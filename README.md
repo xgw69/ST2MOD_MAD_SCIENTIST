@@ -14,7 +14,7 @@
 StS2_MadScientist/
 ├─ MadScientist.csproj          项目文件（net9.0 + Godot.NET.Sdk 4.5.1 + BaseLib）
 ├─ MadScientist.json            Mod 清单（id / 名称 / 版本 / 依赖）
-├─ Directory.Build.props        Godot 路径配置（只有 publish 时才用到）
+├─ Directory.Build.props.example  Godot 路径示例（复制成 Directory.Build.props 用，只有 publish 才需要）
 ├─ Sts2PathDiscovery.props      自动定位游戏安装目录
 ├─ project.godot                Godot 工程配置
 ├─ MadScientist/                ← 会被打包进 .pck 的资源目录

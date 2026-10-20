@@ -1,0 +1,10 @@
+<Project>
+    <PropertyGroup>
+        <!-- Only needed for `dotnet publish` (Godot export). Plain `dotnet build`
+             with BSchneppe.StS2.PckPacker does not use this path. -->
+        <GodotPath>C:/megadot/MegaDot_v4.5.1-stable_mono_win64.exe</GodotPath>
+
+        <!-- Uncomment if the game is not found automatically (non-default Steam library). -->
+        <!-- <Sts2Path>D:/steam/steamapps/common/Slay the Spire 2</Sts2Path> -->
+    </PropertyGroup>
+</Project>
