@@ -38,6 +38,7 @@ StS2_MadScientist/
 │  ├─ Extensions/StringExtensions.cs       资源路径工具
 │  └─ MainFile.cs                          入口（Harmony PatchAll）
 ├─ art/build_art.py             美术生成脚本（从原版事件图重新生成上面所有图片）
+├─ docs/content_todo.md         卡牌 / 遗物 / 先古对话 / 台词的填写清单（你来改）
 └─ docs/design.md               角色设计 / 后续规划笔记
 ```
 
