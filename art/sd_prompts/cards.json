@@ -230,5 +230,33 @@
   {
     "id": "tome_of_awakening",
     "subject": "a floating ancient book with glowing green runes"
+  },
+  {
+    "id": "mechanical_ascension",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist ascending with glowing mechanical wings made of gears"
+  },
+  {
+    "id": "reptilian_evolution_project",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist injecting a glowing green serum into her arm"
+  },
+  {
+    "id": "scientific_research",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist studying floating cards with a magnifying glass"
+  },
+  {
+    "id": "refine",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist duplicating a potion, two identical vials glowing"
+  },
+  {
+    "id": "inventory",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist sorting cards into a metal toolbox"
+  },
+  {
+    "id": "mad_research",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist surrounded by floating formula papers"
+  },
+  {
+    "id": "soul_research",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a ghostly soul rising from a flask held by the scientist"
   }
 ]

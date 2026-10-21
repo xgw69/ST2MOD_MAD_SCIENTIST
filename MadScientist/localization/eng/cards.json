@@ -110,5 +110,13 @@
   "MADSCIENTIST-SCIENTIFIC_RESEARCH.title": "Scientific Research",
   "MADSCIENTIST-SCIENTIFIC_RESEARCH.description": "When drawn, add a copy of this card into your hand.",
   "MADSCIENTIST-PROCESS.title": "Process",
-  "MADSCIENTIST-PROCESS.description": "Exhaust 1 card in your hand, draw 1 card, and fuse it with this card."
+  "MADSCIENTIST-PROCESS.description": "Exhaust 1 card in your hand, draw 1 card, and fuse it with this card.",
+  "MADSCIENTIST-INVENTORY.title": "Inventory",
+  "MADSCIENTIST-INVENTORY.description": "At the end of your turn, retain up to 1 card.",
+  "MADSCIENTIST-MAD_RESEARCH.title": "Mad Research",
+  "MADSCIENTIST-MAD_RESEARCH.description": "At the start of each turn, gain a random uncommon Power card.",
+  "MADSCIENTIST-SOUL_RESEARCH.title": "Soul Research",
+  "MADSCIENTIST-SOUL_RESEARCH.description": "The next time you would die, prevent it and heal to half your Max HP.",
+  "MADSCIENTIST-REFINE.title": "Refine",
+  "MADSCIENTIST-REFINE.description": "Duplicate one of your potions. Exhaust."
 }

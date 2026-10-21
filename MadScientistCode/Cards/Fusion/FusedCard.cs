@@ -35,6 +35,13 @@ public sealed class FusedCard : CardModel
             PickTarget(sources))
     {
         _sources = sources.ToList();
+
+        // 攻击组件：仅与另外 1 张攻击牌融合时，整张融合牌获得重放 1
+        if (_sources.Count == 2 && _sources.Any(c => c is AttackModule)
+            && _sources.Count(c => c.Type == CardType.Attack) == 2)
+        {
+            BaseReplayCount = 1;
+        }
     }
 
     public IReadOnlyList<CardModel> Sources => _sources;
