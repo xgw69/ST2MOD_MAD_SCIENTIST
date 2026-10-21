@@ -44,6 +44,23 @@ public sealed class FusedCard : CardModel
         }
     }
 
+    /// <summary>Create a fused card without registering a new model id.</summary>
+    public static FusedCard Create(IReadOnlyList<CardModel> sources)
+    {
+        var fused = (FusedCard)ModelDb.Card<FusedCard>().CreateClone();
+        fused._sources.Clear();
+        fused._sources.AddRange(sources);
+        fused.EnergyCost.SetCustomBaseCost(SumCost(sources));
+
+        if (sources.Count == 2 && sources.Any(c => c is AttackModule)
+            && sources.Count(c => c.Type == CardType.Attack) == 2)
+        {
+            fused.BaseReplayCount = 1;
+        }
+
+        return fused;
+    }
+
     public IReadOnlyList<CardModel> Sources => _sources;
 
     public override bool CanBeGeneratedByModifiers => false;

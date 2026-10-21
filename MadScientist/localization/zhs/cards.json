@@ -118,5 +118,13 @@
   "MADSCIENTIST-SOUL_RESEARCH.title": "灵魂研究",
   "MADSCIENTIST-SOUL_RESEARCH.description": "当你下一次生命值归零时，免死并回复到最大生命值的一半。",
   "MADSCIENTIST-REFINE.title": "炼制",
-  "MADSCIENTIST-REFINE.description": "复制一瓶你已有的药水。消耗。"
+  "MADSCIENTIST-REFINE.description": "复制一瓶你已有的药水。消耗。",
+  "MADSCIENTIST-SPARE_SPIKES.title": "备用尖刺",
+  "MADSCIENTIST-SPARE_SPIKES.description": "下回合开始时，对所有敌人造成 9 点伤害。",
+  "MADSCIENTIST-SPARE_REAGENT.title": "备用药剂",
+  "MADSCIENTIST-SPARE_REAGENT.description": "下回合开始时，对所有敌人造成 9 点伤害，并给予 1 层虚弱。",
+  "MADSCIENTIST-PLAN.title": "计划",
+  "MADSCIENTIST-PLAN.description": "获得 10 点格挡。下回合开始时修复 3。",
+  "MADSCIENTIST-SELF_REPAIR_RESEARCH.title": "自修复研究",
+  "MADSCIENTIST-SELF_REPAIR_RESEARCH.description": "每回合开始时，修复 2。"
 }

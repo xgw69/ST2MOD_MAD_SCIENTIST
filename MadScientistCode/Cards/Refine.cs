@@ -27,7 +27,8 @@ public class Refine : MadScientistCard
             return Task.CompletedTask;
         }
 
-        var clone = (PotionModel)potion.ToMutable();
+        var canonical = ModelDb.GetById<PotionModel>(potion.Id);
+        var clone = (PotionModel)canonical.ToMutable();
         typeof(Player)
             .GetMethod("AddPotionInternal", BindingFlags.Instance | BindingFlags.NonPublic)
             ?.Invoke(Owner, [clone]);

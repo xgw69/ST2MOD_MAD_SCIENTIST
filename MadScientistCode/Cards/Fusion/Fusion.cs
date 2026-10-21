@@ -21,7 +21,7 @@ public static class FusionHelper
             return null;
         }
 
-        var fused = new FusedCard(sources);
+        var fused = FusedCard.Create(sources);
         foreach (var source in sources)
         {
             await CardPileCmd.RemoveFromCombat(source, true);
