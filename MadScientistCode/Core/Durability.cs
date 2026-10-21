@@ -50,6 +50,12 @@ public static class Durability
             return false;
         }
 
+        // 机器无限研究：照常打出，但不再扣耐久
+        if (creature.HasPower<InfiniteMachineResearchPower>())
+        {
+            return true;
+        }
+
         var power = creature.GetPower<MachineDurabilityPower>();
         var current = power?.Amount ?? 0;
 
