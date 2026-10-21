@@ -60,5 +60,9 @@
   "MADSCIENTIST-FORBIDDEN_FRENZY.title": "疯狂禁忌",
   "MADSCIENTIST-FORBIDDEN_FRENZY.description": "仅当机器耐久刚好为 10 时能打出。对所有敌人造成 40 点伤害。修复 3。",
   "MADSCIENTIST-INFINITE_MACHINE_RESEARCH.title": "机器无限研究",
-  "MADSCIENTIST-INFINITE_MACHINE_RESEARCH.description": "你的机器不再减少耐久。"
+  "MADSCIENTIST-INFINITE_MACHINE_RESEARCH.description": "你的机器不再减少耐久。",
+  "MADSCIENTIST-SCIENTIFIC_METHOD.title": "科学方法",
+  "MADSCIENTIST-SCIENTIFIC_METHOD.description": "融合手中 2 张牌。消耗。",
+  "MADSCIENTIST-FUSED_CARD.title": "融合体",
+  "MADSCIENTIST-FUSED_CARD.description": "打出时依次结算所有融合牌的效果。"
 }

@@ -41,7 +41,7 @@ public class MadScientist : PlaceholderCharacterModel
         ModelDb.Card<Defend>(),
         ModelDb.Card<Defend>(),
         ModelDb.Card<Defend>(),
-        ModelDb.Card<WrenchStrike>()
+        ModelDb.Card<ScientificMethod>()
     ];
 
     // TODO: replace with the character's own starter relic once it is designed.

@@ -60,5 +60,9 @@
   "MADSCIENTIST-FORBIDDEN_FRENZY.title": "Forbidden Frenzy",
   "MADSCIENTIST-FORBIDDEN_FRENZY.description": "Can only be played while Machine Durability is exactly 10. Deal 40 damage to ALL enemies. Repair 3.",
   "MADSCIENTIST-INFINITE_MACHINE_RESEARCH.title": "Infinite Machine Research",
-  "MADSCIENTIST-INFINITE_MACHINE_RESEARCH.description": "Your machine no longer loses durability."
+  "MADSCIENTIST-INFINITE_MACHINE_RESEARCH.description": "Your machine no longer loses durability.",
+  "MADSCIENTIST-SCIENTIFIC_METHOD.title": "Scientific Method",
+  "MADSCIENTIST-SCIENTIFIC_METHOD.description": "Fuse 2 cards in your hand. Exhaust.",
+  "MADSCIENTIST-FUSED_CARD.title": "Fusion",
+  "MADSCIENTIST-FUSED_CARD.description": "Play the effects of every fused card in order."
 }
