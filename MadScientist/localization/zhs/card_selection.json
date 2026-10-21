@@ -1,3 +1,4 @@
 {
-  "MADSCIENTIST-FUSE_PROMPT": "选择要融合的牌"
+  "MADSCIENTIST-FUSE_PROMPT": "选择要融合的牌",
+  "MADSCIENTIST-REMOVE_PROMPT": "选择要移除的牌"
 }

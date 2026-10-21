@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MadScientist.MadScientistCode.Cards;
 using MegaCrit.Sts2.Core.Models.Cards;
+using MadScientist.MadScientistCode.Relics;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 
@@ -47,7 +48,7 @@ public class MadScientist : PlaceholderCharacterModel
     // TODO: replace with the character's own starter relic once it is designed.
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<BurningBlood>()
+        ModelDb.Relic<TomeOfScience>()
     ];
 
     public override CardPoolModel CardPool => ModelDb.CardPool<MadScientistCardPool>();

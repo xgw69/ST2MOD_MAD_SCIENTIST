@@ -1,1 +1,8 @@
-{}
+{
+  "MADSCIENTIST-TOME_OF_SCIENCE.title": "科学宝典",
+  "MADSCIENTIST-TOME_OF_SCIENCE.description": "回合开始时，修复 1。回合结束时，获得等同于机器耐久的格挡。",
+  "MADSCIENTIST-TOME_OF_SCIENCE.flavor": "一本写满批注的实验笔记。",
+  "MADSCIENTIST-TOME_OF_AWAKENING.title": "觉醒宝典",
+  "MADSCIENTIST-TOME_OF_AWAKENING.description": "回合开始时，修复 3。回合结束时，获得等同于机器耐久的格挡，并对所有敌人造成等量伤害。",
+  "MADSCIENTIST-TOME_OF_AWAKENING.flavor": "书页自己翻动，墨迹在发热。"
+}

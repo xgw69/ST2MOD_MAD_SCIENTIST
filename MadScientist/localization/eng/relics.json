@@ -1,3 +1,8 @@
 {
-  
+  "MADSCIENTIST-TOME_OF_SCIENCE.title": "Tome of Science",
+  "MADSCIENTIST-TOME_OF_SCIENCE.description": "At the start of your turn, Repair 1. At the end of your turn, gain Block equal to your Machine Durability.",
+  "MADSCIENTIST-TOME_OF_SCIENCE.flavor": "A lab journal full of marginalia.",
+  "MADSCIENTIST-TOME_OF_AWAKENING.title": "Tome of Awakening",
+  "MADSCIENTIST-TOME_OF_AWAKENING.description": "At the start of your turn, Repair 3. At the end of your turn, gain Block equal to your Machine Durability and deal that much damage to ALL enemies.",
+  "MADSCIENTIST-TOME_OF_AWAKENING.flavor": "The pages turn themselves; the ink runs hot."
 }

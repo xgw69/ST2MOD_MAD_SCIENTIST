@@ -4,5 +4,13 @@
   "MADSCIENTIST-MACHINE_BROKEN_POWER.title": "机器损毁",
   "MADSCIENTIST-MACHINE_BROKEN_POWER.description": "本场战斗内不能再使用消耗机器耐久的牌，修复失效。",
   "MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER.title": "机器无限研究",
-  "MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER.description": "你消耗机器耐久时不再减少耐久。"
+  "MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER.description": "你消耗机器耐久时不再减少耐久。",
+  "MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER.title": "自修复研究",
+  "MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER.description": "每回合开始时修复 {Amount}。",
+  "MADSCIENTIST-SPARE_SPIKES_POWER.title": "备用尖刺",
+  "MADSCIENTIST-SPARE_SPIKES_POWER.description": "下回合开始时对所有敌人造成 {Amount} 点伤害。",
+  "MADSCIENTIST-SPARE_REAGENT_POWER.title": "备用药剂",
+  "MADSCIENTIST-SPARE_REAGENT_POWER.description": "下回合开始时对所有敌人造成 {Amount} 点伤害并给予虚弱。",
+  "MADSCIENTIST-PLAN_POWER.title": "计划",
+  "MADSCIENTIST-PLAN_POWER.description": "下回合开始时修复 {Amount}。"
 }

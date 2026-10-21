@@ -32,15 +32,18 @@ public static class FusionHelper
     }
 
     /// <summary>Let the player pick cards from their hand and fuse them.</summary>
-    public static async Task<FusedCard?> SelectAndFuse(PlayerChoiceContext ctx, Player player, CardModel source, int count)
+    public static Task<FusedCard?> SelectAndFuse(PlayerChoiceContext ctx, Player player, CardModel source, int count)
+        => SelectAndFuse(ctx, player, source, count, count);
+
+    public static async Task<FusedCard?> SelectAndFuse(PlayerChoiceContext ctx, Player player, CardModel source, int min, int max)
     {
-        var prefs = new CardSelectorPrefs(new LocString("card_selection", "MADSCIENTIST-FUSE_PROMPT"), count, count)
+        var prefs = new CardSelectorPrefs(new LocString("card_selection", "MADSCIENTIST-FUSE_PROMPT"), min, max)
         {
             Cancelable = true
         };
 
         var selected = (await MultiPileCardSelect.Select(ctx, player, prefs, c => c != source, PileType.Hand)).ToList();
-        if (selected.Count < count)
+        if (selected.Count < min)
         {
             return null;
         }
