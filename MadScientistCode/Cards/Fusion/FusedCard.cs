@@ -65,6 +65,12 @@ public sealed class FusedCard : CardModel
 
     private static int SumCost(IReadOnlyList<CardModel> sources)
     {
+        // 禁忌科学：融合后费用变 0
+        if (sources.Any(c => c is ForbiddenScience))
+        {
+            return 0;
+        }
+
         if (sources.Any(c => c.EnergyCost.CostsX))
         {
             return 0;

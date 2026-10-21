@@ -94,5 +94,21 @@
   "MADSCIENTIST-BLASTING_DEVICE.title": "爆破装置",
   "MADSCIENTIST-BLASTING_DEVICE.description": "将 X 张爆破加入你的手牌。",
   "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.title": "伪科学方法",
-  "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.description": "融合手中至多 4 张牌。消耗。"
+  "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.description": "融合手中至多 4 张牌。消耗。",
+  "MADSCIENTIST-MUTATION.title": "变异",
+  "MADSCIENTIST-MUTATION.description": "获得 6 点格挡。获得 1 点力量。下回合失去 2 点敏捷。",
+  "MADSCIENTIST-SCORCHED_GROUND.title": "灼热地面",
+  "MADSCIENTIST-SCORCHED_GROUND.description": "接下来 3 个回合开始时，对随机敌人造成 8 点伤害。",
+  "MADSCIENTIST-THINK.title": "思考",
+  "MADSCIENTIST-THINK.description": "下回合开始时获得 12 点格挡、2 点能量。",
+  "MADSCIENTIST-MECHANICAL_ASCENSION.title": "机械飞升",
+  "MADSCIENTIST-MECHANICAL_ASCENSION.description": "获得 1 层人工制品。消耗你抽牌堆、弃牌堆、手牌中所有能力牌。",
+  "MADSCIENTIST-REPTILIAN_EVOLUTION_PROJECT.title": "爬行动物进化工程",
+  "MADSCIENTIST-REPTILIAN_EVOLUTION_PROJECT.description": "获得 5 层无实体。消耗你抽牌堆、弃牌堆、手牌中所有能力牌。",
+  "MADSCIENTIST-FORBIDDEN_SCIENCE.title": "禁忌科学",
+  "MADSCIENTIST-FORBIDDEN_SCIENCE.description": "不可打出。与其他牌融合后，融合牌费用变为 0，打出时对所有敌人造成 15 点伤害。",
+  "MADSCIENTIST-SCIENTIFIC_RESEARCH.title": "科学研究",
+  "MADSCIENTIST-SCIENTIFIC_RESEARCH.description": "抽到时，复制一张到手牌。",
+  "MADSCIENTIST-PROCESS.title": "处理",
+  "MADSCIENTIST-PROCESS.description": "消耗 1 张手牌，抽 1 张牌，并将其与此牌融合。"
 }

@@ -94,5 +94,21 @@
   "MADSCIENTIST-BLASTING_DEVICE.title": "Blasting Device",
   "MADSCIENTIST-BLASTING_DEVICE.description": "Add X Blast cards into your hand.",
   "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.title": "Pseudoscientific Method",
-  "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.description": "Fuse up to 4 cards in your hand. Exhaust."
+  "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.description": "Fuse up to 4 cards in your hand. Exhaust.",
+  "MADSCIENTIST-MUTATION.title": "Mutation",
+  "MADSCIENTIST-MUTATION.description": "Gain 6 Block. Gain 1 Strength. Next turn, lose 2 Dexterity.",
+  "MADSCIENTIST-SCORCHED_GROUND.title": "Scorched Ground",
+  "MADSCIENTIST-SCORCHED_GROUND.description": "At the start of the next 3 turns, deal 8 damage to a random enemy.",
+  "MADSCIENTIST-THINK.title": "Think",
+  "MADSCIENTIST-THINK.description": "At the start of your next turn, gain 12 Block and 2 Energy.",
+  "MADSCIENTIST-MECHANICAL_ASCENSION.title": "Mechanical Ascension",
+  "MADSCIENTIST-MECHANICAL_ASCENSION.description": "Gain 1 Artifact. Exhaust all Power cards in your draw pile, discard pile and hand.",
+  "MADSCIENTIST-REPTILIAN_EVOLUTION_PROJECT.title": "Reptilian Evolution Project",
+  "MADSCIENTIST-REPTILIAN_EVOLUTION_PROJECT.description": "Gain 5 Intangible. Exhaust all Power cards in your draw pile, discard pile and hand.",
+  "MADSCIENTIST-FORBIDDEN_SCIENCE.title": "Forbidden Science",
+  "MADSCIENTIST-FORBIDDEN_SCIENCE.description": "Unplayable. When fused, the fused card costs 0 and deals 15 damage to ALL enemies when played.",
+  "MADSCIENTIST-SCIENTIFIC_RESEARCH.title": "Scientific Research",
+  "MADSCIENTIST-SCIENTIFIC_RESEARCH.description": "When drawn, add a copy of this card into your hand.",
+  "MADSCIENTIST-PROCESS.title": "Process",
+  "MADSCIENTIST-PROCESS.description": "Exhaust 1 card in your hand, draw 1 card, and fuse it with this card."
 }

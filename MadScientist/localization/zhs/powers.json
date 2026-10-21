@@ -12,5 +12,11 @@
   "MADSCIENTIST-SPARE_REAGENT_POWER.title": "备用药剂",
   "MADSCIENTIST-SPARE_REAGENT_POWER.description": "下回合开始时对所有敌人造成 {Amount} 点伤害并给予虚弱。",
   "MADSCIENTIST-PLAN_POWER.title": "计划",
-  "MADSCIENTIST-PLAN_POWER.description": "下回合开始时修复 {Amount}。"
+  "MADSCIENTIST-PLAN_POWER.description": "下回合开始时修复 {Amount}。",
+  "MADSCIENTIST-MUTATION_POWER.title": "变异",
+  "MADSCIENTIST-MUTATION_POWER.description": "下回合开始时失去敏捷。",
+  "MADSCIENTIST-SCORCHED_GROUND_POWER.title": "灼热地面",
+  "MADSCIENTIST-SCORCHED_GROUND_POWER.description": "接下来 {Amount} 个回合开始时，对随机敌人造成 8 点伤害。",
+  "MADSCIENTIST-THINK_POWER.title": "思考",
+  "MADSCIENTIST-THINK_POWER.description": "下回合开始时获得格挡和能量。"
 }
