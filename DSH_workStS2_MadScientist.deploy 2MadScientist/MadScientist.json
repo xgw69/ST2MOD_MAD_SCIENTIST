@@ -1,0 +1,14 @@
+{
+  "id": "MadScientist",
+  "name": "疯狂科学家 / Mad Scientist",
+  "author": "xgw",
+  "description": "新增可玩角色：疯狂科学家。角色美术取自原版第三层「修补时间」事件的插画。需要 BaseLib。",
+  "version": "v0.1.0",
+  "min_game_version": "0.111.0",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": [
+    {"id": "BaseLib", "min_version": "3.4.7"}
+  ],
+  "affects_gameplay": true
+}

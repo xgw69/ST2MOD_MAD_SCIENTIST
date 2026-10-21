@@ -1,0 +1,6 @@
+{
+  "MADSCIENTIST-MACHINE_DURABILITY_POWER.title": "机器耐久",
+  "MADSCIENTIST-MACHINE_DURABILITY_POWER.description": "当前耐久：{Amount}（上限 20）。消耗耐久时若不够，机器爆炸。",
+  "MADSCIENTIST-MACHINE_BROKEN_POWER.title": "机器损毁",
+  "MADSCIENTIST-MACHINE_BROKEN_POWER.description": "本场战斗内不能再使用消耗机器耐久的牌，修复失效。"
+}

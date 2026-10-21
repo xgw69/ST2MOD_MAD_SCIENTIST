@@ -1,3 +1,6 @@
 {
-  
+  "MADSCIENTIST-MACHINE_DURABILITY_POWER.title": "Machine Durability",
+  "MADSCIENTIST-MACHINE_DURABILITY_POWER.description": "Current durability: {Amount} (max 20). If a card consumes more than this, the machine explodes.",
+  "MADSCIENTIST-MACHINE_BROKEN_POWER.title": "Machine Broken",
+  "MADSCIENTIST-MACHINE_BROKEN_POWER.description": "You cannot play cards that consume Machine Durability this combat, and Repair does nothing."
 }
