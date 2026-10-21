@@ -64,5 +64,7 @@
   "MADSCIENTIST-SCIENTIFIC_METHOD.title": "Scientific Method",
   "MADSCIENTIST-SCIENTIFIC_METHOD.description": "Fuse 2 cards in your hand. Exhaust.",
   "MADSCIENTIST-FUSED_CARD.title": "Fusion",
-  "MADSCIENTIST-FUSED_CARD.description": "Play the effects of every fused card in order."
+  "MADSCIENTIST-FUSED_CARD.description": "Play the effects of every fused card in order.",
+  "MADSCIENTIST-SCIENTIFIC_LEGACY.title": "Scientific Legacy",
+  "MADSCIENTIST-SCIENTIFIC_LEGACY.description": "Choose 1 of 9 Mad Science cards and add it to your hand. Exhaust."
 }

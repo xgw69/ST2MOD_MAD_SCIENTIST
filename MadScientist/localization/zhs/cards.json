@@ -64,5 +64,7 @@
   "MADSCIENTIST-SCIENTIFIC_METHOD.title": "科学方法",
   "MADSCIENTIST-SCIENTIFIC_METHOD.description": "融合手中 2 张牌。消耗。",
   "MADSCIENTIST-FUSED_CARD.title": "融合体",
-  "MADSCIENTIST-FUSED_CARD.description": "打出时依次结算所有融合牌的效果。"
+  "MADSCIENTIST-FUSED_CARD.description": "打出时依次结算所有融合牌的效果。",
+  "MADSCIENTIST-SCIENTIFIC_LEGACY.title": "科学传承",
+  "MADSCIENTIST-SCIENTIFIC_LEGACY.description": "从 9 张疯狂科学中选择一张获得。消耗。"
 }
