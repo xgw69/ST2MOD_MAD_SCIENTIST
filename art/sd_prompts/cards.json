@@ -1,0 +1,234 @@
+[
+  {
+    "id": "strike",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, swinging a heavy wrench, cluttered laboratory"
+  },
+  {
+    "id": "defend",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, raising a heavy riveted metal shield plate, green energy barrier"
+  },
+  {
+    "id": "wrench_strike",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a huge wrench striking a glowing gear, sparks flying"
+  },
+  {
+    "id": "mixed_reagent",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a bubbling flask of green and purple chemicals being poured"
+  },
+  {
+    "id": "knock",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a shockwave of green energy knocking slimes off their feet"
+  },
+  {
+    "id": "jolt",
+    "subject": "a static electric jolt arcing from a small hand device"
+  },
+  {
+    "id": "blast",
+    "subject": "a violent chemical explosion of green fire"
+  },
+  {
+    "id": "rumble",
+    "subject": "a heavy machine hammering the ground with shockwaves"
+  },
+  {
+    "id": "spare_spikes",
+    "subject": "spikes and needles erupting from a metal contraption"
+  },
+  {
+    "id": "assault",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist dashing forward with a sparking tool"
+  },
+  {
+    "id": "x_ray",
+    "subject": "a piercing x-ray beam scanning through enemies"
+  },
+  {
+    "id": "scorched_ground",
+    "subject": "cracked ground with green flames spreading"
+  },
+  {
+    "id": "spatial_tear",
+    "subject": "a jagged tear in space, geometric rift"
+  },
+  {
+    "id": "machine_rumble",
+    "subject": "a steam-powered machine pounding with two pistons"
+  },
+  {
+    "id": "machine_blast",
+    "subject": "a machine overloading and exploding in green light"
+  },
+  {
+    "id": "machine_reagent",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a mechanical arm injecting green serum into a flask"
+  },
+  {
+    "id": "fully_automatic",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a fully automated machine gun firing flasks"
+  },
+  {
+    "id": "spare_reagent",
+    "subject": "a spare vial of green reagent hanging from a belt"
+  },
+  {
+    "id": "universal_correction",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist adjusting a giant dial with glowing numbers"
+  },
+  {
+    "id": "forbidden_frenzy",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist laughing madly, green energy erupting"
+  },
+  {
+    "id": "blasting_device",
+    "subject": "a belt of dynamite-like chemical bombs"
+  },
+  {
+    "id": "forbidden_science",
+    "subject": "a forbidden glowing book with green formulas"
+  },
+  {
+    "id": "giant_wrench",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, an enormous wrench crushing the ground"
+  },
+  {
+    "id": "scientific_method",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, two cards merging into one above a lab table"
+  },
+  {
+    "id": "scientific_legacy",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, nine glowing formula cards floating in a circle"
+  },
+  {
+    "id": "self_repair_plan",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a blueprint of a self-repairing machine"
+  },
+  {
+    "id": "quick_repair",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a wrench quickly tightening a bolt with sparks"
+  },
+  {
+    "id": "full_repair",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a machine fully restored and glowing green"
+  },
+  {
+    "id": "machine_defense",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a machine deploying a hexagonal energy shield"
+  },
+  {
+    "id": "machine_production",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a generator producing green energy orbs"
+  },
+  {
+    "id": "machine_control",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist controlling machines with a remote"
+  },
+  {
+    "id": "energy_shield",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist surrounded by a crackling energy shield"
+  },
+  {
+    "id": "reactive_boiler",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a boiler reactor venting steam and pressure"
+  },
+  {
+    "id": "chemical_fog",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a cloud of green chemical fog"
+  },
+  {
+    "id": "obsession",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist staring obsessively at a formula"
+  },
+  {
+    "id": "mutation",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a glowing mutation serum transforming a hand"
+  },
+  {
+    "id": "beneficial_mutation",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist flexing with green energy veins"
+  },
+  {
+    "id": "self_review",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist looking into a mirror covered with notes"
+  },
+  {
+    "id": "ethical_boundary",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist hesitating at a red line on the floor"
+  },
+  {
+    "id": "loss_of_sanity",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist clutching their head, papers flying"
+  },
+  {
+    "id": "assemble",
+    "subject": "many small machine parts assembling into one device"
+  },
+  {
+    "id": "defense_module",
+    "subject": "a small shield module with green circuits"
+  },
+  {
+    "id": "speed_module",
+    "subject": "a small speed module with a lightning symbol"
+  },
+  {
+    "id": "energy_module",
+    "subject": "a small battery module glowing green"
+  },
+  {
+    "id": "attack_module",
+    "subject": "a small blade module with a green edge"
+  },
+  {
+    "id": "plan",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist writing a plan on a clipboard"
+  },
+  {
+    "id": "think",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a scientist thinking, a glowing lightbulb overhead"
+  },
+  {
+    "id": "great_fusion",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a swirling vortex of cards merging together"
+  },
+  {
+    "id": "process",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a conveyor belt processing a card into a machine"
+  },
+  {
+    "id": "pseudoscientific_method",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, an ancient glowing tome merging cards"
+  },
+  {
+    "id": "mad_scientist_character_card",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, three floating mad science cards, attack skill and power"
+  },
+  {
+    "id": "strength_research",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a flask labeled strength, muscles glowing"
+  },
+  {
+    "id": "dexterity_research",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a flask labeled speed, green wind swirling"
+  },
+  {
+    "id": "reflex_research",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a spiky reactive armor module"
+  },
+  {
+    "id": "self_repair_research",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a self-repairing machine with turning gears"
+  },
+  {
+    "id": "infinite_machine_research",
+    "subject": "a goblin scientist with orange scaly skin, colorful spiky hair, brass goggles, white lab coat and a green potion backpack, a perpetual motion machine with an infinity symbol"
+  },
+  {
+    "id": "tome_of_science",
+    "subject": "an old leather book with green chemical formulas"
+  },
+  {
+    "id": "tome_of_awakening",
+    "subject": "a floating ancient book with glowing green runes"
+  }
+]
