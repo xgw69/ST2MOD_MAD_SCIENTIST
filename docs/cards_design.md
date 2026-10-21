@@ -16,8 +16,9 @@
 | 初始遗物 | 科学宝典 Tome of Science |
 | 进化遗物 | 觉醒宝典 Tome of Awakening |
 | 初始卡（进化后） | 科学方法 → 伪科学方法 |
-| 卡池规模 | 攻击 24 / 技能 29 / 能力 10（含 4 张组件、1 张诅咒、1 张衍生） |
+| 卡池规模 | 攻击 24 / 技能 29 / 能力 9 + 先古卡 1（含 4 张组件、1 张诅咒） |
 | 核心机制 | 修复、机器耐久、融合、疯狂科学、重放 |
+| 先古卡 | 机器无限研究（Infinite Machine Research） |
 
 ---
 
@@ -177,7 +178,16 @@
 | 机械飞升 | Mechanical Ascension / `MechanicalAscension` | 1 | 自身 | 仅当本场战斗未打出过能力牌时可打出；获得 1(2) 层人工制品；消耗抽牌堆、弃牌堆、手牌中所有能力牌 | |
 | 爬行动物进化工程 | Reptilian Evolution Project / `ReptilianEvolutionProject` | 1 | 自身 | 仅当本场战斗未打出过能力牌时可打出；获得 5(6) 层无实体；消耗所有能力牌 | |
 | 灵魂研究 | Soul Research / `SoulResearch` | 1 | 自身 | 仅当本场战斗未打出过能力牌时可打出；下次生命归零时，最大生命 -5(-3)，生命恢复到最大生命的一半；消耗所有能力牌 | 见 Q7 |
-| 机器无限研究 | Infinite Machine Research / `InfiniteMachineResearch` | 3(2) | 自身 | 你的机器不再减少耐久 | 见 Q20 |
+
+### 2.4 先古卡 Ancient
+
+> 部分先古之民会给每个角色一张专属「先古卡」；角色卡池里没有 Ancient 稀有度的卡时，该先古的选项可能为空/卡住。
+> 因此把「机器无限研究」从稀有卡改为**先古卡**，保证卡池里有且仅有一张 Ancient。
+
+| 中文 | 英文 / 类名 | 费用 | 目标 | 效果 | 备注 |
+|---|---|---|---|---|---|
+| 机器无限研究 | Infinite Machine Research / `InfiniteMachineResearch` | 3(2) | 自身 | 你的机器不再减少耐久 | **先古卡**（CardRarity.Ancient），由给角色先古卡的那位先古之民提供 |
+
 
 ---
 

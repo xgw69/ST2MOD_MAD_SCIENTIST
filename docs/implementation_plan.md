@@ -116,6 +116,7 @@ public sealed class FusedCard : CardModel
 ## 5. 阶段 4：遗物 / 进化 / 先古
 
 - 科学宝典 / 觉醒宝典（回合开始修复、回合结束格挡/伤害）
+- 机器无限研究作为**先古卡**（`CardRarity.Ancient`），供"给角色先古卡"的先古之民使用
 - 欧洛巴斯选项池 3：新增"升级初始遗物"或"升级初始卡"选项
   - 需要研究 `AncientOption` / `OROBAS` 的选项注册方式（BaseLib 的 `CustomAncientModel` 只覆盖新先古）
 - 进化后的卡：伪科学方法（融合至多 4 张）
