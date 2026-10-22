@@ -22,7 +22,7 @@ class ResourceTests(unittest.TestCase):
                 classes[key] = variables
         classes['FUSED_CARD'] = classes['FUSED_X_CARD'] = {'Effects'}
         for lang in ('eng', 'zhs'):
-            data = json.loads((ROOT / f'MadScientist/localization/{lang}/cards.json').read_text())
+            data = json.loads((ROOT / f'MadScientist/localization/{lang}/cards.json').read_text(encoding="utf-8"))
             for key, text in data.items():
                 if not key.endswith('.description') or not key.startswith('MADSCIENTIST-'):
                     continue
@@ -32,10 +32,10 @@ class ResourceTests(unittest.TestCase):
 
     def test_matching_translation_keys(self):
         paths = [ROOT / f'MadScientist/localization/{lang}/cards.json' for lang in ('eng', 'zhs')]
-        self.assertEqual(set(json.loads(paths[0].read_text())), set(json.loads(paths[1].read_text())))
+        self.assertEqual(set(json.loads(paths[0].read_text(encoding="utf-8"))), set(json.loads(paths[1].read_text(encoding="utf-8"))))
 
     def test_animation_paths_resolve_to_current_hierarchy(self):
-        source = (ROOT / 'MadScientistCode/Visuals/MadScientistVisuals.cs').read_text()
+        source = (ROOT / 'MadScientistCode/Visuals/MadScientistVisuals.cs').read_text(encoding="utf-8")
         paths = re.findall(r'AddTrack\(anim, "([^"]+)"\)', source)
         self.assertTrue(paths)
         for path in paths:
