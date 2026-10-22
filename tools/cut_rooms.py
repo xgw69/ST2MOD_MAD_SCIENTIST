@@ -44,6 +44,14 @@ def main() -> None:
         if not src.exists():
             continue
         out = trim(cut_white(Image.open(src)))
+        if name == "rest_site":
+            # Match the vanilla rest-site character size and nudge her toward
+            # the seat on the left of the room (right padding shifts the sprite left).
+            target_h = 620
+            out = out.resize((round(out.width * target_h / out.height), target_h), Image.LANCZOS)
+            canvas = Image.new("RGBA", (round(out.width * 1.25), round(out.height * 1.05)), (0, 0, 0, 0))
+            canvas.paste(out, (round(canvas.width * 0.38 - out.width / 2), canvas.height - out.height), out)
+            out = canvas
         out.save(IMG / "rooms" / f"{name}.png")
         print(name, out.size)
 
