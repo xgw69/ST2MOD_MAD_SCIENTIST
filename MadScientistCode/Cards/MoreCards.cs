@@ -168,7 +168,27 @@ public class ScientificResearch : MadScientistCard
         }
 
         var copy = CreateClone();
+        copy.Owner = Owner;
         await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner);
+
+        // Also gain a random common Attack card (upgraded when this card is upgraded).
+        var pool = MegaCrit.Sts2.Core.Models.ModelDb
+            .CardPool<MadScientist.MadScientistCode.Character.MadScientistCardPool>()
+            .AllCards
+            .Where(c => c.Rarity == CardRarity.Common && c.Type == CardType.Attack)
+            .ToList();
+        if (pool.Count == 0)
+        {
+            return;
+        }
+
+        var bonus = pool[System.Random.Shared.Next(pool.Count)].ToMutable();
+        bonus.Owner = Owner;
+        if (IsUpgraded)
+        {
+            bonus.UpgradeInternal();
+        }
+        await CardPileCmd.AddGeneratedCardToCombat(bonus, PileType.Hand, Owner);
     }
 }
 

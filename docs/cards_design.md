@@ -120,12 +120,12 @@
 
 | 中文 | 英文 / 类名 | 费用 | 目标 | 效果 | 备注 |
 |---|---|---|---|---|---|
-| 科学研究 | Scientific Research / `ScientificResearch` | 0 | 自身 | 抽到时，复制一张到手牌；随机获得一张（升级过的）普通攻击牌 | 见 Q |
+| 科学研究 | Scientific Research / `ScientificResearch` | 0 | 自身 | 抽到时，复制一张到手牌；随机获得一张（升级过的）普通攻击牌 | 已实现 |
 | 变异 | Mutation / `Mutation` | 1 | 自身 | 获得 6(8) 点格挡；获得 1 点力量；下回合失去 2(1) 点敏捷 | |
 | 炼制 | Refine / `Refine` | 1(0) | 自身 | 记录最左侧已有药水，战后奖励追加一瓶同类药水；消耗 | 2026-10-22 按反馈改为战后奖励 |
 | 化学雾气 | Chemical Fog / `ChemicalFog` | 1 | 自身 | 失去 2(1) 点敏捷；失去 2(1) 点力量；获得 17 点格挡 | |
 | 执迷不误 | Obsession / `Obsession` | 1 | 自身 | 当此牌在手牌时，必须优先打出；获得 12(15) 点格挡；本回合不能再打出其他技能牌 | |
-| 能量护盾 | Energy Shield / `EnergyShield` | 1 | 自身 | 固有；获得 10 点格挡；获得 1 点敏捷；消耗 | |
+| 能量护盾 | Energy Shield / `EnergyShield` | 1 | 自身 | 获得 10 点格挡；获得 1 点敏捷；消耗。**升级：获得固有** | |
 | 防御组件 | Defense Module / `DefenseModule` | — | — | 不可打出。与其他牌融合后，融合牌打出时获得 8 点格挡 | 无升级 |
 | 速度组件 | Speed Module / `SpeedModule` | — | — | 不可打出。与其他牌融合后，融合牌打出时抽 3 张牌 | 无升级 |
 | 能量组件 | Energy Module / `EnergyModule` | — | — | 不可打出。与其他牌融合后，融合牌打出时获得 2 点能量 | 无升级 |
