@@ -20,3 +20,6 @@ seedream_out/
 # Standalone regression harness output
 tests/**/obj/
 tests/**/bin/
+
+# stray deploy folder from a malformed ModsPath
+DSH_workStS2_MadScientist.deploy 2/
