@@ -48,7 +48,9 @@ public class Assemble : MadScientistCard
     {
         var state = Owner.PlayerCombatState;
         var cards = state.Hand.Cards.Concat(state.DrawPile.Cards)
-            .Where(c => c != this && c.Keywords.Contains(CardKeyword.Unplayable))
+            .Where(c => c != this
+                && c.Keywords.Contains(CardKeyword.Unplayable)
+                && c.Type is not (CardType.Curse or CardType.Status))
             .Distinct()
             .ToList();
 

@@ -16,6 +16,8 @@ public static class FusionHelper
 {
     public static async Task<FusedCard?> Fuse(PlayerChoiceContext ctx, Player player, IReadOnlyList<CardModel> sources)
     {
+        // Curses and statuses can never be fused (also guarded in the selection filter).
+        sources = sources.Where(c => c.Type is not (CardType.Curse or CardType.Status)).ToList();
         if (sources.Count < 2)
         {
             return null;
