@@ -29,7 +29,7 @@ public static class MadScienceFactory
 
     private static void Add(List<CardModel> list, CardType type, TinkerTime.RiderEffect rider)
     {
-        var card = (MadScience)ModelDb.Card<MadScience>().CreateClone();
+        var card = (MadScience)ModelDb.Card<MadScience>().ToMutable();
         card.TinkerTimeType = type;
         card.TinkerTimeRider = rider;
         list.Add(card);
