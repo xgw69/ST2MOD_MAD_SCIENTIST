@@ -118,7 +118,7 @@
   "MADSCIENTIST-SOUL_RESEARCH.title": "灵魂研究",
   "MADSCIENTIST-SOUL_RESEARCH.description": "当你下一次生命值归零时，免死并回复到最大生命值的一半。",
   "MADSCIENTIST-REFINE.title": "炼制",
-  "MADSCIENTIST-REFINE.description": "在本场战斗的奖励中额外获得一瓶与你最左侧药水相同的药水。消耗。",
+  "MADSCIENTIST-REFINE.description": "打出后，在本场战斗的奖励中额外获得一瓶与你最左侧药水相同的药水。",
   "MADSCIENTIST-SPARE_SPIKES.title": "备用尖刺",
   "MADSCIENTIST-SPARE_SPIKES.description": "下回合开始时，对所有敌人造成 {DelayedDamage} 点伤害。",
   "MADSCIENTIST-SPARE_REAGENT.title": "备用药剂",
