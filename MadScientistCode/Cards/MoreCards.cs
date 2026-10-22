@@ -171,7 +171,10 @@ public class ScientificResearch : MadScientistCard
         copy.Owner = Owner;
         await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner);
 
-        // Also gain a random common Attack card (upgraded when this card is upgraded).
+    }
+
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
         var pool = MegaCrit.Sts2.Core.Models.ModelDb
             .CardPool<MadScientist.MadScientistCode.Character.MadScientistCardPool>()
             .AllCards
