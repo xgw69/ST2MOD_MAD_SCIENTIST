@@ -68,6 +68,26 @@ public class MadScientist : PlaceholderCharacterModel
         return MadScientistVisuals.Create();
     }
 
+    // Rest site / shop: BaseLib builds static characters from plain textures.
+    public override string? CustomRestSiteAnimPath =>
+        "res://MadScientist/images/rooms/rest_site.png";
+
+    public override string? CustomMerchantAnimPath =>
+        "res://MadScientist/images/rooms/merchant.png";
+
+    // Multiplayer rock/paper/scissors hand gestures.
+    public override string? CustomArmPointingTexturePath =>
+        "res://MadScientist/images/ui/hands/multiplayer_hand_madscientist_point.png";
+
+    public override string? CustomArmRockTexturePath =>
+        "res://MadScientist/images/ui/hands/multiplayer_hand_madscientist_rock.png";
+
+    public override string? CustomArmPaperTexturePath =>
+        "res://MadScientist/images/ui/hands/multiplayer_hand_madscientist_paper.png";
+
+    public override string? CustomArmScissorsTexturePath =>
+        "res://MadScientist/images/ui/hands/multiplayer_hand_madscientist_scissors.png";
+
     /// <summary>Character select backdrop, painted from the Tinker Time event illustration.</summary>
     public override string CustomCharacterSelectBg => "res://MadScientist/scenes/char_select_bg_mad_scientist.tscn";
 
