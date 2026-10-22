@@ -65,6 +65,8 @@ public sealed class FusedCard : CardModel
 
     public override bool CanBeGeneratedByModifiers => false;
 
+    public override CardPoolModel Pool => ModelDb.CardPool<MadScientist.MadScientistCode.Character.MadScientistCardPool>();
+
     public override string Title => string.Join("+", _sources.Select(c => c.Title));
 
     public override string PortraitPath => _sources.Count > 0 ? _sources[0].PortraitPath : base.PortraitPath;

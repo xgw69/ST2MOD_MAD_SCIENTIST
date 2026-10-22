@@ -1,5 +1,6 @@
 {
   "MADSCIENTIST-FUSE_PROMPT": "Choose cards to fuse",
   "MADSCIENTIST-REMOVE_PROMPT": "Choose a card to remove",
-  "MADSCIENTIST-EXHAUST_PROMPT": "Choose a card to exhaust"
+  "MADSCIENTIST-EXHAUST_PROMPT": "Choose a card to exhaust",
+  "MADSCIENTIST-MADSCIENCE_PROMPT": "Choose a Mad Science card"
 }

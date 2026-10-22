@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -47,7 +48,13 @@ public class ScientificLegacy : MadScientistCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var options = MadScienceFactory.CreateAll();
-        var chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, Owner, true);
+        var prefs = new MegaCrit.Sts2.Core.CardSelection.CardSelectorPrefs(
+            new MegaCrit.Sts2.Core.Localization.LocString("card_selection", "MADSCIENTIST-MADSCIENCE_PROMPT"), 1, 1)
+        {
+            Cancelable = true
+        };
+
+        var chosen = (await CardSelectCmd.FromSimpleGrid(choiceContext, options, Owner, prefs)).FirstOrDefault();
         if (chosen != null)
         {
             await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, Owner);
