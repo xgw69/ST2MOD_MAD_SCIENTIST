@@ -37,6 +37,12 @@ public static class MadScientistVisuals
         root.RemoveChild(sprite);
         var pivot = new Node2D { Name = "Visuals" };
         root.AddChild(pivot);
+        pivot.Owner = root;
+        pivot.UniqueNameInOwner = true;
+        // Base display scale lives on the pivot, not on the root: the game's
+        // shrink/grow effects ScaleTo() the creature root, so keeping it at 1
+        // makes those effects multiply our 0.4 instead of overwriting it.
+        pivot.Scale = new Vector2(VisualScale, VisualScale);
         pivot.AddChild(sprite);
         sprite.Name = "Sprite";
         sprite.Position = new Vector2(0f, -height * 0.5f);
@@ -53,7 +59,6 @@ public static class MadScientistVisuals
         player.AddAnimationLibrary("", library);
 
         player.Autoplay = "Idle";
-        root.Scale = new Vector2(VisualScale, VisualScale);
         return root;
     }
 

@@ -15,6 +15,8 @@ public class Strike : MadScientistCard
     {
     }
 
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -35,6 +37,8 @@ public class Defend : MadScientistCard
     public Defend() : base(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
     {
     }
+
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(5m, ValueProp.Move)];
 
