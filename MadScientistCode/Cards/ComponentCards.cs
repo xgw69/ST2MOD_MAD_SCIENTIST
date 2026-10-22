@@ -133,6 +133,7 @@ public class MadScientistCharacterCard : MadScientistCard
         foreach (var type in new[] { CardType.Attack, CardType.Skill, CardType.Power })
         {
             var card = MadScienceFactory.CreateAll().First(c => c.Type == type);
+            card.Owner = Owner;
             await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
         }
 

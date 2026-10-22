@@ -57,6 +57,7 @@ public class ScientificLegacy : MadScientistCard
         var chosen = (await CardSelectCmd.FromSimpleGrid(choiceContext, options, Owner, prefs)).FirstOrDefault();
         if (chosen != null)
         {
+            chosen.Owner = Owner;
             await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, Owner);
         }
     }

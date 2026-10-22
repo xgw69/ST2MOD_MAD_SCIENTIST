@@ -110,6 +110,7 @@ public class EthicalBoundary : MadScientistCard
         await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, Owner);
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         var guilt = ModelDb.Card<Guilty>().ToMutable();
+        guilt.Owner = Owner;
         await CardPileCmd.AddGeneratedCardToCombat(guilt, PileType.Draw, Owner);
     }
 

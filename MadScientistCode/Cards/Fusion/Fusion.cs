@@ -21,7 +21,7 @@ public static class FusionHelper
             return null;
         }
 
-        var fused = FusedCard.Create(sources);
+        var fused = FusedCard.Create(sources, player);
         foreach (var source in sources)
         {
             await CardPileCmd.RemoveFromCombat(source, true);
@@ -42,7 +42,7 @@ public static class FusionHelper
             Cancelable = true
         };
 
-        var selected = (await MultiPileCardSelect.Select(ctx, player, prefs, c => c != source, PileType.Hand)).ToList();
+        var selected = (await MultiPileCardSelect.Select(ctx, player, prefs, c => c != source && c.Type is not (CardType.Curse or CardType.Status), PileType.Hand)).ToList();
         if (selected.Count < min)
         {
             return null;

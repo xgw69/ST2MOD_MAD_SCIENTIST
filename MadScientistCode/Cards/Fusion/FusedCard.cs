@@ -45,9 +45,10 @@ public sealed class FusedCard : CardModel
     }
 
     /// <summary>Create a fused card without registering a new model id.</summary>
-    public static FusedCard Create(IReadOnlyList<CardModel> sources)
+    public static FusedCard Create(IReadOnlyList<CardModel> sources, MegaCrit.Sts2.Core.Entities.Players.Player owner)
     {
         var fused = (FusedCard)ModelDb.Card<FusedCard>().ToMutable();
+        fused.Owner = owner;
         fused._sources.Clear();
         fused._sources.AddRange(sources);
         fused.EnergyCost.SetCustomBaseCost(SumCost(sources));

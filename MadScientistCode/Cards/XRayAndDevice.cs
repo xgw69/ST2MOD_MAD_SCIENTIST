@@ -55,7 +55,12 @@ public class BlastingDevice : MadScientistCard
         }
 
         var cards = Enumerable.Range(0, count)
-            .Select(_ => ModelDb.Card<Blast>().ToMutable())
+            .Select(_ =>
+            {
+                var card = ModelDb.Card<Blast>().ToMutable();
+                card.Owner = Owner;
+                return card;
+            })
             .ToList();
         await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Hand, Owner);
     }
