@@ -73,7 +73,7 @@ public class MadScientist : PlaceholderCharacterModel
         "res://MadScientist/images/rooms/rest_site.png";
 
     public override string? CustomMerchantAnimPath =>
-        "res://MadScientist/images/rooms/merchant.png";
+        "res://MadScientist/scenes/merchant/madscientist_merchant.tscn";
 
     // Multiplayer rock/paper/scissors hand gestures.
     public override string? CustomArmPointingTexturePath =>
