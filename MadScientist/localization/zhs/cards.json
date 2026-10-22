@@ -108,7 +108,7 @@
   "MADSCIENTIST-FORBIDDEN_SCIENCE.title": "禁忌科学",
   "MADSCIENTIST-FORBIDDEN_SCIENCE.description": "与其他牌融合后，融合牌费用变为 0，打出时对所有敌人造成 15 点伤害。",
   "MADSCIENTIST-SCIENTIFIC_RESEARCH.title": "科学研究",
-  "MADSCIENTIST-SCIENTIFIC_RESEARCH.description": "抽到时，复制一张到手牌。打出后，获得一张随机普通攻击牌。升级后，获得的攻击牌也会升级。",
+  "MADSCIENTIST-SCIENTIFIC_RESEARCH.description": "抽到时，复制一张到手牌。打出获得{IfUpgraded:show:一张升级后的|一张}普通攻击牌。",
   "MADSCIENTIST-PROCESS.title": "处理",
   "MADSCIENTIST-PROCESS.description": "消耗 1 张手牌，抽 1 张牌，并将其与此牌融合。",
   "MADSCIENTIST-INVENTORY.title": "库存",

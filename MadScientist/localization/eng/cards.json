@@ -108,7 +108,7 @@
   "MADSCIENTIST-FORBIDDEN_SCIENCE.title": "Forbidden Science",
   "MADSCIENTIST-FORBIDDEN_SCIENCE.description": "When fused, the fused card costs 0 and deals 15 damage to ALL enemies when played.",
   "MADSCIENTIST-SCIENTIFIC_RESEARCH.title": "Scientific Research",
-  "MADSCIENTIST-SCIENTIFIC_RESEARCH.description": "When drawn, add a copy of this card into your hand. When played, gain a random common Attack card. If upgraded, that Attack is upgraded.",
+  "MADSCIENTIST-SCIENTIFIC_RESEARCH.description": "When drawn, add a copy of this card into your hand. When played, gain {IfUpgraded:show:an upgraded|a} common Attack card.",
   "MADSCIENTIST-PROCESS.title": "Process",
   "MADSCIENTIST-PROCESS.description": "Exhaust 1 card in your hand, draw 1 card, and fuse it with this card.",
   "MADSCIENTIST-INVENTORY.title": "Inventory",
