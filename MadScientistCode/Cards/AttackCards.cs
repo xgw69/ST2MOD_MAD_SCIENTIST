@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using MadScientist.MadScientistCode.Core;
 using MegaCrit.Sts2.Core.Commands;
@@ -16,9 +17,9 @@ public class WrenchStrike : MadScientistCard
     {
     }
 
-    private int RepairAmount => IsUpgraded ? 2 : 1;
+    private int RepairAmount => DynamicVars["Repair"].IntValue;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Repair", 1m), new DamageVar(6m, ValueProp.Move)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -31,7 +32,11 @@ public class WrenchStrike : MadScientistCard
         await Durability.Repair(choiceContext, Owner.Creature, RepairAmount, this);
     }
 
-    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(1m);
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Damage.UpgradeValueBy(1m);
+        DynamicVars["Repair"].UpgradeValueBy(1m);
+    }
 }
 
 public class Jolt : MadScientistCard
@@ -69,11 +74,11 @@ public class Assault : MadScientistCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+        var attack = await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
-        await PlayerCmd.GainEnergy((int)DynamicVars.Damage.BaseValue, Owner);
+        await PlayerCmd.GainEnergy(attack.Results.SelectMany(hit => hit).Sum(result => result.UnblockedDamage), Owner);
     }
 
     protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(1m);

@@ -19,4 +19,5 @@ public class PseudoscientificMethod : MadScientistCard
     {
         await FusionHelper.SelectAndFuse(choiceContext, Owner, this, 2, 4);
     }
+    protected override void OnUpgrade() => RemoveKeyword(CardKeyword.Exhaust);
 }

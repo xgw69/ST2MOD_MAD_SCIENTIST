@@ -1,135 +1,130 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Saves.Runs;
 
 namespace MadScientist.MadScientistCode.Cards.Fusion;
 
-/// <summary>
-/// 融合牌：战斗内临时卡，持有若干母卡，打出时按顺序结算母卡效果。
-/// 规则：费用 = 母卡费用之和；词条并集；含 X 费母卡时整张为 X 费。
-/// 名称/卡图参考 CardFusion 的做法（名字拼接、卡图取第一张）。
-/// </summary>
-public sealed class FusedCard : CardModel
+/// <summary>A single play, with independent snapshots of its component effects.</summary>
+public class FusedCard : CardModel
 {
-    private static readonly MethodInfo OnPlayMethod =
-        typeof(CardModel).GetMethod("OnPlay", BindingFlags.Instance | BindingFlags.NonPublic)!;
+    private List<CardModel> _sources = new();
 
-    private readonly List<CardModel> _sources = new();
+    public FusedCard() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
-    /// <summary>Parameterless ctor required by the model database (canonical prototype).</summary>
-    public FusedCard()
-        : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public static FusedCard Create(IReadOnlyList<CardModel> sources, Player owner)
     {
-    }
+        var leaves = Flatten(sources, new HashSet<CardModel>()).ToList();
+        if (leaves.Count < 2 || leaves.Any(c => c.Type is CardType.Curse or CardType.Status))
+            throw new ArgumentException("Fusion requires at least two non-curse, non-status cards.", nameof(sources));
 
-    public FusedCard(IReadOnlyList<CardModel> sources)
-        : base(
-            SumCost(sources),
-            PickType(sources),
-            CardRarity.Common,
-            PickTarget(sources))
-    {
-        _sources = sources.ToList();
-
-        // 攻击组件：仅与另外 1 张攻击牌融合时，整张融合牌获得重放 1
-        if (_sources.Count == 2 && _sources.Any(c => c is AttackModule)
-            && _sources.Count(c => c.Type == CardType.Attack) == 2)
-        {
-            BaseReplayCount = 1;
-        }
-    }
-
-    /// <summary>Create a fused card without registering a new model id.</summary>
-    public static FusedCard Create(IReadOnlyList<CardModel> sources, MegaCrit.Sts2.Core.Entities.Players.Player owner)
-    {
-        var fused = (FusedCard)ModelDb.Card<FusedCard>().ToMutable();
-        fused.Owner = owner;
-        fused._sources.Clear();
-        fused._sources.AddRange(sources);
-        fused.EnergyCost.SetCustomBaseCost(SumCost(sources));
-
-        if (sources.Count == 2 && sources.Any(c => c is AttackModule)
-            && sources.Count(c => c.Type == CardType.Attack) == 2)
-        {
-            fused.BaseReplayCount = 1;
-        }
-
+        bool free = leaves.Any(c => c is ForbiddenScience);
+        var combat = owner.Creature.CombatState ?? throw new InvalidOperationException("Fusion requires a combat.");
+        FusedCard fused = !free && leaves.Any(c => c.EnergyCost.CostsX)
+            ? combat.CreateCard<FusedXCard>(owner)
+            : combat.CreateCard<FusedCard>(owner);
+        fused._sources = leaves.Select(Snapshot).ToList();
+        fused.FusionCost = free ? 0 : sources.Where(c => !c.EnergyCost.CostsX)
+            .Sum(c => Math.Max(0, c.EnergyCost.GetWithModifiers(CostModifiers.Local)));
+        fused.FusionKeywords = sources.SelectMany(c => c.Keywords)
+            .Where(k => k != CardKeyword.Unplayable).Distinct().ToArray();
+        // Existing Replay belongs to the entire result, not to each effect invocation.
+        fused.FusionReplay = sources.Sum(c => c.BaseReplayCount);
+        if (leaves.Count == 2 && leaves.Count(c => c is AttackModule) == 1
+            && leaves.All(c => c.Type == CardType.Attack) && !sources.OfType<FusedCard>().Any())
+            fused.FusionReplay++;
         return fused;
     }
 
-    public IReadOnlyList<CardModel> Sources => _sources;
+    private static IEnumerable<CardModel> Flatten(IEnumerable<CardModel> sources, HashSet<CardModel> path)
+    {
+        foreach (var source in sources)
+        {
+            if (!path.Add(source)) throw new InvalidOperationException("Cyclic fusion materials.");
+            if (source is FusedCard fused)
+            {
+                foreach (var leaf in Flatten(fused._sources, path)) yield return leaf;
+            }
+            else yield return source;
+            path.Remove(source);
+        }
+    }
 
+    private static CardModel Snapshot(CardModel card) => (CardModel)card.ClonePreservingMutability();
+
+    protected override void DeepCloneFields()
+    {
+        base.DeepCloneFields();
+        _sources = _sources.Select(Snapshot).ToList();
+    }
+
+    // Include materials and derived metadata in saves and multiplayer serialization.
+    [SavedProperty]
+    public List<SerializableCard> FusionMaterials
+    {
+        get => _sources.Select(c => c.ToSerializable()).ToList();
+        set => _sources = value.Select(CardModel.FromSerializable).ToList();
+    }
+
+    [SavedProperty]
+    public int FusionCost
+    {
+        get => EnergyCost.GetWithModifiers(CostModifiers.None);
+        set => EnergyCost.SetCustomBaseCost(value);
+    }
+
+    [SavedProperty]
+    public CardKeyword[] FusionKeywords
+    {
+        get => Keywords.ToArray();
+        set
+        {
+            foreach (var keyword in Keywords.ToArray()) RemoveKeyword(keyword);
+            foreach (var keyword in value.Where(k => k != CardKeyword.Unplayable)) AddKeyword(keyword);
+        }
+    }
+
+    [SavedProperty]
+    public int FusionReplay { get => BaseReplayCount; set => BaseReplayCount = value; }
+
+    public IReadOnlyList<CardModel> Sources => _sources.AsReadOnly();
     public override bool CanBeGeneratedByModifiers => false;
-
     public override CardPoolModel Pool => ModelDb.CardPool<MadScientist.MadScientistCode.Character.MadScientistCardPool>();
-
-    public override string Title => string.Join("+", _sources.Select(c => c.Title));
-
+    public override string Title => _sources.Count == 0 ? base.Title : string.Join("+", _sources.Select(c => c.Title));
     public override string PortraitPath => _sources.Count > 0 ? _sources[0].PortraitPath : base.PortraitPath;
+    public override CardType Type => _sources.Any(c => c.Type == CardType.Attack) ? CardType.Attack
+        : _sources.Any(c => c.Type == CardType.Power) ? CardType.Power : CardType.Skill;
+    // A single-target effect must still receive a target when mixed with an AoE.
+    public override TargetType TargetType => _sources.Any(c => c.TargetType == TargetType.AnyEnemy) ? TargetType.AnyEnemy
+        : _sources.Any(c => c.TargetType == TargetType.AllEnemies) ? TargetType.AllEnemies : TargetType.Self;
 
-    protected override int CanonicalEnergyCost => SumCost(_sources);
-
-    protected override bool HasEnergyCostX => _sources.Any(c => c.EnergyCost.CostsX);
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-        _sources.SelectMany(c => c.Keywords).Distinct();
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        description.Add("Effects", string.Join("\n", _sources.Select(c => c.Title + ": " + c.GetDescriptionForPile(PileType.None))));
+    }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         foreach (var source in _sources)
         {
-            source.Owner = Owner;
-            var play = new CardPlay
-            {
-                Card = source,
-                Player = cardPlay.Player,
-                Target = cardPlay.Target,
-                ResultPile = cardPlay.ResultPile,
-                Resources = cardPlay.Resources,
-                IsAutoPlay = cardPlay.IsAutoPlay,
-                PlayIndex = cardPlay.PlayIndex,
-                PlayCount = cardPlay.PlayCount,
-            };
-
-            if (OnPlayMethod.Invoke(source, [choiceContext, play]) is Task task)
-            {
-                await task;
-            }
+            if (Owner.Creature.IsDead) break;
+            if (source.TargetType == TargetType.AnyEnemy && (cardPlay.Target == null || !cardPlay.Target.IsAlive)) continue;
+            // Deserialized material snapshots are unowned; normal snapshots already belong to us.
+            if (source.Owner == null) source.Owner = Owner;
+            await FusionEffectContext.Execute(source, this, choiceContext, cardPlay);
         }
     }
+}
 
-    private static int SumCost(IReadOnlyList<CardModel> sources)
-    {
-        // 禁忌科学：融合后费用变 0
-        if (sources.Any(c => c is ForbiddenScience))
-        {
-            return 0;
-        }
-
-        if (sources.Any(c => c.EnergyCost.CostsX))
-        {
-            return 0;
-        }
-
-        return Math.Max(0, sources.Sum(c => c.EnergyCost.Canonical));
-    }
-
-    private static CardType PickType(IReadOnlyList<CardModel> sources)
-    {
-        if (sources.Any(c => c.Type == CardType.Attack)) return CardType.Attack;
-        if (sources.Any(c => c.Type == CardType.Power)) return CardType.Power;
-        return CardType.Skill;
-    }
-
-    private static TargetType PickTarget(IReadOnlyList<CardModel> sources)
-    {
-        if (sources.Any(c => c.TargetType == TargetType.AllEnemies)) return TargetType.AllEnemies;
-        if (sources.Any(c => c.TargetType == TargetType.AnyEnemy)) return TargetType.AnyEnemy;
-        return TargetType.Self;
-    }
+/// <summary>X is fixed on the prototype because CardEnergyCost caches CostsX when cloned.</summary>
+public sealed class FusedXCard : FusedCard
+{
+    protected override bool HasEnergyCostX => true;
 }

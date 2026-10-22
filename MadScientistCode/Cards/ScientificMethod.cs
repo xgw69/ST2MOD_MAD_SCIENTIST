@@ -19,8 +19,5 @@ public class ScientificMethod : MadScientistCard
         await FusionHelper.SelectAndFuse(choiceContext, Owner, this, 2);
     }
 
-    protected override void OnUpgrade()
-    {
-        // TODO: 升级去掉消耗（关键词是静态的，需要单独的升级后关键词处理）
-    }
+    protected override void OnUpgrade() => RemoveKeyword(CardKeyword.Exhaust);
 }

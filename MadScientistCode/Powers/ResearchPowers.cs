@@ -64,8 +64,8 @@ public class MadResearchPower : MadScientistPower
             ModelDb.Card<SelfRepairResearch>(),
         };
 
-        var pick = pool[System.Random.Shared.Next(pool.Length)].ToMutable();
-        pick.Owner = Owner.Player;
+        var canonical = pool[Owner.Player.RunState.Rng.CombatCardGeneration.NextInt(pool.Length)];
+        var pick = combatState.CreateCard(canonical, Owner.Player);
         await CardPileCmd.AddGeneratedCardToCombat(pick, PileType.Hand, Owner.Player);
     }
 }

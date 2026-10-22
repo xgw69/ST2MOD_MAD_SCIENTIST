@@ -18,15 +18,20 @@ public class ChemicalFog : MadScientistCard
     {
     }
 
-    private decimal Loss => IsUpgraded ? 1m : 2m;
+    private decimal Loss => DynamicVars["Loss"].BaseValue;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(17m, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Loss", 2m), new BlockVar(17m, ValueProp.Move)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<DexterityPower>(choiceContext, Owner.Creature, -Loss, Owner.Creature, this);
         await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, -Loss, Owner.Creature, this);
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Loss"].UpgradeValueBy(-1m);
     }
 }
 
@@ -47,7 +52,7 @@ public class Obsession : MadScientistCard
 
     public override bool ShouldPlay(CardModel card, AutoPlayType autoPlayType)
     {
-        if (card.Owner != Owner || Pile?.Type != PileType.Hand || card == this || autoPlayType != AutoPlayType.None)
+        if (card.Owner != Owner || Pile?.Type != PileType.Hand || card is Obsession || autoPlayType != AutoPlayType.None)
         {
             return true;
         }
@@ -109,8 +114,7 @@ public class EthicalBoundary : MadScientistCard
     {
         await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, Owner);
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
-        var guilt = ModelDb.Card<Guilty>().ToMutable();
-        guilt.Owner = Owner;
+        var guilt = Owner.Creature.CombatState!.CreateCard<Guilty>(Owner);
         await CardPileCmd.AddGeneratedCardToCombat(guilt, PileType.Draw, Owner);
     }
 

@@ -17,7 +17,7 @@ public static class FusionHelper
     public static async Task<FusedCard?> Fuse(PlayerChoiceContext ctx, Player player, IReadOnlyList<CardModel> sources)
     {
         // Curses and statuses can never be fused (also guarded in the selection filter).
-        sources = sources.Where(c => c.Type is not (CardType.Curse or CardType.Status)).ToList();
+        sources = sources.Where(c => c.Type is not (CardType.Curse or CardType.Status)).Distinct().ToList();
         if (sources.Count < 2)
         {
             return null;
@@ -26,7 +26,8 @@ public static class FusionHelper
         var fused = FusedCard.Create(sources, player);
         foreach (var source in sources)
         {
-            await CardPileCmd.RemoveFromCombat(source, true);
+            if (source.Pile?.IsCombatPile == true)
+                await CardPileCmd.RemoveFromCombat(source, true);
         }
 
         await CardPileCmd.AddGeneratedCardToCombat(fused, PileType.Hand, player);

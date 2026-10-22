@@ -16,11 +16,18 @@ public class SpareSpikes : MadScientistCard
     {
     }
 
-    private int Damage => IsUpgraded ? 10 : 9;
+    private int Damage => DynamicVars["DelayedDamage"].IntValue;
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("DelayedDamage", 9m)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<SpareSpikesPower>(choiceContext, Owner.Creature, Damage, Owner.Creature, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["DelayedDamage"].UpgradeValueBy(1m);
     }
 }
 
@@ -30,9 +37,11 @@ public class SpareReagent : MadScientistCard
     {
     }
 
-    private int Damage => IsUpgraded ? 10 : 9;
+    private int Damage => DynamicVars["DelayedDamage"].IntValue;
 
-    private int Weak => IsUpgraded ? 2 : 1;
+    private int Weak => DynamicVars["Weak"].IntValue;
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("DelayedDamage", 9m), new DynamicVar("Weak", 1m)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -41,6 +50,12 @@ public class SpareReagent : MadScientistCard
         {
             power.WeakAmount = Weak;
         }
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["DelayedDamage"].UpgradeValueBy(1m);
+        DynamicVars["Weak"].UpgradeValueBy(1m);
     }
 }
 

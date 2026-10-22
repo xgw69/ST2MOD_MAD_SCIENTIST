@@ -16,13 +16,20 @@ public class FullRepair : MadScientistCard
     {
     }
 
-    private int RepairAmount => IsUpgraded ? 15 : 10;
+    private int RepairAmount => DynamicVars["Repair"].IntValue;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Repair", 10m)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await Durability.Repair(choiceContext, Owner.Creature, RepairAmount, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Repair"].UpgradeValueBy(5m);
     }
 }
 
@@ -32,14 +39,19 @@ public class SelfRepairPlan : MadScientistCard
     {
     }
 
-    private int RepairAmount => IsUpgraded ? 3 : 2;
+    private int RepairAmount => DynamicVars["Repair"].IntValue;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Repair", 2m), new CardsVar(1)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         await Durability.Repair(choiceContext, Owner.Creature, RepairAmount, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Repair"].UpgradeValueBy(1m);
     }
 }
 
@@ -85,14 +97,21 @@ public class MachineProduction : MadScientistCard
     {
     }
 
-    private int Cost => IsUpgraded ? 8 : 10;
+    private int Cost => DynamicVars["DurabilityCost"].IntValue;
 
     protected override bool IsPlayable => Owner == null || !Durability.IsBroken(Owner.Creature);
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("DurabilityCost", 10m)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PlayerCmd.GainEnergy(4, Owner);
         await Durability.Consume(choiceContext, Owner.Creature, Cost, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["DurabilityCost"].UpgradeValueBy(-2m);
     }
 }
 
@@ -102,9 +121,11 @@ public class MachineControl : MadScientistCard
     {
     }
 
-    private int Cost => IsUpgraded ? 8 : 10;
+    private int Cost => DynamicVars["DurabilityCost"].IntValue;
 
     protected override bool IsPlayable => Owner == null || !Durability.IsBroken(Owner.Creature);
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("DurabilityCost", 10m)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -113,6 +134,11 @@ public class MachineControl : MadScientistCard
             await PowerCmd.Apply<StrengthPower>(choiceContext, enemy, -3m, Owner.Creature, this);
         }
         await Durability.Consume(choiceContext, Owner.Creature, Cost, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["DurabilityCost"].UpgradeValueBy(-2m);
     }
 }
 

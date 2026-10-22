@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.4.1" />
+    <Compile Include="../../MadScientistCode/Cards/Fusion/FusedCard.cs" Link="Production/FusedCard.cs" />
+    <Compile Include="../../MadScientistCode/Cards/Fusion/FusionEffectContext.cs" Link="Production/FusionEffectContext.cs" />
+    <Compile Include="../../MadScientistCode/Cards/ScientificLegacy.cs" Link="Production/ScientificLegacy.cs" />
+    <Compile Include="../../MadScientistCode/Cards/Refine.cs" Link="Production/Refine.cs" />
+    <Compile Include="../../MadScientistCode/Cards/XRayAndDevice.cs" Link="Production/XRayAndDevice.cs" />
+  </ItemGroup>
+</Project>

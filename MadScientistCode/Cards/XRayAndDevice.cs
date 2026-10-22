@@ -23,12 +23,12 @@ public class XRay : MadScientistCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var x = ResolveEnergyXValue();
-        if (x <= 0)
+        var hits = IsUpgraded ? x + 1 : x;
+        if (hits <= 0)
         {
             return;
         }
 
-        var hits = IsUpgraded ? x + 1 : x;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .WithHitCount(hits)
             .FromCard(this, cardPlay)
@@ -57,9 +57,7 @@ public class BlastingDevice : MadScientistCard
         var cards = Enumerable.Range(0, count)
             .Select(_ =>
             {
-                var card = ModelDb.Card<Blast>().ToMutable();
-                card.Owner = Owner;
-                return card;
+                return Owner.Creature.CombatState!.CreateCard<Blast>(Owner);
             })
             .ToList();
         await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Hand, Owner);

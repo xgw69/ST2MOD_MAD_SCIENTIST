@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -10,7 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace MadScientist.MadScientistCode.Cards;
 
-/// <summary>炼制：复制一瓶已有药水。</summary>
+/// <summary>炼制：战斗奖励中追加一瓶当前最左侧的药水。</summary>
 public class Refine : MadScientistCard
 {
     public Refine() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
@@ -27,11 +26,12 @@ public class Refine : MadScientistCard
             return Task.CompletedTask;
         }
 
-        var canonical = ModelDb.GetById<PotionModel>(potion.Id);
-        var clone = (PotionModel)canonical.ToMutable();
-        typeof(Player)
-            .GetMethod("AddPotionInternal", BindingFlags.Instance | BindingFlags.NonPublic)
-            ?.Invoke(Owner, [clone]);
+        if (Owner.RunState.CurrentRoom is MegaCrit.Sts2.Core.Rooms.CombatRoom room)
+        {
+            // Capture the model now; drinking/discarding it later does not change the reward.
+            var clone = ModelDb.GetById<PotionModel>(potion.Id).ToMutable();
+            room.AddExtraReward(Owner, new MegaCrit.Sts2.Core.Rewards.PotionReward(clone, Owner));
+        }
 
         return Task.CompletedTask;
     }

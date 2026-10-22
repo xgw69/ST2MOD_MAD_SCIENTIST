@@ -1,4 +1,4 @@
-﻿using BaseLib.Abstracts;
+using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
 using MadScientist.MadScientistCode.Character;
@@ -17,6 +17,9 @@ namespace MadScientist.MadScientistCode.Cards;
 public abstract class MadScientistCard(int cost, CardType type, CardRarity rarity, TargetType target) :
     CustomCardModel(cost, type, rarity, target)
 {
+    internal System.Threading.Tasks.Task ExecuteFusionEffect(
+        MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choice, CardPlay play) => OnPlay(choice, play);
+
     //Image size:
     //Normal art: 1000x760 (Using 500x380 should also work, it will simply be scaled.)
     //Full art: 606x852

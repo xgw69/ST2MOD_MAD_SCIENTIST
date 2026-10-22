@@ -49,7 +49,7 @@ public class ScorchedGroundPower : MadScientistPower
         var enemies = combatState.HittableEnemies.ToList();
         if (enemies.Count > 0)
         {
-            var target = enemies[Random.Shared.Next(enemies.Count)];
+            var target = enemies[combatState.RunState.Rng.CombatTargets.NextInt(enemies.Count)];
             await CreatureCmd.Damage(ctx, target, 8m, ValueProp.Move, null, null);
         }
 

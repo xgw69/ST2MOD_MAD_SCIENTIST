@@ -10,7 +10,7 @@ param(
 # It refuses to run while the game is already open, because the headless
 # instance shares settings.save and godot.log with the real client.
 $exe = Join-Path $GameDir "SlayTheSpire2.exe"
-$log = Join-Path $env:APPDATA "SlayTheSpire2\logs\godot.log"
+$log = Join-Path ([System.IO.Path]::GetTempPath()) ("MadScientist-headless-" + [guid]::NewGuid() + ".log")
 
 $running = Get-Process SlayTheSpire2 -ErrorAction SilentlyContinue
 if ($running -and -not $Force) {
@@ -20,14 +20,14 @@ if ($running -and -not $Force) {
 }
 
 $start = Get-Date
-$proc = Start-Process -FilePath $exe -ArgumentList "--headless" -WorkingDirectory $GameDir -PassThru
+$proc = Start-Process -FilePath $exe -ArgumentList @("--headless", "--log-file", "`"$log`"") -WorkingDirectory $GameDir -PassThru
 Write-Host "headless pid=$($proc.Id), waiting for startup..."
 
 $found = $false
 while (((Get-Date) - $start).TotalSeconds -lt $TimeoutSeconds) {
     Start-Sleep -Seconds 3
     if (Test-Path $log) {
-        $line = Select-String -Path $log -Pattern "\[MadScientist\] \[Diag\]" -ErrorAction SilentlyContinue
+        $line = Select-String -Path $log -Pattern "\[MadScientist\] \[Diag\] OK startup checks complete" -ErrorAction SilentlyContinue
         if ($line) { $found = $true; break }
     }
     if ($proc.HasExited) { break }
@@ -44,5 +44,8 @@ Select-String -Path $log -Pattern "MadScientist" |
     Where-Object { $_.Line -match "ERROR|Exception|failed" } |
     Select-Object -ExpandProperty Line
 
-if (-not $found) { Write-Host "WARNING: no [MadScientist] log line found"; exit 1 }
+if (-not $found) { Write-Host "FAIL: startup checks did not complete successfully. Log: $log"; exit 1 }
+$errors = Select-String -Path $log -Pattern "MadScientist" | Where-Object { $_.Line -match "ERROR|Exception|failed|MISSING" }
+if ($errors) { Write-Host "FAIL: errors in startup log: $log"; exit 1 }
+Write-Host "PASS: startup/resource checks only; gameplay regression tests must be run separately. Log: $log"
 exit 0

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using System.Threading.Tasks;
 using MadScientist.MadScientistCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
@@ -12,9 +14,16 @@ public class Inventory : MadScientistCard
     {
     }
 
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Retain", 1m)];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<InventoryPower>(choiceContext, Owner.Creature, IsUpgraded ? 2m : 1m, Owner.Creature, this);
+        await PowerCmd.Apply<InventoryPower>(choiceContext, Owner.Creature, DynamicVars["Retain"].BaseValue, Owner.Creature, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Retain"].UpgradeValueBy(1m);
     }
 }
 

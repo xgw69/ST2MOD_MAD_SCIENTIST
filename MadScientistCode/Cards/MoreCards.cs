@@ -20,16 +20,20 @@ public class Mutation : MadScientistCard
     {
     }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(6m, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Loss", 2m), new BlockVar(6m, ValueProp.Move)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
-        await PowerCmd.Apply<MutationPower>(choiceContext, Owner.Creature, IsUpgraded ? 1m : 2m, Owner.Creature, this);
+        await PowerCmd.Apply<MutationPower>(choiceContext, Owner.Creature, DynamicVars["Loss"].BaseValue, Owner.Creature, this);
     }
 
-    protected override void OnUpgrade() => DynamicVars.Block.UpgradeValueBy(2m);
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Block.UpgradeValueBy(2m);
+        DynamicVars["Loss"].UpgradeValueBy(-1m);
+    }
 }
 
 public class ScorchedGround : MadScientistCard
@@ -38,9 +42,16 @@ public class ScorchedGround : MadScientistCard
     {
     }
 
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Turns", 3m)];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<ScorchedGroundPower>(choiceContext, Owner.Creature, IsUpgraded ? 4m : 3m, Owner.Creature, this);
+        await PowerCmd.Apply<ScorchedGroundPower>(choiceContext, Owner.Creature, DynamicVars["Turns"].BaseValue, Owner.Creature, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Turns"].UpgradeValueBy(1m);
     }
 }
 
@@ -66,9 +77,11 @@ public class MechanicalAscension : MadScientistCard
     {
     }
 
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Artifact", 1m)];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<ArtifactPower>(choiceContext, Owner.Creature, IsUpgraded ? 2m : 1m, Owner.Creature, this);
+        await PowerCmd.Apply<ArtifactPower>(choiceContext, Owner.Creature, DynamicVars["Artifact"].BaseValue, Owner.Creature, this);
         await ExhaustAllPowers(choiceContext);
     }
 
@@ -85,6 +98,11 @@ public class MechanicalAscension : MadScientistCard
             await CardCmd.Exhaust(choiceContext, card);
         }
     }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Artifact"].UpgradeValueBy(1m);
+    }
 }
 
 public class ReptilianEvolutionProject : MadScientistCard
@@ -93,9 +111,11 @@ public class ReptilianEvolutionProject : MadScientistCard
     {
     }
 
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Intangible", 5m)];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<IntangiblePower>(choiceContext, Owner.Creature, IsUpgraded ? 6m : 5m, Owner.Creature, this);
+        await PowerCmd.Apply<IntangiblePower>(choiceContext, Owner.Creature, DynamicVars["Intangible"].BaseValue, Owner.Creature, this);
 
         var state = Owner.PlayerCombatState;
         var powers = state.Hand.Cards.Concat(state.DrawPile.Cards).Concat(state.DiscardPile.Cards)
@@ -107,6 +127,11 @@ public class ReptilianEvolutionProject : MadScientistCard
         {
             await CardCmd.Exhaust(choiceContext, card);
         }
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Intangible"].UpgradeValueBy(1m);
     }
 }
 
@@ -168,13 +193,10 @@ public class Process : MadScientistCard
         }
 
         await CardCmd.Exhaust(choiceContext, picked);
-        await CardPileCmd.Draw(choiceContext, 1, Owner);
-        var drawn = Owner.PlayerCombatState.Hand.Cards.LastOrDefault(c => c != this);
+        var drawn = (await CardPileCmd.Draw(choiceContext, 1, Owner)).FirstOrDefault();
         if (drawn != null)
         {
-            var fused = new FusedCard([CreateClone(), drawn]);
-            await CardPileCmd.RemoveFromCombat(drawn, true);
-            await CardPileCmd.AddGeneratedCardToCombat(fused, PileType.Hand, Owner);
+            await FusionHelper.Fuse(choiceContext, Owner, new CardModel[] { cardPlay.Card, drawn });
         }
     }
 

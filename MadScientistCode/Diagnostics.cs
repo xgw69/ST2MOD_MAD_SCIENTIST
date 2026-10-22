@@ -40,7 +40,7 @@ internal static class MadScientistDiagnostics
         var scene = ResourceLoader.Load<PackedScene>(SelectBgScene);
 
         MainFile.Logger.Info(
-            $"[Diag] OK {character.Id} title='{character.Title.GetFormattedText()}' " +
+            $"[Diag] checking {character.Id} title='{character.Title.GetFormattedText()}' " +
             $"hp={character.StartingHp} missingAssets={missing.Count} " +
             $"selectBg={(scene != null ? "loaded" : "MISSING")}");
 
@@ -58,12 +58,26 @@ internal static class MadScientistDiagnostics
                 return;
             }
 
-            var sprite = visuals.GetNodeOrNull<Sprite2D>("Visuals/Sprite");
+            var sprite = visuals.GetNodeOrNull<Sprite2D>("Visuals/Artwork/Sprite");
             MainFile.Logger.Info(
                 $"[Diag] combat visual scale={visuals.Scale} texture={(sprite?.Texture?.GetSize().ToString() ?? "null")}");
             var player = visuals.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
             var names = player == null ? "<none>" : string.Join(",", player.GetAnimationList());
             MainFile.Logger.Info($"[Diag] combat animations: {names} autoplay={player?.Autoplay}");
+            if (missing.Count == 0 && scene != null && sprite?.Texture != null && player != null)
+            {
+                foreach (var animationName in player.GetAnimationList())
+                {
+                    var animation = player.GetAnimation(animationName);
+                    for (int i = 0; i < animation.GetTrackCount(); i++)
+                    {
+                        var path = animation.TrackGetPath(i).ToString().Split(':')[0];
+                        if (!visuals.HasNode(path)) throw new System.InvalidOperationException($"Missing animation target: {path}");
+                    }
+                }
+                MainFile.Logger.Info("[Diag] OK startup checks complete");
+            }
+            else MainFile.Logger.Error("[Diag] startup checks failed");
             visuals.QueueFree();
         }
         catch (System.Exception e)

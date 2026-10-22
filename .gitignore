@@ -16,3 +16,7 @@ Directory.Build.props
 # generated images (large)
 art/incoming/
 seedream_out/
+
+# Standalone regression harness output
+tests/**/obj/
+tests/**/bin/

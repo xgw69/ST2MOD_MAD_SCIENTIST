@@ -39,13 +39,20 @@ public static class MadScientistVisuals
         root.AddChild(pivot);
         pivot.Owner = root;
         pivot.UniqueNameInOwner = true;
-        // Base display scale lives on the pivot, not on the root: the game's
-        // shrink/grow effects ScaleTo() the creature root, so keeping it at 1
-        // makes those effects multiply our 0.4 instead of overwriting it.
-        pivot.Scale = new Vector2(VisualScale, VisualScale);
-        pivot.AddChild(sprite);
+        // Keep artwork size below the game-controlled Visuals node. Resets/tweens
+        // on Visuals or the creature root cannot overwrite this base size.
+        var artwork = new Node2D { Name = "Artwork", Scale = Vector2.One * VisualScale };
+        pivot.AddChild(artwork);
+        artwork.AddChild(sprite);
         sprite.Name = "Sprite";
         sprite.Position = new Vector2(0f, -height * 0.5f);
+
+        // NodeFactory builds these using the original, unscaled image dimensions.
+        var bounds = root.GetNode<Control>("Bounds");
+        bounds.Position *= VisualScale;
+        bounds.Size *= VisualScale;
+        foreach (var name in new[] { "CenterPos", "IntentPos", "OrbPos", "TalkPos" })
+            if (root.GetNodeOrNull<Node2D>(name) is { } marker) marker.Position *= VisualScale;
 
         var player = new AnimationPlayer { Name = "AnimationPlayer", RootNode = new NodePath("..") };
         root.AddChild(player);
@@ -56,7 +63,14 @@ public static class MadScientistVisuals
         Add(library, "Cast", BuildCast(), "cast");
         Add(library, "Hurt", BuildHurt(), "hurt");
         Add(library, "Die", BuildDie(), "die");
+        library.AddAnimation("Hit", BuildHurt());
+        library.AddAnimation("Dead", BuildDie());
+        library.AddAnimation("Victory", BuildIdle());
         player.AddAnimationLibrary("", library);
+        player.AnimationFinished += name =>
+        {
+            if (name != "Die" && name != "die" && name != "Dead") player.Play("Idle");
+        };
 
         player.Autoplay = "Idle";
         return root;
@@ -98,7 +112,7 @@ public static class MadScientistVisuals
         anim.TrackInsertKey(rot, 1.4, 0.012f);
         anim.TrackInsertKey(rot, 2.8, -0.010f);
 
-        var scale = AddTrack(anim, "Sprite:scale");
+        var scale = AddTrack(anim, "Visuals/Artwork/Sprite:scale");
         anim.TrackInsertKey(scale, 0.0, Vector2.One);
         anim.TrackInsertKey(scale, 1.4, new Vector2(1.004f, 0.996f));
         anim.TrackInsertKey(scale, 2.8, Vector2.One);
@@ -121,13 +135,13 @@ public static class MadScientistVisuals
         anim.TrackInsertKey(rot, 0.18, 0.075f);
         anim.TrackInsertKey(rot, 0.50, 0f);
 
-        var scale = AddTrack(anim, "Sprite:scale");
+        var scale = AddTrack(anim, "Visuals/Artwork/Sprite:scale");
         anim.TrackInsertKey(scale, 0.0, Vector2.One);
         anim.TrackInsertKey(scale, 0.09, new Vector2(0.97f, 1.04f));
         anim.TrackInsertKey(scale, 0.18, new Vector2(1.06f, 0.94f));
         anim.TrackInsertKey(scale, 0.50, Vector2.One);
 
-        var mod = AddTrack(anim, "Sprite:modulate");
+        var mod = AddTrack(anim, "Visuals/Artwork/Sprite:modulate");
         anim.TrackInsertKey(mod, 0.0, Colors.White);
         anim.TrackInsertKey(mod, 0.16, new Color(1.9f, 1.85f, 1.6f));
         anim.TrackInsertKey(mod, 0.50, Colors.White);
@@ -143,12 +157,12 @@ public static class MadScientistVisuals
         anim.TrackInsertKey(pos, 0.40, new Vector2(0f, -4f));
         anim.TrackInsertKey(pos, 0.65, Vector2.Zero);
 
-        var scale = AddTrack(anim, "Sprite:scale");
+        var scale = AddTrack(anim, "Visuals/Artwork/Sprite:scale");
         anim.TrackInsertKey(scale, 0.0, Vector2.One);
         anim.TrackInsertKey(scale, 0.15, new Vector2(1.05f, 1.05f));
         anim.TrackInsertKey(scale, 0.65, Vector2.One);
 
-        var mod = AddTrack(anim, "Sprite:modulate");
+        var mod = AddTrack(anim, "Visuals/Artwork/Sprite:modulate");
         anim.TrackInsertKey(mod, 0.0, Colors.White);
         anim.TrackInsertKey(mod, 0.15, new Color(0.75f, 1.55f, 0.85f));
         anim.TrackInsertKey(mod, 0.65, Colors.White);
@@ -165,7 +179,7 @@ public static class MadScientistVisuals
         anim.TrackInsertKey(pos, 0.22, new Vector2(-4f, 0f));
         anim.TrackInsertKey(pos, 0.32, Vector2.Zero);
 
-        var mod = AddTrack(anim, "Sprite:modulate");
+        var mod = AddTrack(anim, "Visuals/Artwork/Sprite:modulate");
         anim.TrackInsertKey(mod, 0.0, Colors.White);
         anim.TrackInsertKey(mod, 0.06, new Color(1.5f, 0.55f, 0.5f));
         anim.TrackInsertKey(mod, 0.32, Colors.White);
@@ -185,7 +199,7 @@ public static class MadScientistVisuals
         anim.TrackInsertKey(pos, 0.55, new Vector2(-6f, 0f));
         anim.TrackInsertKey(pos, 1.5, new Vector2(-26f, 0f));
 
-        var mod = AddTrack(anim, "Sprite:modulate");
+        var mod = AddTrack(anim, "Visuals/Artwork/Sprite:modulate");
         anim.TrackInsertKey(mod, 0.0, Colors.White);
         anim.TrackInsertKey(mod, 0.7, new Color(0.7f, 0.7f, 0.75f, 1f));
         anim.TrackInsertKey(mod, 1.5, new Color(0.5f, 0.5f, 0.55f, 0.35f));

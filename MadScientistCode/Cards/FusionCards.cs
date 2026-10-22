@@ -30,6 +30,9 @@ public class GreatFusion : MadScientistCard
             return;
         }
 
+        if (IsUpgraded)
+            foreach (var card in hand) CardCmd.Upgrade(card);
+        hand.Add(cardPlay.Card);
         var fused = await FusionHelper.Fuse(choiceContext, Owner, hand);
         if (fused != null)
         {
@@ -56,6 +59,7 @@ public class Assemble : MadScientistCard
 
         if (cards.Count > 0)
         {
+            cards.Add(cardPlay.Card);
             await FusionHelper.Fuse(choiceContext, Owner, cards);
         }
     }
@@ -69,9 +73,11 @@ public class FullyAutomatic : MadScientistCard
     {
     }
 
-    private int RepairPerEnemy => IsUpgraded ? 2 : 1;
+    private int RepairPerEnemy => DynamicVars["Repair"].IntValue;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Repair", 1m)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -82,13 +88,14 @@ public class FullyAutomatic : MadScientistCard
         }
 
         await Durability.Consume(choiceContext, Owner.Creature, durability, this);
-        await DamageCmd.Attack(durability)
+        var attack = await DamageCmd.Attack(durability)
             .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
             .Execute(choiceContext);
 
-        var enemies = CombatState.HittableEnemies.Count();
+        var enemies = attack.Results.SelectMany(hit => hit)
+            .Select(result => result.Receiver).Distinct().Count();
         await Durability.Repair(choiceContext, Owner.Creature, enemies * RepairPerEnemy, this);
     }
 
@@ -98,5 +105,10 @@ public class FullyAutomatic : MadScientistCard
         {
             await CardCmd.AutoPlay(choiceContext, this, null);
         }
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Repair"].UpgradeValueBy(1m);
     }
 }

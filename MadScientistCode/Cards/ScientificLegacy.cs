@@ -16,7 +16,6 @@ public static class MadScienceFactory
     public static List<CardModel> CreateAll(MegaCrit.Sts2.Core.Entities.Players.Player owner)
     {
         var list = new List<CardModel>();
-        _owner = owner;
         Add(list, CardType.Attack, TinkerTime.RiderEffect.Violence);
         Add(list, CardType.Attack, TinkerTime.RiderEffect.Sapping);
         Add(list, CardType.Attack, TinkerTime.RiderEffect.Choking);
@@ -26,18 +25,24 @@ public static class MadScienceFactory
         Add(list, CardType.Power, TinkerTime.RiderEffect.Expertise);
         Add(list, CardType.Power, TinkerTime.RiderEffect.Curious);
         Add(list, CardType.Power, TinkerTime.RiderEffect.Improvement);
+        foreach (var card in list) card.Owner = owner;
         return list;
     }
-
-    private static MegaCrit.Sts2.Core.Entities.Players.Player? _owner;
 
     private static void Add(List<CardModel> list, CardType type, TinkerTime.RiderEffect rider)
     {
         var card = (MadScience)ModelDb.Card<MadScience>().ToMutable();
-        card.Owner = _owner!;
         card.TinkerTimeType = type;
         card.TinkerTimeRider = rider;
         list.Add(card);
+    }
+
+    public static MadScience CreateForCombat(MadScience selected, MegaCrit.Sts2.Core.Entities.Players.Player owner)
+    {
+        var card = owner.Creature.CombatState!.CreateCard<MadScience>(owner);
+        card.TinkerTimeType = selected.TinkerTimeType;
+        card.TinkerTimeRider = selected.TinkerTimeRider;
+        return card;
     }
 }
 
@@ -59,10 +64,10 @@ public class ScientificLegacy : MadScientistCard
         };
 
         var chosen = (await CardSelectCmd.FromSimpleGrid(choiceContext, options, Owner, prefs)).FirstOrDefault();
-        if (chosen != null)
+        if (chosen is MadScience selected)
         {
-            chosen.Owner = Owner;
-            await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, Owner);
+            var generated = MadScienceFactory.CreateForCombat(selected, Owner);
+            await CardPileCmd.AddGeneratedCardToCombat(generated, PileType.Hand, Owner);
         }
     }
 
