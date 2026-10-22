@@ -43,7 +43,7 @@ def trim(img: Image.Image) -> Image.Image:
 
 def main() -> None:
     net = BriaRMBG.from_pretrained(MODEL).to("cuda").eval()
-    for name, target_h in (("rest_site", 310), ("merchant", 620)):
+    for name, target_h in (("rest_site", 310), ("merchant", 434)):
         src = SRC / f"{name}.png"
         if not src.exists():
             continue
