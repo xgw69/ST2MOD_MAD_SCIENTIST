@@ -126,5 +126,7 @@
   "MADSCIENTIST-PLAN.title": "Plan",
   "MADSCIENTIST-PLAN.description": "Gain 10 Block. At the start of your next turn, Repair 3.",
   "MADSCIENTIST-SELF_REPAIR_RESEARCH.title": "Self-Repair Research",
-  "MADSCIENTIST-SELF_REPAIR_RESEARCH.description": "At the start of each turn, Repair 2."
+  "MADSCIENTIST-SELF_REPAIR_RESEARCH.description": "At the start of each turn, Repair 2.",
+  "CARD.FUSED_CARD.title": "Fusion",
+  "CARD.FUSED_CARD.description": "Play the effects of every fused card in order."
 }

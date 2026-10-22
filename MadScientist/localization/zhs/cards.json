@@ -126,5 +126,7 @@
   "MADSCIENTIST-PLAN.title": "计划",
   "MADSCIENTIST-PLAN.description": "获得 10 点格挡。下回合开始时修复 3。",
   "MADSCIENTIST-SELF_REPAIR_RESEARCH.title": "自修复研究",
-  "MADSCIENTIST-SELF_REPAIR_RESEARCH.description": "每回合开始时，修复 2。"
+  "MADSCIENTIST-SELF_REPAIR_RESEARCH.description": "每回合开始时，修复 2。",
+  "CARD.FUSED_CARD.title": "融合体",
+  "CARD.FUSED_CARD.description": "打出时，依次结算所有融合牌的效果。"
 }

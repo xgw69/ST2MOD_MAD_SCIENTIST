@@ -13,9 +13,10 @@ namespace MadScientist.MadScientistCode.Cards;
 /// <summary>九种疯狂科学（三类型 x 三词条）。</summary>
 public static class MadScienceFactory
 {
-    public static List<CardModel> CreateAll()
+    public static List<CardModel> CreateAll(MegaCrit.Sts2.Core.Entities.Players.Player owner)
     {
         var list = new List<CardModel>();
+        _owner = owner;
         Add(list, CardType.Attack, TinkerTime.RiderEffect.Violence);
         Add(list, CardType.Attack, TinkerTime.RiderEffect.Sapping);
         Add(list, CardType.Attack, TinkerTime.RiderEffect.Choking);
@@ -28,9 +29,12 @@ public static class MadScienceFactory
         return list;
     }
 
+    private static MegaCrit.Sts2.Core.Entities.Players.Player? _owner;
+
     private static void Add(List<CardModel> list, CardType type, TinkerTime.RiderEffect rider)
     {
         var card = (MadScience)ModelDb.Card<MadScience>().ToMutable();
+        card.Owner = _owner!;
         card.TinkerTimeType = type;
         card.TinkerTimeRider = rider;
         list.Add(card);
@@ -47,7 +51,7 @@ public class ScientificLegacy : MadScientistCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var options = MadScienceFactory.CreateAll();
+        var options = MadScienceFactory.CreateAll(Owner);
         var prefs = new MegaCrit.Sts2.Core.CardSelection.CardSelectorPrefs(
             new MegaCrit.Sts2.Core.Localization.LocString("card_selection", "MADSCIENTIST-MADSCIENCE_PROMPT"), 1, 1)
         {

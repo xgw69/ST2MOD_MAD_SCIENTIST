@@ -83,7 +83,20 @@ public sealed class FusedCard : CardModel
     {
         foreach (var source in _sources)
         {
-            if (OnPlayMethod.Invoke(source, [choiceContext, cardPlay]) is Task task)
+            source.Owner = Owner;
+            var play = new CardPlay
+            {
+                Card = source,
+                Player = cardPlay.Player,
+                Target = cardPlay.Target,
+                ResultPile = cardPlay.ResultPile,
+                Resources = cardPlay.Resources,
+                IsAutoPlay = cardPlay.IsAutoPlay,
+                PlayIndex = cardPlay.PlayIndex,
+                PlayCount = cardPlay.PlayCount,
+            };
+
+            if (OnPlayMethod.Invoke(source, [choiceContext, play]) is Task task)
             {
                 await task;
             }
