@@ -64,7 +64,7 @@
   "MADSCIENTIST-SCIENTIFIC_METHOD.title": "Scientific Method",
   "MADSCIENTIST-SCIENTIFIC_METHOD.description": "Fuse 2 cards in your hand. {IfUpgraded:show:|Exhaust.}",
   "MADSCIENTIST-FUSED_CARD.title": "Fusion",
-  "MADSCIENTIST-FUSED_CARD.description": "{Effects}",
+  "MADSCIENTIST-FUSED_CARD.description": "[gold]Fusion effects[/gold] (in order):\n{Effects}",
   "MADSCIENTIST-SCIENTIFIC_LEGACY.title": "Scientific Legacy",
   "MADSCIENTIST-SCIENTIFIC_LEGACY.description": "Choose 1 of 9 Mad Science cards and add it to your hand. Exhaust.",
   "MADSCIENTIST-GREAT_FUSION.title": "Great Fusion",
@@ -128,9 +128,11 @@
   "MADSCIENTIST-SELF_REPAIR_RESEARCH.title": "Self-Repair Research",
   "MADSCIENTIST-SELF_REPAIR_RESEARCH.description": "At the start of each turn, Repair {Repair}.",
   "CARD.FUSED_CARD.title": "Fusion",
-  "CARD.FUSED_CARD.description": "{Effects}",
+  "CARD.FUSED_CARD.description": "[gold]Fusion effects[/gold] (in order):\n{Effects}",
   "CARD.FUSED_X_CARD.title": "Fusion",
   "CARD.FUSED_X_CARD.description": "{Effects}",
   "MADSCIENTIST-FUSED_X_CARD.title": "Fusion",
-  "MADSCIENTIST-FUSED_X_CARD.description": "{Effects}"
+  "MADSCIENTIST-FUSED_X_CARD.description": "{Effects}",
+  "FUSED_CARD.title": "Fusion",
+  "FUSED_CARD.description": "[gold]Fusion effects[/gold] (in order):\n{Effects}"
 }

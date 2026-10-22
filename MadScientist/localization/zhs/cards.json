@@ -64,7 +64,7 @@
   "MADSCIENTIST-SCIENTIFIC_METHOD.title": "科学方法",
   "MADSCIENTIST-SCIENTIFIC_METHOD.description": "融合手中 2 张牌。{IfUpgraded:show:|消耗。}",
   "MADSCIENTIST-FUSED_CARD.title": "融合体",
-  "MADSCIENTIST-FUSED_CARD.description": "{Effects}",
+  "MADSCIENTIST-FUSED_CARD.description": "[gold]融合效果[/gold]（按顺序结算）：\n{Effects}",
   "MADSCIENTIST-SCIENTIFIC_LEGACY.title": "科学传承",
   "MADSCIENTIST-SCIENTIFIC_LEGACY.description": "从 9 张疯狂科学中选择一张获得。消耗。",
   "MADSCIENTIST-GREAT_FUSION.title": "大融合",
@@ -128,9 +128,11 @@
   "MADSCIENTIST-SELF_REPAIR_RESEARCH.title": "自修复研究",
   "MADSCIENTIST-SELF_REPAIR_RESEARCH.description": "每回合开始时，修复 {Repair}。",
   "CARD.FUSED_CARD.title": "融合体",
-  "CARD.FUSED_CARD.description": "{Effects}",
+  "CARD.FUSED_CARD.description": "[gold]融合效果[/gold]（按顺序结算）：\n{Effects}",
   "CARD.FUSED_X_CARD.title": "融合体",
   "CARD.FUSED_X_CARD.description": "{Effects}",
   "MADSCIENTIST-FUSED_X_CARD.title": "融合体",
-  "MADSCIENTIST-FUSED_X_CARD.description": "{Effects}"
+  "MADSCIENTIST-FUSED_X_CARD.description": "{Effects}",
+  "FUSED_CARD.title": "融合体",
+  "FUSED_CARD.description": "[gold]融合效果[/gold]（按顺序结算）：\n{Effects}"
 }

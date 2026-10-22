@@ -27,7 +27,7 @@ public static class FusionHelper
         foreach (var source in sources)
         {
             if (source.Pile?.IsCombatPile == true)
-                await CardPileCmd.RemoveFromCombat(source, true);
+                await CardPileCmd.RemoveFromCombat(source);
         }
 
         await CardPileCmd.AddGeneratedCardToCombat(fused, PileType.Hand, player);
