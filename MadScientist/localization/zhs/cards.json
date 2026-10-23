@@ -86,7 +86,7 @@
   "MADSCIENTIST-ATTACK_MODULE.title": "攻击组件",
   "MADSCIENTIST-ATTACK_MODULE.description": "若仅与另外 1 张攻击牌融合，融合牌获得重放 1。",
   "MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.title": "疯狂科学家",
-  "MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.description": "获得所有种类疯狂科学各一张。获得 {Energy} 点能量。",
+  "MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.description": "从 9 张疯狂科学中选择三张获得。获得 {Energy} 点能量。",
   "MADSCIENTIST-LOSS_OF_SANITY.title": "丧失理智",
   "MADSCIENTIST-LOSS_OF_SANITY.description": "获得 99 层脆弱、99 层易伤{IfUpgraded:show:|、99 层虚弱}，永久从牌组中移除一张牌。",
   "MADSCIENTIST-X_RAY.title": "X射线",

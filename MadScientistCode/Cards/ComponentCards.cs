@@ -130,10 +130,18 @@ public class MadScientistCharacterCard : MadScientistCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        foreach (var type in new[] { CardType.Attack, CardType.Skill, CardType.Power })
+        var prefs = new MegaCrit.Sts2.Core.CardSelection.CardSelectorPrefs(
+            new MegaCrit.Sts2.Core.Localization.LocString("card_selection", "MADSCIENTIST-MADSCIENTIST_PROMPT"), 3, 3)
         {
-            var selected = (MegaCrit.Sts2.Core.Models.Cards.MadScience)MadScienceFactory.CreateAll(Owner).First(c => c.Type == type);
-            var card = MadScienceFactory.CreateForCombat(selected, Owner);
+            Cancelable = false
+        };
+
+        var chosen = (await CardSelectCmd.FromSimpleGrid(
+            choiceContext, MadScienceFactory.CreateAll(Owner), Owner, prefs)).ToList();
+
+        foreach (var pick in chosen)
+        {
+            var card = MadScienceFactory.CreateForCombat((MegaCrit.Sts2.Core.Models.Cards.MadScience)pick, Owner);
             await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
         }
 

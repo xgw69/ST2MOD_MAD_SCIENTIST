@@ -86,7 +86,7 @@
   "MADSCIENTIST-ATTACK_MODULE.title": "Attack Module",
   "MADSCIENTIST-ATTACK_MODULE.description": "If fused with exactly 1 other Attack, the fused card gains Replay 1.",
   "MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.title": "Mad Scientist",
-  "MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.description": "Gain one Mad Science of each type. Gain {Energy} Energy.",
+  "MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.description": "Choose 3 of 9 Mad Science cards. Gain {Energy} Energy.",
   "MADSCIENTIST-LOSS_OF_SANITY.title": "Loss of Sanity",
   "MADSCIENTIST-LOSS_OF_SANITY.description": "Gain 99 Frail and 99 Vulnerable{IfUpgraded:show:| and 99 Weak}. Permanently remove a card from your deck.",
   "MADSCIENTIST-X_RAY.title": "X-Ray",
