@@ -56,7 +56,7 @@
   "MADSCIENTIST-SELF_REVIEW.title": "Self-Review",
   "MADSCIENTIST-SELF_REVIEW.description": "Gain 1 Buffer. If you have more than 5 Buffer, heal 3 HP.",
   "MADSCIENTIST-ETHICAL_BOUNDARY.title": "Ethical Boundary",
-  "MADSCIENTIST-ETHICAL_BOUNDARY.description": "Gain {Energy} Energy. Draw {Cards} cards. Add a Guilt into your draw pile.",
+  "MADSCIENTIST-ETHICAL_BOUNDARY.description": "Gain {Energy} Energy. Draw {Cards} cards. Add a Guilt into your draw pile, and another Guilt into your deck after combat.",
   "MADSCIENTIST-FORBIDDEN_FRENZY.title": "Forbidden Frenzy",
   "MADSCIENTIST-FORBIDDEN_FRENZY.description": "Can only be played while Machine Durability is exactly 10. Deal {Damage} damage to ALL enemies. Repair 3.",
   "MADSCIENTIST-INFINITE_MACHINE_RESEARCH.title": "Infinite Machine Research",

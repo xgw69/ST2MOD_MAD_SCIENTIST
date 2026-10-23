@@ -56,7 +56,7 @@
   "MADSCIENTIST-SELF_REVIEW.title": "自我审视",
   "MADSCIENTIST-SELF_REVIEW.description": "获得 1 层缓冲。若你的缓冲层数超过 5 层，回复 3 点生命。",
   "MADSCIENTIST-ETHICAL_BOUNDARY.title": "伦理边界",
-  "MADSCIENTIST-ETHICAL_BOUNDARY.description": "获得 {Energy} 点能量。抽 {Cards} 张牌。将一张愧疚加入你的抽牌堆。",
+  "MADSCIENTIST-ETHICAL_BOUNDARY.description": "获得 {Energy} 点能量。抽 {Cards} 张牌。将一张愧疚加入你的抽牌堆，战斗结束后将一张愧疚加入你的牌组。",
   "MADSCIENTIST-FORBIDDEN_FRENZY.title": "疯狂禁忌",
   "MADSCIENTIST-FORBIDDEN_FRENZY.description": "仅当机器耐久刚好为 10 时能打出。对所有敌人造成 {Damage} 点伤害。修复 3。",
   "MADSCIENTIST-INFINITE_MACHINE_RESEARCH.title": "机器无限研究",
