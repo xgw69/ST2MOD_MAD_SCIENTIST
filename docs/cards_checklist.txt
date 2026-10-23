@@ -1,0 +1,63 @@
+- [ ] **X射线** / X-Ray
+- [ ] **丧失理智** / Loss of Sanity
+- [ ] **伦理边界** / Ethical Boundary
+- [ ] **伪科学方法** / Pseudoscientific Method
+- [ ] **全能修正** / Universal Correction
+- [ ] **全自动运行** / Fully Automatic
+- [ ] **力量研究** / Strength Research
+- [ ] **化学雾气** / Chemical Fog
+- [ ] **反射研究** / Reflex Research
+- [ ] **反应锅炉** / Reactor Boiler
+- [ ] **变异** / Mutation
+- [ ] **处理** / Process
+- [ ] **备用尖刺** / Spare Spikes
+- [ ] **备用药剂** / Spare Reagent
+- [ ] **大融合** / Great Fusion
+- [ ] **完全修复** / Full Repair
+- [ ] **巨型扳手** / Giant Wrench
+- [ ] **库存** / Inventory
+- [ ] **快速修复** / Quick Repair
+- [ ] **思考** / Think
+- [ ] **打击** / Strike
+- [ ] **执迷不误** / Obsession
+- [ ] **扳手打击** / Wrench Strike
+- [ ] **攻击组件** / Attack Module
+- [ ] **敏捷研究** / Dexterity Research
+- [ ] **敲击** / Knock
+- [ ] **机器控制** / Machine Control
+- [ ] **机器无限研究** / Infinite Machine Research
+- [ ] **机器爆破** / Machine Blast
+- [ ] **机器生产** / Machine Production
+- [ ] **机器药剂** / Machine Reagent
+- [ ] **机器轰鸣** / Machine Rumble
+- [ ] **机器防御** / Machine Defense
+- [ ] **机械飞升** / Mechanical Ascension
+- [ ] **混合药剂** / Mixed Reagent
+- [ ] **灵魂研究** / Soul Research
+- [ ] **灼热地面** / Scorched Ground
+- [ ] **炼制** / Refine
+- [ ] **爆破** / Blast
+- [ ] **爆破装置** / Blasting Device
+- [ ] **爬行动物进化工程** / Reptilian Evolution Project
+- [ ] **疯狂禁忌** / Forbidden Frenzy
+- [ ] **疯狂科学家** / Mad Scientist
+- [ ] **疯狂科研** / Mad Research
+- [ ] **禁忌科学** / Forbidden Science
+- [ ] **科学传承** / Scientific Legacy
+- [ ] **科学方法** / Scientific Method
+- [ ] **科学研究** / Scientific Research
+- [ ] **空间撕裂** / Spatial Tear
+- [ ] **突击** / Assault
+- [ ] **组装** / Assemble
+- [ ] **能量护盾** / Energy Shield
+- [ ] **能量组件** / Energy Module
+- [ ] **自修复研究** / Self-Repair Research
+- [ ] **自修复计划** / Self-Repair Plan
+- [ ] **自我审视** / Self-Review
+- [ ] **良化变异** / Beneficial Mutation
+- [ ] **计划** / Plan
+- [ ] **轰鸣** / Rumble
+- [ ] **速度组件** / Speed Module
+- [ ] **防御** / Defend
+- [ ] **防御组件** / Defense Module
+- [ ] **震荡** / Jolt
