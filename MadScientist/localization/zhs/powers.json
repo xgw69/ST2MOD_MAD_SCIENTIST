@@ -26,5 +26,7 @@
   "MADSCIENTIST-SOUL_RESEARCH_POWER.title": "灵魂研究",
   "MADSCIENTIST-SOUL_RESEARCH_POWER.description": "下一次致死时免死并回复到最大生命值的一半。",
   "MADSCIENTIST-BLOCK_LOCK_POWER.title": "格挡封锁",
-  "MADSCIENTIST-BLOCK_LOCK_POWER.description": "接下来 {Amount} 回合内，你无法从卡牌中获得格挡。"
+  "MADSCIENTIST-BLOCK_LOCK_POWER.description": "接下来 {Amount} 回合内，你无法从卡牌中获得格挡。",
+  "MADSCIENTIST-BLAST_FREE_POWER.title": "爆破时间",
+  "MADSCIENTIST-BLAST_FREE_POWER.description": "本回合你的爆破牌费用为 0。"
 }

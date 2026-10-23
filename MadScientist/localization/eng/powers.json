@@ -26,5 +26,7 @@
   "MADSCIENTIST-SOUL_RESEARCH_POWER.title": "Soul Research",
   "MADSCIENTIST-SOUL_RESEARCH_POWER.description": "The next time you would die, prevent it and heal to half your Max HP.",
   "MADSCIENTIST-BLOCK_LOCK_POWER.title": "Block Lock",
-  "MADSCIENTIST-BLOCK_LOCK_POWER.description": "For the next {Amount} turns, you cannot gain Block from cards."
+  "MADSCIENTIST-BLOCK_LOCK_POWER.description": "For the next {Amount} turns, you cannot gain Block from cards.",
+  "MADSCIENTIST-BLAST_FREE_POWER.title": "Blast Time",
+  "MADSCIENTIST-BLAST_FREE_POWER.description": "Your Blast cards cost 0 this turn."
 }

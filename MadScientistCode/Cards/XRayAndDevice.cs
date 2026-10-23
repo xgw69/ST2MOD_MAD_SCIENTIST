@@ -61,5 +61,7 @@ public class BlastingDevice : MadScientistCard
             })
             .ToList();
         await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Hand, Owner);
+        await PowerCmd.Apply<MadScientist.MadScientistCode.Powers.BlastFreePower>(
+            choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 }

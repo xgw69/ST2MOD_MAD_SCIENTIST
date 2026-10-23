@@ -92,7 +92,7 @@
   "MADSCIENTIST-X_RAY.title": "X-Ray",
   "MADSCIENTIST-X_RAY.description": "Deal 10 damage to ALL enemies X(X+1) times. For the next X(X-1) turns, you cannot gain Block from cards.",
   "MADSCIENTIST-BLASTING_DEVICE.title": "Blasting Device",
-  "MADSCIENTIST-BLASTING_DEVICE.description": "Add X{IfUpgraded:show:+1|} Blast cards into your hand.",
+  "MADSCIENTIST-BLASTING_DEVICE.description": "Add X(X+1) Blast cards into your hand. This turn, your Blast cards cost 0.",
   "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.title": "Pseudoscientific Method",
   "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.description": "Fuse up to 4 cards in your hand.",
   "MADSCIENTIST-MUTATION.title": "Mutation",

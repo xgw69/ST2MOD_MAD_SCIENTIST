@@ -92,7 +92,7 @@
   "MADSCIENTIST-X_RAY.title": "X射线",
   "MADSCIENTIST-X_RAY.description": "对所有敌人造成 10 点伤害 X(X+1) 次。接下来 X(X-1) 回合你无法从卡牌中获得格挡。",
   "MADSCIENTIST-BLASTING_DEVICE.title": "爆破装置",
-  "MADSCIENTIST-BLASTING_DEVICE.description": "将 X{IfUpgraded:show:+1|} 张爆破加入手牌。",
+  "MADSCIENTIST-BLASTING_DEVICE.description": "将 X(X+1) 张爆破加入你的手牌。本回合你的爆破费用为 0。",
   "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.title": "伪科学方法",
   "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.description": "融合手中至多 4 张牌。",
   "MADSCIENTIST-MUTATION.title": "变异",
