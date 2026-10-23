@@ -34,12 +34,13 @@ public class BlockLockPower : MadScientistPower
         return -block;
     }
 
-    public override Task BeforeSideTurnEnd(
+    public override Task BeforeSideTurnStart(
         PlayerChoiceContext choiceContext,
         CombatSide side,
-        IEnumerable<Creature> participants)
+        IReadOnlyList<Creature> participants,
+        MegaCrit.Sts2.Core.Combat.ICombatState combatState)
     {
-        if (!participants.Contains(Owner))
+        if (side != CombatSide.Player || !participants.Contains(Owner))
         {
             return Task.CompletedTask;
         }

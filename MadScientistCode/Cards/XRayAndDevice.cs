@@ -34,6 +34,13 @@ public class XRay : MadScientistCard
             .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
             .Execute(choiceContext);
+
+        var lockTurns = IsUpgraded ? x - 1 : x;
+        if (lockTurns > 0)
+        {
+            await PowerCmd.Apply<MadScientist.MadScientistCode.Powers.BlockLockPower>(
+                choiceContext, Owner.Creature, lockTurns + 1, Owner.Creature, this);
+        }
     }
 }
 
