@@ -16,6 +16,8 @@ public class LossOfSanity : MadScientistCard
     {
     }
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (!IsUpgraded)
