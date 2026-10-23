@@ -98,8 +98,10 @@ public class FusedCard : CardModel
     public override CardPoolModel Pool => ModelDb.CardPool<MadScientist.MadScientistCode.Character.MadScientistCardPool>();
     public override string Title => _sources.Count == 0 ? base.Title : string.Join("+", _sources.Select(c => c.Title));
     public override string PortraitPath => _sources.Count > 0 ? _sources[0].PortraitPath : base.PortraitPath;
-    public override CardType Type => _sources.Any(c => c.Type == CardType.Attack) ? CardType.Attack
-        : _sources.Any(c => c.Type == CardType.Power) ? CardType.Power : CardType.Skill;
+    public override CardType Type =>
+        _sources.Any(c => c.Type == CardType.Power) ? CardType.Power
+        : _sources.Any(c => c.Type == CardType.Skill) ? CardType.Skill
+        : CardType.Attack;
     // A single-target effect must still receive a target when mixed with an AoE.
     public override TargetType TargetType => _sources.Any(c => c.TargetType == TargetType.AnyEnemy) ? TargetType.AnyEnemy
         : _sources.Any(c => c.TargetType == TargetType.AllEnemies) ? TargetType.AllEnemies : TargetType.Self;
