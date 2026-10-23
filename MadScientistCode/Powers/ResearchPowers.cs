@@ -13,32 +13,44 @@ using MegaCrit.Sts2.Core.Models.Cards;
 
 namespace MadScientist.MadScientistCode.Powers;
 
-/// <summary>库存：回合结束时保留最多 N 张手牌。</summary>
+/// <summary>库存：回合开始时从弃牌堆选择至多 N 张牌加入手牌。</summary>
 public class InventoryPower : MadScientistPower
 {
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    public override async Task BeforeSideTurnStart(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
         if (!participants.Contains(Owner) || Owner.Player == null)
         {
-            return Task.CompletedTask;
+            return;
         }
 
-        var hand = Owner.Player.PlayerCombatState?.Hand.Cards;
-        if (hand == null)
+        var state = Owner.Player.PlayerCombatState;
+        if (state == null || state.DiscardPile.Cards.Count == 0)
         {
-            return Task.CompletedTask;
+            return;
         }
 
-        foreach (var card in hand.Take(Amount))
+        var prefs = new MegaCrit.Sts2.Core.CardSelection.CardSelectorPrefs(
+            new MegaCrit.Sts2.Core.Localization.LocString("card_selection", "MADSCIENTIST-INVENTORY_PROMPT"), 0, Amount)
         {
-            CardCmd.ApplySingleTurnRetain(card);
+            Cancelable = true
+        };
+
+        var picked = (await MegaCrit.Sts2.Core.Commands.CardSelectCmd.FromCombatPile(
+            choiceContext, state.DiscardPile, Owner.Player, prefs)).ToList();
+        if (picked.Count == 0)
+        {
+            return;
         }
 
-        return Task.CompletedTask;
+        await MegaCrit.Sts2.Core.Commands.CardPileCmd.Add(picked, MegaCrit.Sts2.Core.Entities.Cards.PileType.Hand);
     }
 }
 

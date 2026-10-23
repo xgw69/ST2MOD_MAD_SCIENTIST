@@ -112,7 +112,7 @@
   "MADSCIENTIST-PROCESS.title": "Process",
   "MADSCIENTIST-PROCESS.description": "Exhaust 1 card in your hand, draw 1 card, and fuse it with this card.",
   "MADSCIENTIST-INVENTORY.title": "Inventory",
-  "MADSCIENTIST-INVENTORY.description": "At the end of your turn, retain up to {Retain} card.",
+  "MADSCIENTIST-INVENTORY.description": "At the start of your turn, choose up to {IfUpgraded:show:2|1} cards from your discard pile and put them into your hand.",
   "MADSCIENTIST-MAD_RESEARCH.title": "Mad Research",
   "MADSCIENTIST-MAD_RESEARCH.description": "At the start of each turn, gain a random uncommon Power card.",
   "MADSCIENTIST-SOUL_RESEARCH.title": "Soul Research",

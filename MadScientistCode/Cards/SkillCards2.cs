@@ -116,6 +116,9 @@ public class EthicalBoundary : MadScientistCard
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         var guilt = Owner.Creature.CombatState!.CreateCard<Guilty>(Owner);
         await CardPileCmd.AddGeneratedCardToCombat(guilt, PileType.Draw, Owner);
+
+        // A second Guilt goes into the deck permanently (shown after combat).
+        await CardPileCmd.AddCurseToDeck<Guilty>(Owner);
     }
 
     protected override void OnUpgrade()

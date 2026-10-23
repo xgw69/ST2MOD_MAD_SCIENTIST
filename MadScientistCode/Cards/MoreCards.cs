@@ -167,8 +167,11 @@ public class ScientificResearch : MadScientistCard
             return;
         }
 
-        var copy = CreateClone();
-        copy.Owner = Owner;
+        var copy = CombatState!.CreateCard(ModelDb.GetById<CardModel>(Id), Owner);
+        if (IsUpgraded)
+        {
+            copy.UpgradeInternal();
+        }
         await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner);
 
     }
@@ -179,14 +182,15 @@ public class ScientificResearch : MadScientistCard
             .CardPool<MadScientist.MadScientistCode.Character.MadScientistCardPool>()
             .AllCards
             .Where(c => c.Rarity == CardRarity.Common && c.Type == CardType.Attack)
+            .OrderBy(c => c.Id.Entry)
             .ToList();
         if (pool.Count == 0)
         {
             return;
         }
 
-        var bonus = pool[System.Random.Shared.Next(pool.Count)].ToMutable();
-        bonus.Owner = Owner;
+        var canonical = pool[Owner.RunState.Rng.CombatCardGeneration.NextInt(pool.Count)];
+        var bonus = CombatState!.CreateCard(canonical, Owner);
         if (IsUpgraded)
         {
             bonus.UpgradeInternal();

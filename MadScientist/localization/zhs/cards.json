@@ -112,7 +112,7 @@
   "MADSCIENTIST-PROCESS.title": "处理",
   "MADSCIENTIST-PROCESS.description": "消耗 1 张手牌，抽 1 张牌，并将其与此牌融合。",
   "MADSCIENTIST-INVENTORY.title": "库存",
-  "MADSCIENTIST-INVENTORY.description": "回合结束时保留最多 {Retain} 张手牌。",
+  "MADSCIENTIST-INVENTORY.description": "回合开始时，从弃牌堆选择至多 {IfUpgraded:show:2|1} 张牌加入你的手牌。",
   "MADSCIENTIST-MAD_RESEARCH.title": "疯狂科研",
   "MADSCIENTIST-MAD_RESEARCH.description": "每回合开始时，获得一张随机罕见能力牌。",
   "MADSCIENTIST-SOUL_RESEARCH.title": "灵魂研究",
