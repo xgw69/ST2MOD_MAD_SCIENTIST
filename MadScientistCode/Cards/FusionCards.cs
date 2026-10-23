@@ -32,7 +32,6 @@ public class GreatFusion : MadScientistCard
 
         if (IsUpgraded)
             foreach (var card in hand) CardCmd.Upgrade(card);
-        hand.Add(cardPlay.Card);
         var fused = await FusionHelper.Fuse(choiceContext, Owner, hand);
         if (fused != null)
         {
