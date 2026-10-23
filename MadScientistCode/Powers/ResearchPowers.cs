@@ -26,7 +26,7 @@ public class InventoryPower : MadScientistPower
         IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
-        if (!participants.Contains(Owner) || Owner.Player == null)
+        if (side != CombatSide.Player || !participants.Contains(Owner) || Owner.Player == null)
         {
             return;
         }
@@ -63,7 +63,7 @@ public class MadResearchPower : MadScientistPower
 
     public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
-        if (!participants.Contains(Owner) || Owner.Player == null)
+        if (side != CombatSide.Player || !participants.Contains(Owner) || Owner.Player == null)
         {
             return;
         }

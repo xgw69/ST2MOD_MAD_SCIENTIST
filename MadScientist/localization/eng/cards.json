@@ -90,7 +90,7 @@
   "MADSCIENTIST-LOSS_OF_SANITY.title": "Loss of Sanity",
   "MADSCIENTIST-LOSS_OF_SANITY.description": "Gain 99 Frail and 99 Vulnerable{IfUpgraded:show:| and 99 Weak}. Permanently remove a card from your deck.",
   "MADSCIENTIST-X_RAY.title": "X-Ray",
-  "MADSCIENTIST-X_RAY.description": "Deal {Damage} damage to ALL enemies X{IfUpgraded:show:+1|} times.",
+  "MADSCIENTIST-X_RAY.description": "Deal 10 damage to ALL enemies X(X+1) times. For the next X(X-1) turns, you cannot gain Block from cards.",
   "MADSCIENTIST-BLASTING_DEVICE.title": "Blasting Device",
   "MADSCIENTIST-BLASTING_DEVICE.description": "Add X{IfUpgraded:show:+1|} Blast cards into your hand.",
   "MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.title": "Pseudoscientific Method",

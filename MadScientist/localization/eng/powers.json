@@ -20,9 +20,11 @@
   "MADSCIENTIST-THINK_POWER.title": "Think",
   "MADSCIENTIST-THINK_POWER.description": "At the start of your next turn, gain Block and Energy.",
   "MADSCIENTIST-INVENTORY_POWER.title": "Inventory",
-  "MADSCIENTIST-INVENTORY_POWER.description": "At the end of your turn, retain up to {Amount} cards.",
+  "MADSCIENTIST-INVENTORY_POWER.description": "At the start of your turn, choose up to {Amount} cards from your discard pile and put them into your hand.",
   "MADSCIENTIST-MAD_RESEARCH_POWER.title": "Mad Research",
   "MADSCIENTIST-MAD_RESEARCH_POWER.description": "At the start of each turn, gain a random uncommon Power card.",
   "MADSCIENTIST-SOUL_RESEARCH_POWER.title": "Soul Research",
-  "MADSCIENTIST-SOUL_RESEARCH_POWER.description": "The next time you would die, prevent it and heal to half your Max HP."
+  "MADSCIENTIST-SOUL_RESEARCH_POWER.description": "The next time you would die, prevent it and heal to half your Max HP.",
+  "MADSCIENTIST-BLOCK_LOCK_POWER.title": "Block Lock",
+  "MADSCIENTIST-BLOCK_LOCK_POWER.description": "For the next {Amount} turns, you cannot gain Block from cards."
 }
