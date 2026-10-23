@@ -150,7 +150,7 @@
 
 | 中文 | 英文 / 类名 | 费用 | 目标 | 效果 | 备注 |
 |---|---|---|---|---|---|
-| 大融合 | Great Fusion / `GreatFusion` | 3 | 自身 | 将你的所有手牌（升级后）与此牌融合，然后再打出一次 | 见 Q11 |
+| 大融合 | Great Fusion / `GreatFusion` | 3 | 自身 | 将你的所有其他手牌与此牌融合，然后自动打出融合牌。**升级：融合前先升级所有参与融合的手牌** | 见 Q11 |
 | 完全修复 | Full Repair / `FullRepair` | 1 | 自身 | 修复 10(15)；消耗 | |
 | 疯狂科学家 | Mad Scientist / `MadScientistCard` | 1 | 自身 | 获得所有种类疯狂科学各一张；获得 3(4) 点能量；消耗 | 类名避开角色类 |
 | 良化变异 | Beneficial Mutation / `BeneficialMutation` | 2 | 自身 | 获得 3(4) 点力量；获得 1(2) 点敏捷 | |

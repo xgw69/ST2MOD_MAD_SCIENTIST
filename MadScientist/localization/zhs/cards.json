@@ -68,7 +68,7 @@
   "MADSCIENTIST-SCIENTIFIC_LEGACY.title": "科学传承",
   "MADSCIENTIST-SCIENTIFIC_LEGACY.description": "从 9 张疯狂科学中选择一张获得。",
   "MADSCIENTIST-GREAT_FUSION.title": "大融合",
-  "MADSCIENTIST-GREAT_FUSION.description": "将你的所有手牌与此牌融合，然后再打出一次。",
+  "MADSCIENTIST-GREAT_FUSION.description": "{IfUpgraded:show:融合前先升级所有参与融合的手牌，然后将你的所有其他手牌与此牌融合并自动打出。|将你的所有其他手牌与此牌融合，然后自动打出融合牌。}",
   "MADSCIENTIST-ASSEMBLE.title": "组装",
   "MADSCIENTIST-ASSEMBLE.description": "将抽牌堆和手牌中所有不可打出的牌与此牌融合。",
   "MADSCIENTIST-FULLY_AUTOMATIC.title": "全自动运行",
