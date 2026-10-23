@@ -20,7 +20,7 @@ public class BlastFreePower : MadScientistPower
 
     public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
     {
-        if (card is Blast)
+        if (card is Blast && card.Owner?.Creature == Owner)
         {
             modifiedCost = 0m;
             return true;

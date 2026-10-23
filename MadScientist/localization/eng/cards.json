@@ -116,7 +116,7 @@
   "MADSCIENTIST-MAD_RESEARCH.title": "Mad Research",
   "MADSCIENTIST-MAD_RESEARCH.description": "At the start of each turn, gain a random uncommon Power card.",
   "MADSCIENTIST-SOUL_RESEARCH.title": "Soul Research",
-  "MADSCIENTIST-SOUL_RESEARCH.description": "The next time you would die, lose {IfUpgraded:show:3|5} Max HP and heal to half your Max HP.",
+  "MADSCIENTIST-SOUL_RESEARCH.description": "Once per combat, the next time you would die, lose {IfUpgraded:show:3|5} Max HP and heal to half your Max HP.",
   "MADSCIENTIST-REFINE.title": "Refine",
   "MADSCIENTIST-REFINE.description": "When played, gain an extra potion identical to your leftmost potion at the end of this combat.",
   "MADSCIENTIST-SPARE_SPIKES.title": "Spare Spikes",
@@ -134,5 +134,7 @@
   "MADSCIENTIST-FUSED_X_CARD.title": "Fusion",
   "MADSCIENTIST-FUSED_X_CARD.description": "{Effects}",
   "FUSED_CARD.title": "Fusion",
-  "FUSED_CARD.description": "[gold]Fusion effects[/gold] (in order):\n{Effects}"
+  "FUSED_CARD.description": "[gold]Fusion effects[/gold] (in order):\n{Effects}",
+  "FUSED_X_CARD.title": "Fusion",
+  "FUSED_X_CARD.description": "{Effects}"
 }

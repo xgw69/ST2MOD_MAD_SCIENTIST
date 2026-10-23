@@ -46,5 +46,9 @@
   "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char": "我融合卡牌，你融合野兽。我们算同行。",
   "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next": "继续",
   "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient": "让我看看你的缝合。",
-  "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient": "嵌合兽认可你。"
+  "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient": "嵌合兽认可你。",
+  "THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-0r.char": "每次实验最终都指向你。今天我要验证：你的设计是否也能被打破。",
+  "THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-0r.next": "继续",
+  "THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-1r.ancient": "你把我的设计当成了假说。来吧，亲自体会两者的区别。",
+  "THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-attack": "Both"
 }

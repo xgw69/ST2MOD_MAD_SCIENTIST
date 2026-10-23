@@ -155,43 +155,6 @@ public class ForbiddenScience : MadScientistCard
     }
 }
 
-public class ScientificResearch : MadScientistCard
-{
-    public ScientificResearch() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
-    {
-    }
-
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new BlockVar(6m, ValueProp.Move), new DynamicVar("Repair", 1m)];
-
-    public override async Task AfterCardDrawnEarly(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-    {
-        if (card != this || fromHandDraw)
-        {
-            return;
-        }
-
-        var copy = CombatState!.CreateCard(ModelDb.GetById<CardModel>(Id), Owner);
-        if (IsUpgraded)
-        {
-            copy.UpgradeInternal();
-        }
-        await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner);
-    }
-
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-        await Durability.Repair(choiceContext, Owner.Creature, (int)DynamicVars["Repair"].BaseValue, this);
-    }
-
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Block.UpgradeValueBy(1m);
-        DynamicVars["Repair"].UpgradeValueBy(1m);
-    }
-}
-
 public class Process : MadScientistCard
 {
     public Process() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)

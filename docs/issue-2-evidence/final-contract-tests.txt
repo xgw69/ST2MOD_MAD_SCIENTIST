@@ -1,0 +1,94 @@
+<repo>\tests\CombatRegression\GameDoubles.cs(29,27): warning CS9124: Parameter 'int cost' is captured into the state of the enclosing type and its value is also used to initialize a field, property, or event. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+<repo>\tests\CombatRegression\GameDoubles.cs(106,64): warning CS9113: Parameter 'rarity' is unread. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+<repo>\tests\CombatRegression\GameDoubles.cs(190,35): warning CS9113: Parameter 'table' is unread. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+<repo>\tests\CombatRegression\GameDoubles.cs(194,78): warning CS9113: Parameter 'loc' is unread. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+<repo>\tests\CombatRegression\GameDoubles.cs(194,87): warning CS9113: Parameter 'min' is unread. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+<repo>\tests\CombatRegression\GameDoubles.cs(194,96): warning CS9113: Parameter 'max' is unread. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+<repo>\tests\CombatRegression\GameDoubles.cs(27,43): warning CS9113: Parameter 'card' is unread. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+<repo>\tests\CombatRegression\GameDoubles.cs(199,83): warning CS9113: Parameter 'prop' is unread. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+<repo>\tests\CombatRegression\GameDoubles.cs(200,82): warning CS9113: Parameter 'prop' is unread. [<repo>\tests\CombatRegression\CombatRegression.csproj]
+PASS fusion registers with combat
+PASS upgraded cost plus unplayable material cannot discount the result
+PASS dynamic type and target
+PASS component playable and Replay inherited
+PASS later fusion cannot mutate earlier materials/keywords
+PASS keywords initialized after materials
+PASS nested fusion flattens in order
+PASS single plus area attack retains enemy selection
+PASS cloned materials do not share mutable state
+PASS cyclic materials rejected
+PASS X captured from parent and ordinary effect executes once
+PASS effects retain a single parent CardPlay
+PASS effect combat context restored after execution
+PASS temporary X restored
+PASS Forbidden Science takes precedence over X cost
+PASS two unplayable materials remain playable
+PASS serialized fusion preserves cost, keywords and Replay
+PASS re-fusion respects the current fused card cost
+PASS serialized fusion restores materials and X prototype
+PASS combat context restored after exception
+PASS simultaneous players have isolated asynchronous contexts
+PASS all nine choices create owned registered cards
+PASS reward records potion type and owner even after potion is consumed
+PASS no potion produces no extra reward
+PASS upgraded X-Ray at zero energy still hits once
+PASS Blasting Device creates registered playable cards
+PASS initial repair is capped at 20
+PASS subsequent repair is capped at 20
+PASS zero repair leaves full durability unchanged
+PASS exact consumption does not break the machine
+PASS overdraft deals double damage and breaks the machine
+PASS broken machine cannot repair or explode twice
+PASS zero consumption without a durability power is safe
+PASS Blast discount applies to its owner
+PASS Blast discount does not change teammate costs
+PASS other side does not expire Blast discount
+PASS owner turn end expires Blast discount without mutating cards
+PASS block lock cancels card block regardless of additive modifier order
+PASS block lock preserves non-card and teammate block
+PASS block lock does not tick on enemy turn
+PASS block lock decrements once at owner turn start
+PASS block lock expires at the following owner turn start
+PASS Soul Research prevents first death (loss 5)
+PASS unused Soul Research selects its active smart description
+PASS Soul Research reduces max HP and heals to half (loss 5)
+PASS Soul Research cannot revive again after reapplication (loss 5)
+PASS spent Soul Research keeps both tooltip paths spent after reapplication
+PASS Soul Research does not prevent teammate death
+PASS Soul Research prevents first death (loss 3)
+PASS unused Soul Research selects its active smart description
+PASS Soul Research reduces max HP and heals to half (loss 3)
+PASS Soul Research cannot revive again after reapplication (loss 3)
+PASS spent Soul Research keeps both tooltip paths spent after reapplication
+PASS Soul Research does not prevent teammate death
+PASS Scientific Research copies on turn-start hand draw
+PASS Scientific Research copies on effect draw
+PASS Scientific Research ignores another card being drawn
+PASS Scientific Research plays for 6 block and 1 repair
+PASS upgraded Scientific Research plays for 7 block and 2 repair
+PASS Scientific Research copy preserves upgrade
+PASS X-Ray X=0, upgrade=False: hit count
+PASS X-Ray X=0, upgrade=False: block-lock duration
+PASS Blasting Device X=0, upgrade=False: generated cards
+PASS Blasting Device X=0, upgrade=False: discount also applies to existing Blasts
+PASS X-Ray X=1, upgrade=False: hit count
+PASS X-Ray X=1, upgrade=False: block-lock duration
+PASS Blasting Device X=1, upgrade=False: generated cards
+PASS Blasting Device X=1, upgrade=False: discount also applies to existing Blasts
+PASS X-Ray X=3, upgrade=False: hit count
+PASS X-Ray X=3, upgrade=False: block-lock duration
+PASS Blasting Device X=3, upgrade=False: generated cards
+PASS Blasting Device X=3, upgrade=False: discount also applies to existing Blasts
+PASS X-Ray X=0, upgrade=True: hit count
+PASS X-Ray X=0, upgrade=True: block-lock duration
+PASS Blasting Device X=0, upgrade=True: generated cards
+PASS Blasting Device X=0, upgrade=True: discount also applies to existing Blasts
+PASS X-Ray X=1, upgrade=True: hit count
+PASS X-Ray X=1, upgrade=True: block-lock duration
+PASS Blasting Device X=1, upgrade=True: generated cards
+PASS Blasting Device X=1, upgrade=True: discount also applies to existing Blasts
+PASS X-Ray X=3, upgrade=True: hit count
+PASS X-Ray X=3, upgrade=True: block-lock duration
+PASS Blasting Device X=3, upgrade=True: generated cards
+PASS Blasting Device X=3, upgrade=True: discount also applies to existing Blasts
+84 passed, 0 failed (contract doubles; game integration still required).

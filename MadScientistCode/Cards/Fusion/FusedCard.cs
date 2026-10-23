@@ -12,6 +12,8 @@ using MegaCrit.Sts2.Core.Saves.Runs;
 namespace MadScientist.MadScientistCode.Cards.Fusion;
 
 /// <summary>A single play, with independent snapshots of its component effects.</summary>
+// Keep the original unprefixed FUSED_CARD / FUSED_X_CARD model IDs for saved
+// materials. Adding ICustomModel here would change IDs via BaseLib's prefix patch.
 public class FusedCard : CardModel
 {
     private List<CardModel> _sources = new();

@@ -1,14 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType><TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <ProductionSourceDir Condition="'$(ProductionSourceDir)' == ''">../../MadScientistCode</ProductionSourceDir><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Lib.Harmony" Version="2.4.1" />
-    <Compile Include="../../MadScientistCode/Cards/Fusion/FusedCard.cs" Link="Production/FusedCard.cs" />
-    <Compile Include="../../MadScientistCode/Cards/Fusion/FusionEffectContext.cs" Link="Production/FusionEffectContext.cs" />
-    <Compile Include="../../MadScientistCode/Cards/ScientificLegacy.cs" Link="Production/ScientificLegacy.cs" />
-    <Compile Include="../../MadScientistCode/Cards/Refine.cs" Link="Production/Refine.cs" />
-    <Compile Include="../../MadScientistCode/Cards/XRayAndDevice.cs" Link="Production/XRayAndDevice.cs" />
+    <PackageReference Include="Lib.Harmony" Version="2.4.1" Condition="'$(HarmonyAssembly)' == ''" />
+    <Reference Include="0Harmony" Condition="'$(HarmonyAssembly)' != ''">
+      <HintPath>$(HarmonyAssembly)</HintPath>
+    </Reference>
+    <Compile Include="$(ProductionSourceDir)/Cards/Fusion/FusedCard.cs" Link="Production/FusedCard.cs" />
+    <Compile Include="$(ProductionSourceDir)/Cards/Fusion/FusionEffectContext.cs" Link="Production/FusionEffectContext.cs" />
+    <Compile Include="$(ProductionSourceDir)/Cards/ScientificLegacy.cs" Link="Production/ScientificLegacy.cs" />
+    <Compile Include="$(ProductionSourceDir)/Cards/Refine.cs" Link="Production/Refine.cs" />
+    <Compile Include="$(ProductionSourceDir)/Cards/XRayAndDevice.cs" Link="Production/XRayAndDevice.cs" />
+    <Compile Include="$(ProductionSourceDir)/Core/Durability.cs" Link="Production/Durability.cs" />
+    <Compile Include="$(ProductionSourceDir)/Powers/BlastFreePower.cs" Link="Production/BlastFreePower.cs" />
+    <Compile Include="$(ProductionSourceDir)/Powers/BlockLockPower.cs" Link="Production/BlockLockPower.cs" />
+    <Compile Include="$(ProductionSourceDir)/Powers/MachineDurabilityPower.cs" Link="Production/MachineDurabilityPower.cs" />
+    <Compile Include="$(ProductionSourceDir)/Powers/MachineBrokenPower.cs" Link="Production/MachineBrokenPower.cs" />
+    <Compile Include="$(ProductionSourceDir)/Powers/InfiniteMachineResearchPower.cs" Link="Production/InfiniteMachineResearchPower.cs" />
+    <Compile Include="$(ProductionSourceDir)/Powers/SoulResearchPower.cs" Link="Production/SoulResearchPower.cs" />
+    <Compile Include="$(ProductionSourceDir)/Cards/ScientificResearch.cs" Link="Production/ScientificResearch.cs" />
   </ItemGroup>
 </Project>

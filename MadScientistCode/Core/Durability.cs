@@ -34,11 +34,11 @@ public static class Durability
         var power = creature.GetPower<MachineDurabilityPower>();
         if (power == null)
         {
-            await PowerCmd.Apply<MachineDurabilityPower>(ctx, creature, amount, creature, source);
+            await PowerCmd.Apply<MachineDurabilityPower>(ctx, creature, System.Math.Min(Max, amount), creature, source);
         }
         else
         {
-            power.SetAmount(System.Math.Min(Max, power.Amount + amount));
+            power.SetAmount((int)System.Math.Min(Max, (long)power.Amount + amount));
         }
     }
 
@@ -48,6 +48,12 @@ public static class Durability
         if (IsBroken(creature))
         {
             return false;
+        }
+
+        // A zero-cost machine effect can execute before any durability power exists.
+        if (amount <= 0)
+        {
+            return true;
         }
 
         // 机器无限研究：照常打出，但不再扣耐久

@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "sts2.dll",
+    "Role": "installed build input",
+    "SHA256": "0861BFA1DF347538D932F22D580E75420F08082792EB914E53B4882764ACDBE9"
+  },
+  {
+    "Name": "0Harmony.dll",
+    "Role": "installed build input",
+    "SHA256": "EF1898322C9F5C86DC1B0758B272A9C440823B4A41CA9A0B82A3AA6B3D206387"
+  },
+  {
+    "Name": "BaseLib.dll",
+    "Role": "installed build input",
+    "SHA256": "55863CA6ADC30A61A7544874E157A519FFE148CCF2B18025947609C4BFF813CE"
+  },
+  {
+    "Name": "MadScientist.dll",
+    "Role": "installed workshop original",
+    "SHA256": "FD46E80A1568612927A7B066CDF0B886EBA308D84D64FE5D480A0A398B218C67"
+  },
+  {
+    "Name": "MadScientist.pck",
+    "Role": "installed workshop original",
+    "SHA256": "68E653039DD32709C4845E5911DF2C01062373F791E7B5E7D1EE6BF208554B2C"
+  },
+  {
+    "Name": "MadScientist.dll",
+    "Role": "initial compile-check output before full-build follow-up",
+    "SHA256": "142A0DEF34D43A0F92733268E93B67647875732353B7163BD1257C3B5CFE4348"
+  }
+]

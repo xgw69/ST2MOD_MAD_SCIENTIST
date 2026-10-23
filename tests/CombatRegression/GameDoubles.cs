@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Saves.Runs;
@@ -38,7 +39,6 @@ namespace MegaCrit.Sts2.Core.Entities.Cards
 }
 namespace MegaCrit.Sts2.Core.Entities.Players
 {
-    public class Creature { public ICombatState? CombatState; public bool IsDead; public bool IsAlive => !IsDead; }
     public class RunState { public object? CurrentRoom; }
     public class Player
     {
@@ -48,12 +48,33 @@ namespace MegaCrit.Sts2.Core.Entities.Players
         public List<PotionModel> Potions = new();
     }
 }
+namespace MegaCrit.Sts2.Core.Entities.Creatures
+{
+    public class Creature
+    {
+        public ICombatState? CombatState;
+        public bool IsDead;
+        public bool IsAlive => !IsDead;
+        public decimal CurrentHp = 60, MaxHp = 60;
+        public List<PowerModel> Powers = new();
+        public T? GetPower<T>() where T : PowerModel => Powers.OfType<T>().SingleOrDefault();
+        public bool HasPower<T>() where T : PowerModel => GetPower<T>() != null;
+    }
+}
+namespace MegaCrit.Sts2.Core.Entities.Powers
+{
+    public enum PowerType { Buff, Debuff }
+    public enum PowerStackType { Single, Counter }
+}
 namespace MegaCrit.Sts2.Core.Combat
 {
-    public interface ICombatState { T CreateCard<T>(Player owner) where T : CardModel; }
+    public enum CombatSide { Player, Enemy }
+    public interface ICombatState { T CreateCard<T>(Player owner) where T : CardModel; CardModel CreateCard(CardModel canonical, Player owner); }
     public class CombatState : ICombatState
     {
         public List<CardModel> Registered = new();
+        public CardModel CreateCard(CardModel canonical, Player owner)
+        { var card = canonical.ToMutable(); card.Owner = owner; Registered.Add(card); return card; }
         public T CreateCard<T>(Player owner) where T : CardModel
         {
             var card = (T)ModelDb.Card<T>().ToMutable(); card.Owner = owner; Registered.Add(card); return card;
@@ -62,6 +83,25 @@ namespace MegaCrit.Sts2.Core.Combat
 }
 namespace MegaCrit.Sts2.Core.Models
 {
+    public abstract class PowerModel
+    {
+        public Creature Owner = null!;
+        public int Amount;
+        public abstract MegaCrit.Sts2.Core.Entities.Powers.PowerType Type { get; }
+        public abstract MegaCrit.Sts2.Core.Entities.Powers.PowerStackType StackType { get; }
+        public virtual bool AllowNegative => true;
+        public virtual MegaCrit.Sts2.Core.Localization.LocString Description => new("powers", GetType().Name);
+        protected virtual string SmartDescriptionLocKey => GetType().Name + ".smartDescription";
+        public MegaCrit.Sts2.Core.Localization.LocString SmartDescription => new("powers", SmartDescriptionLocKey);
+        public void SetAmount(int amount) => Amount = amount;
+        public virtual bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost) { modifiedCost = originalCost; return false; }
+        public virtual decimal ModifyBlockAdditive(Creature target, decimal block, MegaCrit.Sts2.Core.ValueProps.ValueProp props, CardModel? cardSource, CardPlay? cardPlay) => 0;
+        public virtual decimal ModifyBlockMultiplicative(Creature target, decimal block, MegaCrit.Sts2.Core.ValueProps.ValueProp props, CardModel? cardSource, CardPlay? cardPlay) => 1;
+        public virtual Task BeforeSideTurnStart(PlayerChoiceContext context, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState) => Task.CompletedTask;
+        public virtual Task BeforeSideTurnEnd(PlayerChoiceContext context, CombatSide side, IEnumerable<Creature> participants) => Task.CompletedTask;
+        public virtual bool ShouldDieLate(Creature creature) => true;
+        public virtual Task AfterPreventingDeath(Creature creature) => Task.CompletedTask;
+    }
     public class CardPoolModel { }
     public class CardModel(int cost, CardType type, CardRarity rarity, TargetType target)
     {
@@ -74,6 +114,7 @@ namespace MegaCrit.Sts2.Core.Models
         public virtual CardType Type => type;
         public virtual TargetType TargetType => target;
         public virtual string Title => GetType().Name;
+        public string Id => GetType().Name;
         public virtual string PortraitPath => Title;
         public virtual bool CanBeGeneratedByModifiers => true;
         public virtual CardPoolModel Pool => new();
@@ -105,6 +146,8 @@ namespace MegaCrit.Sts2.Core.Models
         public Task Play(PlayerChoiceContext choice, CardPlay play) => OnPlay(choice, play);
         protected virtual void OnUpgrade() { }
         public void Upgrade() { IsUpgraded = true; OnUpgrade(); }
+        public void UpgradeInternal() => Upgrade();
+        public virtual Task AfterCardDrawnEarly(PlayerChoiceContext context, CardModel card, bool fromHandDraw) => Task.CompletedTask;
         public int ResolveEnergyXValue() => EnergyCost.CapturedXValue;
     }
     public class PotionModel(string id) { public string Id = id; public PotionModel ToMutable() => new(Id); }
@@ -117,7 +160,8 @@ namespace MegaCrit.Sts2.Core.Models
             return (T)card;
         }
         public static T CardPool<T>() where T : CardPoolModel, new() => new();
-        public static T GetById<T>(string id) where T : PotionModel => (T)new PotionModel(id);
+        public static T GetById<T>(string id)
+            => typeof(T) == typeof(CardModel) ? (T)(object)Cards.Values.Single(c => c.Id == id) : (T)(object)new PotionModel(id);
     }
 }
 namespace MegaCrit.Sts2.Core.Saves.Runs
@@ -138,11 +182,12 @@ namespace MegaCrit.Sts2.Core.Models.Cards
         public override CardType Type => TinkerTimeType;
     }
 }
-namespace MegaCrit.Sts2.Core.GameActions.Multiplayer { public class PlayerChoiceContext { } }
+namespace MegaCrit.Sts2.Core.Models.Powers { }
+namespace MegaCrit.Sts2.Core.GameActions.Multiplayer { public class PlayerChoiceContext { } public class ThrowingPlayerChoiceContext : PlayerChoiceContext { } }
 namespace MegaCrit.Sts2.Core.Entities.Potions { public enum Unused { } }
 namespace MegaCrit.Sts2.Core.Localization
 {
-    public class LocString(string table, string key) { public void Add(string name, object value) { } }
+    public class LocString(string table, string key) { public string Key => key; public void Add(string name, object value) { } }
 }
 namespace MegaCrit.Sts2.Core.CardSelection
 {
@@ -150,11 +195,13 @@ namespace MegaCrit.Sts2.Core.CardSelection
 }
 namespace MegaCrit.Sts2.Core.Localization.DynamicVars
 {
-    public class DynamicVar(string name, decimal value) { public string Name = name; public decimal BaseValue = value; }
+    public class DynamicVar(string name, decimal value) { public string Name = name; public decimal BaseValue = value; public void UpgradeValueBy(decimal value) => BaseValue += value; }
     public class DamageVar(decimal value, MegaCrit.Sts2.Core.ValueProps.ValueProp prop) : DynamicVar("Damage", value) { }
-    public class VarSet(IEnumerable<DynamicVar> vars) { public DynamicVar Damage => vars.Single(v => v.Name == "Damage"); }
+    public class BlockVar(decimal value, MegaCrit.Sts2.Core.ValueProps.ValueProp prop) : DynamicVar("Block", value) { }
+    public class VarSet(IEnumerable<DynamicVar> vars)
+    { public DynamicVar Damage => this["Damage"]; public DynamicVar Block => this["Block"]; public DynamicVar this[string name] => vars.Single(v => v.Name == name); }
 }
-namespace MegaCrit.Sts2.Core.ValueProps { public enum ValueProp { Move } }
+namespace MegaCrit.Sts2.Core.ValueProps { [Flags] public enum ValueProp { Move = 1, Unblockable = 2, Unpowered = 4 } }
 namespace MegaCrit.Sts2.Core.Rooms
 {
     public class CombatRoom
@@ -166,6 +213,30 @@ namespace MegaCrit.Sts2.Core.Rooms
 namespace MegaCrit.Sts2.Core.Rewards { public record PotionReward(PotionModel Potion, Player Owner); }
 namespace MegaCrit.Sts2.Core.Commands
 {
+    public static class PowerCmd
+    {
+        public static Task<T> Apply<T>(PlayerChoiceContext ctx, Creature target, decimal amount, Creature applier, CardModel? source) where T : PowerModel, new()
+        {
+            var power = target.GetPower<T>();
+            if (power == null) { power = new T { Owner = target, Amount = (int)amount }; target.Powers.Add(power); }
+            else if (power.StackType == MegaCrit.Sts2.Core.Entities.Powers.PowerStackType.Counter) power.Amount += (int)amount;
+            return Task.FromResult(power);
+        }
+        public static Task Remove(PowerModel power) { power.Owner.Powers.Remove(power); return Task.CompletedTask; }
+        public static Task Decrement(PowerModel power) { power.Amount--; return Task.CompletedTask; }
+    }
+    public static class CreatureCmd
+    {
+        public static Task Damage(PlayerChoiceContext ctx, Creature target, decimal damage, MegaCrit.Sts2.Core.ValueProps.ValueProp props, CardModel? source, Creature? dealer)
+        { target.CurrentHp -= damage; return Task.CompletedTask; }
+        public static Task LoseMaxHp(PlayerChoiceContext ctx, Creature target, decimal amount, bool unpowered)
+        { target.MaxHp -= amount; target.CurrentHp = Math.Min(target.CurrentHp, target.MaxHp); return Task.CompletedTask; }
+        public static Task Heal(Creature target, decimal amount)
+        { target.CurrentHp = Math.Min(target.MaxHp, target.CurrentHp + amount); return Task.CompletedTask; }
+        public static decimal LastBlock;
+        public static Task GainBlock(Creature target, MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar amount, CardPlay play)
+        { LastBlock = amount.BaseValue; return Task.CompletedTask; }
+    }
     public static class CardSelectCmd
     {
         public static int Selection;
@@ -194,6 +265,7 @@ namespace MegaCrit.Sts2.Core.Commands
     }
 }
 namespace MadScientist.MadScientistCode.Character { public class MadScientistCardPool : CardPoolModel { } }
+namespace MadScientist.MadScientistCode.Powers { public abstract class MadScientistPower : PowerModel { } }
 namespace MadScientist.MadScientistCode.Cards
 {
     public class MadScientistCard(int cost, CardType type, CardRarity rarity, TargetType target) : CardModel(cost, type, rarity, target)

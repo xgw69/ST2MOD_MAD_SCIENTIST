@@ -1,0 +1,52 @@
+Build started 2026/10/23 22:21:23.
+     1>Project "<repo>\MadScientist.csproj" on node 1 (Restore target(s)).
+     1>_GetAllRestoreProjectPathItems:
+         Determining projects to restore...
+       Restore:
+         X.509 certificate chain validation will use the default trust store selected by .NET for code signing.
+         X.509 certificate chain validation will use the default trust store selected by .NET for timestamping.
+         Restoring packages for <repo>\MadScientist.csproj...
+           CACHE https://api.nuget.org/v3-flatcontainer/alchyr.sts2.modanalyzers/index.json
+           CACHE https://api.nuget.org/v3-flatcontainer/godotsharp/index.json
+           CACHE https://api.nuget.org/v3-flatcontainer/bschneppe.sts2.pckpacker/index.json
+           CACHE https://api.nuget.org/v3-flatcontainer/alchyr.sts2.baselib/index.json
+           CACHE https://api.nuget.org/v3-flatcontainer/godot.sourcegenerators/index.json
+           GET https://api.nuget.org/v3-flatcontainer/godotsharpeditor/index.json
+           CACHE https://api.nuget.org/v3-flatcontainer/godotsharp/4.5.1/godotsharp.4.5.1.nupkg
+           CACHE https://api.nuget.org/v3-flatcontainer/bschneppe.sts2.pckpacker/0.1.1/bschneppe.sts2.pckpacker.0.1.1.nupkg
+           GET https://api.nuget.org/v3-flatcontainer/alchyr.sts2.baselib/3.4.7/alchyr.sts2.baselib.3.4.7.nupkg
+           CACHE https://api.nuget.org/v3-flatcontainer/godot.sourcegenerators/4.5.1/godot.sourcegenerators.4.5.1.nupkg
+           CACHE https://api.nuget.org/v3-flatcontainer/alchyr.sts2.modanalyzers/0.2.1/alchyr.sts2.modanalyzers.0.2.1.nupkg
+           OK https://api.nuget.org/v3-flatcontainer/godotsharpeditor/index.json 1099ms
+           GET https://api.nuget.org/v3-flatcontainer/godotsharpeditor/4.5.1/godotsharpeditor.4.5.1.nupkg
+           OK https://api.nuget.org/v3-flatcontainer/alchyr.sts2.baselib/3.4.7/alchyr.sts2.baselib.3.4.7.nupkg 1793ms
+           OK https://api.nuget.org/v3-flatcontainer/godotsharpeditor/4.5.1/godotsharpeditor.4.5.1.nupkg 1514ms
+         Installed GodotSharpEditor 4.5.1 from https://api.nuget.org/v3/index.json to <repo>\.validation\nuget\godotsharpeditor\4.5.1 with content hash 8CM49047b0Us3qPJo6L7kdldreOvR7JCoXlKoSHzpA0TQP6+Qnoxz/26GZ1ONg2wW4vV9uzor0AHXSGUFP9XSw==.
+         Installed Godot.SourceGenerators 4.5.1 from https://api.nuget.org/v3/index.json to <repo>\.validation\nuget\godot.sourcegenerators\4.5.1 with content hash HOHYJQO5A/kzf5CUobeTPOX+JawSvjkDE0v/Fyo4EMYEC2MvCTGUvpJFjqQQmHYLNsiiB7RLVilcnup+jiVfdA==.
+         Installed Alchyr.Sts2.ModAnalyzers 0.2.1 from https://api.nuget.org/v3/index.json to <repo>\.validation\nuget\alchyr.sts2.modanalyzers\0.2.1 with content hash hiUZueWH2QqAtvrR13aqtlIxpOsByV2mCKmL/wGop2MSrbBxzO7vAJJehkFD6AII0ANE/6XNC+kAywWsiGtwwg==.
+         Installed Alchyr.Sts2.BaseLib 3.4.7 from https://api.nuget.org/v3/index.json to <repo>\.validation\nuget\alchyr.sts2.baselib\3.4.7 with content hash tQkAUPXJzaDjMMPT2hXVbYGKPqHcsNe/eDtm0/RGyOUG21Rsiu+JkWiM6BIN8RjFDSfHEPZ/e1D3mujuuo5mYw==.
+         Installed BSchneppe.StS2.PckPacker 0.1.1 from https://api.nuget.org/v3/index.json to <repo>\.validation\nuget\bschneppe.sts2.pckpacker\0.1.1 with content hash 2P+D16glmz7OZ3zbQYOoIuQGNnJgOjfPq55nzZRl/WiEE2xNvF0vexAuVrr56/laOL5cP0BUZEdvRZJSdBQ5ug==.
+         Installed GodotSharp 4.5.1 from https://api.nuget.org/v3/index.json to <repo>\.validation\nuget\godotsharp\4.5.1 with content hash 5CFnEHT+FByv5desNHMipz/209SCrWR9CGWFZjGHnXupl1Rw8U8q4nf65/unqZVL97Rx+3J5hskPMoDGaiZL9g==.
+           CACHE https://api.nuget.org/v3/vulnerabilities/index.json
+           CACHE https://api.nuget.org/v3/vulnerabilities/vulnerability.base.json
+           CACHE https://api.nuget.org/v3/vulnerabilities/vulnerability.update.json
+         Generating MSBuild file <repo>\.godot\mono\temp\obj\MadScientist.csproj.nuget.g.props.
+         Generating MSBuild file <repo>\.godot\mono\temp\obj\MadScientist.csproj.nuget.g.targets.
+         Writing assets file to disk. Path: <repo>\.godot\mono\temp\obj\project.assets.json
+         Restored <repo>\MadScientist.csproj (in 3.68 sec).
+
+         NuGet Config files used:
+             <repo>\.validation\NuGet.Online.Config
+
+         Feeds used:
+             https://api.nuget.org/v3/index.json
+
+         Installed:
+             6 package(s) to <repo>\MadScientist.csproj
+     1>Done Building Project "<repo>\MadScientist.csproj" (Restore target(s)).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.69

@@ -1,0 +1,49 @@
+PASS 15 concrete production powers
+SentryGodotInitializer: Sentry GDExtension not loaded in this process; skipping. If you see this in a running game (not during project export or IDE script analysis), check Godot's log for extension load failures.
+PASS eng preserves existing model ID FUSED_CARD
+PASS eng runtime fusion ID resolves title and material description: FUSED_CARD
+PASS eng preserves existing model ID FUSED_X_CARD
+PASS eng runtime fusion ID resolves title and material description: FUSED_X_CARD
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-BLAST_FREE_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-BLOCK_LOCK_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-MACHINE_BROKEN_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-MACHINE_DURABILITY_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-MUTATION_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-SCORCHED_GROUND_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-THINK_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-INVENTORY_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-MAD_RESEARCH_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-SOUL_RESEARCH_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-SPARE_SPIKES_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-SPARE_REAGENT_POWER
+PASS eng runtime power ID resolves all descriptions: MADSCIENTIST-PLAN_POWER
+PASS eng native active smart-description key
+PASS eng native spent smart-description key resolves
+PASS eng runtime character ID resolves Architect dialogue
+PASS eng Architect attackers parse as the installed game's enum
+PASS zhs preserves existing model ID FUSED_CARD
+PASS zhs runtime fusion ID resolves title and material description: FUSED_CARD
+PASS zhs preserves existing model ID FUSED_X_CARD
+PASS zhs runtime fusion ID resolves title and material description: FUSED_X_CARD
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-BLAST_FREE_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-BLOCK_LOCK_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-MACHINE_BROKEN_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-MACHINE_DURABILITY_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-MUTATION_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-SCORCHED_GROUND_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-THINK_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-INVENTORY_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-MAD_RESEARCH_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-SOUL_RESEARCH_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-SPARE_SPIKES_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-SPARE_REAGENT_POWER
+PASS zhs runtime power ID resolves all descriptions: MADSCIENTIST-PLAN_POWER
+PASS zhs native active smart-description key
+PASS zhs native spent smart-description key resolves
+PASS zhs runtime character ID resolves Architect dialogue
+PASS zhs Architect attackers parse as the installed game's enum
+47 managed runtime localization checks passed; no gameplay or save round-trip executed.

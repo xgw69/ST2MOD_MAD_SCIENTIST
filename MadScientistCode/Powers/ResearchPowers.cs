@@ -81,37 +81,3 @@ public class MadResearchPower : MadScientistPower
         await CardPileCmd.AddGeneratedCardToCombat(pick, PileType.Hand, Owner.Player);
     }
 }
-
-/// <summary>灵魂研究：下一次致死时免死，回复到最大生命一半（并消耗自身）。</summary>
-public class SoulResearchPower : MadScientistPower
-{
-    private bool _used;
-
-    public override PowerType Type => PowerType.Buff;
-
-    public override PowerStackType StackType => PowerStackType.Single;
-
-    public override bool ShouldDieLate(Creature creature)
-    {
-        if (creature != Owner || _used)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    public override async Task AfterPreventingDeath(Creature creature)
-    {
-        if (creature != Owner)
-        {
-            return;
-        }
-
-        _used = true;
-        await CreatureCmd.LoseMaxHp(new ThrowingPlayerChoiceContext(), creature, Amount, true);
-        var heal = System.Math.Max(1, (int)(creature.MaxHp / 2m));
-        await CreatureCmd.Heal(creature, heal);
-        await PowerCmd.Remove(this);
-    }
-}

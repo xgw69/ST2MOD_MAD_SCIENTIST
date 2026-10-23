@@ -116,7 +116,7 @@
   "MADSCIENTIST-MAD_RESEARCH.title": "疯狂科研",
   "MADSCIENTIST-MAD_RESEARCH.description": "每回合开始时，获得一张随机罕见能力牌。",
   "MADSCIENTIST-SOUL_RESEARCH.title": "灵魂研究",
-  "MADSCIENTIST-SOUL_RESEARCH.description": "当你下一次生命值归零时，最大生命值 -{IfUpgraded:show:3|5}，并回复到最大生命值的一半。",
+  "MADSCIENTIST-SOUL_RESEARCH.description": "每场战斗限一次：当你下一次生命值归零时，最大生命值 -{IfUpgraded:show:3|5}，并回复到最大生命值的一半。",
   "MADSCIENTIST-REFINE.title": "炼制",
   "MADSCIENTIST-REFINE.description": "打出后，在本场战斗的奖励中额外获得一瓶与你最左侧药水相同的药水。",
   "MADSCIENTIST-SPARE_SPIKES.title": "备用尖刺",
@@ -134,5 +134,7 @@
   "MADSCIENTIST-FUSED_X_CARD.title": "融合体",
   "MADSCIENTIST-FUSED_X_CARD.description": "{Effects}",
   "FUSED_CARD.title": "融合体",
-  "FUSED_CARD.description": "[gold]融合效果[/gold]（按顺序结算）：\n{Effects}"
+  "FUSED_CARD.description": "[gold]融合效果[/gold]（按顺序结算）：\n{Effects}",
+  "FUSED_X_CARD.title": "融合",
+  "FUSED_X_CARD.description": "{Effects}"
 }

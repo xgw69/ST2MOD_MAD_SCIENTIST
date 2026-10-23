@@ -56,18 +56,15 @@ public class BlastingDevice : MadScientistCard
     {
         var x = ResolveEnergyXValue();
         var count = IsUpgraded ? x + 1 : x;
-        if (count <= 0)
+        if (count > 0)
         {
-            return;
+            var cards = Enumerable.Range(0, count)
+                .Select(_ => Owner.Creature.CombatState!.CreateCard<Blast>(Owner))
+                .ToList();
+            await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Hand, Owner);
         }
 
-        var cards = Enumerable.Range(0, count)
-            .Select(_ =>
-            {
-                return Owner.Creature.CombatState!.CreateCard<Blast>(Owner);
-            })
-            .ToList();
-        await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Hand, Owner);
+        // The discount is a separate effect, including when X creates no cards.
         await PowerCmd.Apply<MadScientist.MadScientistCode.Powers.BlastFreePower>(
             choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }

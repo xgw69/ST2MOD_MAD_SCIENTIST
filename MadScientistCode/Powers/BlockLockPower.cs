@@ -19,7 +19,7 @@ public class BlockLockPower : MadScientistPower
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override decimal ModifyBlockAdditive(
+    public override decimal ModifyBlockMultiplicative(
         Creature target,
         decimal block,
         ValueProp props,
@@ -28,10 +28,12 @@ public class BlockLockPower : MadScientistPower
     {
         if (target != Owner || cardSource == null)
         {
-            return 0m;
+            return 1m;
         }
 
-        return -block;
+        // The game applies every additive modifier (including Dexterity) first.
+        // Multiplying by zero prevents later additive listeners from restoring block.
+        return 0m;
     }
 
     public override Task BeforeSideTurnStart(

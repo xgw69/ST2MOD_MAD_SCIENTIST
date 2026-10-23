@@ -1,0 +1,5 @@
+PASS: 430 PCK entry checksums; 206 image remaps, 16 source resources, 2 scenes.
+PASS: release DLL header and manifest; no gameplay/rendering/save claim.
+MadScientist.dll: 139776 bytes; SHA256 d0cb48fa071a1d30c7df71c1e6c366039a4f06d3286fb8a140cd064c68ab4f1b
+MadScientist.pck: 65027644 bytes; SHA256 4b58be73121ba57e6dc3a6b7d5b07dd2cafcf138ba8e3eda0ed4b651633edafd
+MadScientist.json: 430 bytes; SHA256 df71156d9b2dc6bcf7b3c278ae839e0785316291c472f6d127f3db95260c9800

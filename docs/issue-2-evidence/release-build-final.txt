@@ -1,0 +1,53 @@
+<repo>\MadScientistCode\Character\MadScientist.cs(73,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(76,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(80,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(83,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(86,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(89,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\AttackCards2.cs(175,31): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\AttackCards2.cs(63,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\XRayAndDevice.cs(35,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Relics\TomeRelics.cs(87,31): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(153,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(122,22): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\RareCards.cs(29,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(93,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\SkillCards.cs(132,31): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(92,22): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(53,21): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(24,20): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\Fusion\FusedCard.cs(129,21): warning STS003: Model should inherit BaseLib.Abstracts.CustomCardModel or add interface ICustomModel so that a prefix is added to its ID [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\Fusion\FusedCard.cs(17,14): warning STS003: Model should inherit BaseLib.Abstracts.CustomCardModel or add interface ICustomModel so that a prefix is added to its ID [<repo>\MadScientist.csproj]
+  MadScientist -> <repo>\.godot\mono\temp\bin\Release\MadScientist.dll
+  Copying .dll .pdb and .json to mods folder.
+  PCK packed: <repo>\.godot\mono\temp\bin\Release\MadScientist.pck
+  Appending text scenes to the .pck
+  pack_scenes: MadScientist.pck -> 430 files (2 scenes added)
+  Copying quick .pck to mods folder.
+
+Build succeeded.
+
+<repo>\MadScientistCode\Character\MadScientist.cs(73,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(76,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(80,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(83,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(86,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(89,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\AttackCards2.cs(175,31): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\AttackCards2.cs(63,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\XRayAndDevice.cs(35,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Relics\TomeRelics.cs(87,31): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(153,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(122,22): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\RareCards.cs(29,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(93,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\SkillCards.cs(132,31): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(92,22): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(53,21): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(24,20): warning CS8602: Dereference of a possibly null reference. [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\Fusion\FusedCard.cs(129,21): warning STS003: Model should inherit BaseLib.Abstracts.CustomCardModel or add interface ICustomModel so that a prefix is added to its ID [<repo>\MadScientist.csproj]
+<repo>\MadScientistCode\Cards\Fusion\FusedCard.cs(17,14): warning STS003: Model should inherit BaseLib.Abstracts.CustomCardModel or add interface ICustomModel so that a prefix is added to its ID [<repo>\MadScientist.csproj]
+    20 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:42.62

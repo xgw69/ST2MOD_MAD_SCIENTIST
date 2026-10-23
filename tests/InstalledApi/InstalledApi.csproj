@@ -1,0 +1,20 @@
+<!-- Compile-only compatibility check. No deployment, packer, or game launch. -->
+<Project Sdk="Microsoft.NET.Sdk" InitialTargets="CheckReferences">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>MadScientist</AssemblyName><AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../MadScientistCode/**/*.cs" />
+    <Reference Include="sts2"><HintPath>$(Sts2DataDir)/sts2.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="GodotSharp"><HintPath>$(Sts2DataDir)/GodotSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BaseLib"><HintPath>$(BaseLibAssembly)</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="CheckReferences">
+    <Error Condition="!Exists('$(Sts2DataDir)/sts2.dll')" Text="Pass Sts2DataDir pointing to the installed game assemblies." />
+    <Error Condition="!Exists('$(BaseLibAssembly)')" Text="Pass BaseLibAssembly pointing to the installed BaseLib.dll." />
+  </Target>
+</Project>

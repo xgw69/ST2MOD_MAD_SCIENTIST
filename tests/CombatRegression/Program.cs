@@ -5,13 +5,17 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MadScientist.MadScientistCode.Core;
+using MadScientist.MadScientistCode.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
 
 new Harmony("madscientist.regression").PatchAll();
-int passed = 0;
-void Check(bool condition, string name) { if (!condition) throw new Exception(name); passed++; Console.WriteLine("PASS " + name); }
+int passed = 0, failed = 0;
+void Check(bool condition, string name) { if (!condition) { failed++; Console.WriteLine("FAIL " + name); return; } passed++; Console.WriteLine("PASS " + name); }
 Player NewPlayer() => new() { Creature = new() { CombatState = new CombatState() }, RunState = new() { CurrentRoom = new CombatRoom() } };
 T Card<T>(Player p) where T : CardModel => p.Creature.CombatState!.CreateCard<T>(p);
 CardPlay Play(CardModel card) => new() { Card = card, Target = new Creature() };
@@ -80,7 +84,97 @@ Check(AttackCommand.LastHits == 1, "upgraded X-Ray at zero energy still hits onc
 var device = Card<BlastingDevice>(owner); device.EnergyCost.CapturedXValue = 2;
 await device.Play(choice, Play(device));
 Check(owner.Hand.TakeLast(2).All(c => c is Blast), "Blasting Device creates registered playable cards");
-Console.WriteLine($"{passed} regression checks passed (contract doubles; game integration still required).");
+var fresh = NewPlayer();
+await Durability.Repair(choice, fresh.Creature, 25, null);
+Check(Durability.Get(fresh.Creature) == 20, "initial repair is capped at 20");
+fresh.Creature.GetPower<MachineDurabilityPower>()!.SetAmount(19);
+await Durability.Repair(choice, fresh.Creature, 5, null);
+Check(Durability.Get(fresh.Creature) == 20, "subsequent repair is capped at 20");
+await Durability.Repair(choice, fresh.Creature, 0, null);
+Check(Durability.Get(fresh.Creature) == 20, "zero repair leaves full durability unchanged");
+Check(await Durability.Consume(choice, fresh.Creature, 20, null) && Durability.Get(fresh.Creature) == 0, "exact consumption does not break the machine");
+var hp = fresh.Creature.CurrentHp;
+Check(!await Durability.Consume(choice, fresh.Creature, 3, null) && fresh.Creature.CurrentHp == hp - 6 && Durability.IsBroken(fresh.Creature), "overdraft deals double damage and breaks the machine");
+await Durability.Repair(choice, fresh.Creature, 20, null);
+Check(Durability.Get(fresh.Creature) == 0 && !await Durability.Consume(choice, fresh.Creature, 1, null) && fresh.Creature.CurrentHp == hp - 6, "broken machine cannot repair or explode twice");
+try { Check(await Durability.Consume(choice, NewPlayer().Creature, 0, null), "zero consumption without a durability power is safe"); }
+catch (NullReferenceException) { Check(false, "zero consumption without a durability power is safe"); }
+var freePower = await PowerCmd.Apply<BlastFreePower>(choice, owner.Creature, 1, owner.Creature, null);
+Check(freePower.TryModifyEnergyCostInCombat(Card<Blast>(owner), 3, out var ownCost) && ownCost == 0, "Blast discount applies to its owner");
+Check(!freePower.TryModifyEnergyCostInCombat(Card<Blast>(other), 3, out var teamCost) && teamCost == 3, "Blast discount does not change teammate costs");
+await freePower.BeforeSideTurnEnd(choice, CombatSide.Enemy, [other.Creature]);
+Check(owner.Creature.HasPower<BlastFreePower>(), "other side does not expire Blast discount");
+await freePower.BeforeSideTurnEnd(choice, CombatSide.Player, [owner.Creature]);
+Check(!owner.Creature.HasPower<BlastFreePower>(), "owner turn end expires Blast discount without mutating cards");
+var blockLock = await PowerCmd.Apply<BlockLockPower>(choice, owner.Creature, 2, owner.Creature, null);
+decimal BlockAfterHooks(CardModel? source, Creature target, bool dexFirst)
+{
+    decimal block = 6;
+    if (dexFirst) block += 3;
+    block += blockLock.ModifyBlockAdditive(target, block, ValueProp.Move, source, null);
+    if (!dexFirst) block += 3;
+    return block * blockLock.ModifyBlockMultiplicative(target, block, ValueProp.Move, source, null);
+}
+Check(BlockAfterHooks(a, owner.Creature, false) == 0 && BlockAfterHooks(a, owner.Creature, true) == 0, "block lock cancels card block regardless of additive modifier order");
+Check(BlockAfterHooks(null, owner.Creature, false) == 9 && BlockAfterHooks(a, other.Creature, false) == 9, "block lock preserves non-card and teammate block");
+await blockLock.BeforeSideTurnStart(choice, CombatSide.Enemy, [other.Creature], (CombatState)owner.Creature.CombatState!);
+Check(blockLock.Amount == 2, "block lock does not tick on enemy turn");
+await blockLock.BeforeSideTurnStart(choice, CombatSide.Player, [owner.Creature], (CombatState)owner.Creature.CombatState!);
+Check(blockLock.Amount == 1, "block lock decrements once at owner turn start");
+await blockLock.BeforeSideTurnStart(choice, CombatSide.Player, [owner.Creature], (CombatState)owner.Creature.CombatState!);
+Check(!owner.Creature.HasPower<BlockLockPower>(), "block lock expires at the following owner turn start");
+foreach (var loss in new[] { 5, 3 })
+{
+    var soulPlayer = NewPlayer();
+    var soul = await PowerCmd.Apply<SoulResearchPower>(choice, soulPlayer.Creature, loss, soulPlayer.Creature, null);
+    soulPlayer.Creature.CurrentHp = 0;
+    Check(!soul.ShouldDieLate(soulPlayer.Creature), $"Soul Research prevents first death (loss {loss})");
+    Check(soul.SmartDescription.Key.EndsWith(".smartDescription"), "unused Soul Research selects its active smart description");
+    await soul.AfterPreventingDeath(soulPlayer.Creature);
+    Check(soulPlayer.Creature.MaxHp == 60 - loss && soulPlayer.Creature.CurrentHp == (int)((60 - loss) / 2m), $"Soul Research reduces max HP and heals to half (loss {loss})");
+    var reapplied = await PowerCmd.Apply<SoulResearchPower>(choice, soulPlayer.Creature, loss, soulPlayer.Creature, null);
+    Check(reapplied.ShouldDieLate(soulPlayer.Creature), $"Soul Research cannot revive again after reapplication (loss {loss})");
+    Check(reapplied.SmartDescription.Key == "MADSCIENTIST-SOUL_RESEARCH_POWER.spent"
+        && reapplied.Description.Key == reapplied.SmartDescription.Key, "spent Soul Research keeps both tooltip paths spent after reapplication");
+    Check(soul.ShouldDieLate(other.Creature), "Soul Research does not prevent teammate death");
+}
+var researchPlayer = NewPlayer();
+var research = Card<ScientificResearch>(researchPlayer); research.InPile = true;
+await research.AfterCardDrawnEarly(choice, research, true);
+Check(researchPlayer.Hand.Count == 1, "Scientific Research copies on turn-start hand draw");
+researchPlayer.Hand.Clear();
+await research.AfterCardDrawnEarly(choice, research, false);
+Check(researchPlayer.Hand.Count == 1, "Scientific Research copies on effect draw");
+researchPlayer.Hand.Clear();
+await research.AfterCardDrawnEarly(choice, a, false);
+Check(researchPlayer.Hand.Count == 0, "Scientific Research ignores another card being drawn");
+await research.Play(choice, Play(research));
+Check(CreatureCmd.LastBlock == 6 && Durability.Get(researchPlayer.Creature) == 1, "Scientific Research plays for 6 block and 1 repair");
+research.Upgrade();
+await research.Play(choice, Play(research));
+Check(CreatureCmd.LastBlock == 7 && Durability.Get(researchPlayer.Creature) == 3, "upgraded Scientific Research plays for 7 block and 2 repair");
+await research.AfterCardDrawnEarly(choice, research, false);
+Check(researchPlayer.Hand.Single().IsUpgraded, "Scientific Research copy preserves upgrade");
+foreach (var upgrade in new[] { false, true })
+foreach (var energy in new[] { 0, 1, 3 })
+{
+    var xp = NewPlayer();
+    var xr = Card<XRay>(xp); xr.InPile = true; xr.EnergyCost.CapturedXValue = energy;
+    if (upgrade) xr.Upgrade();
+    AttackCommand.LastHits = -1;
+    await xr.Play(choice, Play(xr));
+    var expectedHits = energy + (upgrade ? 1 : 0);
+    Check(AttackCommand.LastHits == (expectedHits == 0 ? -1 : expectedHits), $"X-Ray X={energy}, upgrade={upgrade}: hit count");
+    var lockedTurns = upgrade ? energy - 1 : energy;
+    Check((xp.Creature.GetPower<BlockLockPower>()?.Amount ?? 0) == (lockedTurns > 0 ? lockedTurns + 1 : 0), $"X-Ray X={energy}, upgrade={upgrade}: block-lock duration");
+    var bd = Card<BlastingDevice>(xp); bd.EnergyCost.CapturedXValue = energy;
+    if (upgrade) bd.Upgrade();
+    await bd.Play(choice, Play(bd));
+    Check(xp.Hand.Count == expectedHits && xp.Hand.All(c => c is Blast && c.Owner == xp), $"Blasting Device X={energy}, upgrade={upgrade}: generated cards");
+    Check(xp.Creature.HasPower<BlastFreePower>(), $"Blasting Device X={energy}, upgrade={upgrade}: discount also applies to existing Blasts");
+}
+Console.WriteLine($"{passed} passed, {failed} failed (contract doubles; game integration still required).");
+Environment.ExitCode = failed == 0 ? 0 : 1;
 
 public class Probe() : CardModel(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {

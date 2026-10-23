@@ -1,0 +1,46 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+<repo>\MadScientistCode\Character\MadScientist.cs(73,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(76,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(80,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(83,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(86,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(89,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Relics\TomeRelics.cs(87,31): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\AttackCards2.cs(63,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\XRayAndDevice.cs(35,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\AttackCards2.cs(175,31): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(24,20): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(93,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(53,21): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(122,22): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(153,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\RareCards.cs(29,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\SkillCards.cs(132,31): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(92,22): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+  InstalledApi -> <repo>\tests\InstalledApi\bin\Release\net9.0\MadScientist.dll
+
+Build succeeded.
+
+<repo>\MadScientistCode\Character\MadScientist.cs(73,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(76,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(80,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(83,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(86,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Character\MadScientist.cs(89,9): warning CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes). [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Relics\TomeRelics.cs(87,31): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\AttackCards2.cs(63,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\XRayAndDevice.cs(35,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\AttackCards2.cs(175,31): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(24,20): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(93,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\FusionCards.cs(53,21): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(122,22): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(153,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\RareCards.cs(29,36): warning CS8604: Possible null reference argument for parameter 'combatState' in 'AttackCommand AttackCommand.TargetingAllOpponents(ICombatState combatState)'. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\SkillCards.cs(132,31): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+<repo>\MadScientistCode\Cards\MoreCards.cs(92,22): warning CS8602: Dereference of a possibly null reference. [<repo>\tests\InstalledApi\InstalledApi.csproj]
+    18 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.75

@@ -1,0 +1,656 @@
+PASS ancients.json: matching language keys
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.ancient
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.next
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.0-2.ancient
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.next
+PASS English text: ancients.json:NEOW.talk.MADSCIENTIST-MAD_SCIENTIST.2-1.char
+PASS English text: ancients.json:DARV.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.ancient
+PASS English text: ancients.json:DARV.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char
+PASS English text: ancients.json:DARV.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.next
+PASS English text: ancients.json:DARV.talk.MADSCIENTIST-MAD_SCIENTIST.0-2.ancient
+PASS English text: ancients.json:DARV.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next
+PASS English text: ancients.json:DARV.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient
+PASS English text: ancients.json:DARV.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient
+PASS English text: ancients.json:OROBAS.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.ancient
+PASS English text: ancients.json:OROBAS.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char
+PASS English text: ancients.json:OROBAS.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.next
+PASS English text: ancients.json:OROBAS.talk.MADSCIENTIST-MAD_SCIENTIST.0-2.ancient
+PASS English text: ancients.json:OROBAS.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next
+PASS English text: ancients.json:OROBAS.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient
+PASS English text: ancients.json:OROBAS.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient
+PASS English text: ancients.json:PAEL.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.ancient
+PASS English text: ancients.json:PAEL.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char
+PASS English text: ancients.json:PAEL.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next
+PASS English text: ancients.json:PAEL.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient
+PASS English text: ancients.json:PAEL.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient
+PASS English text: ancients.json:TEZCATARA.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.ancient
+PASS English text: ancients.json:TEZCATARA.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char
+PASS English text: ancients.json:TEZCATARA.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next
+PASS English text: ancients.json:TEZCATARA.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient
+PASS English text: ancients.json:TEZCATARA.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient
+PASS English text: ancients.json:NONUPEIPE.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.ancient
+PASS English text: ancients.json:NONUPEIPE.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char
+PASS English text: ancients.json:NONUPEIPE.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next
+PASS English text: ancients.json:NONUPEIPE.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient
+PASS English text: ancients.json:NONUPEIPE.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient
+PASS English text: ancients.json:VAKUU.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.ancient
+PASS English text: ancients.json:VAKUU.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char
+PASS English text: ancients.json:VAKUU.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next
+PASS English text: ancients.json:VAKUU.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient
+PASS English text: ancients.json:VAKUU.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient
+PASS English text: ancients.json:TANX.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.ancient
+PASS English text: ancients.json:TANX.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char
+PASS English text: ancients.json:TANX.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next
+PASS English text: ancients.json:TANX.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient
+PASS English text: ancients.json:TANX.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient
+PASS English text: ancients.json:THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-0r.char
+PASS English text: ancients.json:THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-0r.next
+PASS English text: ancients.json:THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-1r.ancient
+PASS English text: ancients.json:THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-attack
+PASS card_keywords.json: matching language keys
+PASS card_selection.json: matching language keys
+PASS English text: card_selection.json:MADSCIENTIST-FUSE_PROMPT
+PASS English text: card_selection.json:MADSCIENTIST-REMOVE_PROMPT
+PASS English text: card_selection.json:MADSCIENTIST-EXHAUST_PROMPT
+PASS English text: card_selection.json:MADSCIENTIST-MADSCIENCE_PROMPT
+PASS English text: card_selection.json:MADSCIENTIST-INVENTORY_PROMPT
+PASS English text: card_selection.json:MADSCIENTIST-MADSCIENTIST_PROMPT
+PASS cards.json: matching language keys
+PASS English text: cards.json:MADSCIENTIST-STRIKE.title
+PASS English text: cards.json:MADSCIENTIST-STRIKE.description
+PASS English text: cards.json:MADSCIENTIST-DEFEND.title
+PASS English text: cards.json:MADSCIENTIST-DEFEND.description
+PASS English text: cards.json:MADSCIENTIST-WRENCH_STRIKE.title
+PASS English text: cards.json:MADSCIENTIST-WRENCH_STRIKE.description
+PASS English text: cards.json:MADSCIENTIST-JOLT.title
+PASS English text: cards.json:MADSCIENTIST-JOLT.description
+PASS English text: cards.json:MADSCIENTIST-ASSAULT.title
+PASS English text: cards.json:MADSCIENTIST-ASSAULT.description
+PASS English text: cards.json:MADSCIENTIST-RUMBLE.title
+PASS English text: cards.json:MADSCIENTIST-RUMBLE.description
+PASS English text: cards.json:MADSCIENTIST-FULL_REPAIR.title
+PASS English text: cards.json:MADSCIENTIST-FULL_REPAIR.description
+PASS English text: cards.json:MADSCIENTIST-SELF_REPAIR_PLAN.title
+PASS English text: cards.json:MADSCIENTIST-SELF_REPAIR_PLAN.description
+PASS English text: cards.json:MADSCIENTIST-QUICK_REPAIR.title
+PASS English text: cards.json:MADSCIENTIST-QUICK_REPAIR.description
+PASS English text: cards.json:MADSCIENTIST-MACHINE_DEFENSE.title
+PASS English text: cards.json:MADSCIENTIST-MACHINE_DEFENSE.description
+PASS English text: cards.json:MADSCIENTIST-MACHINE_PRODUCTION.title
+PASS English text: cards.json:MADSCIENTIST-MACHINE_PRODUCTION.description
+PASS English text: cards.json:MADSCIENTIST-MACHINE_CONTROL.title
+PASS English text: cards.json:MADSCIENTIST-MACHINE_CONTROL.description
+PASS English text: cards.json:MADSCIENTIST-ENERGY_SHIELD.title
+PASS English text: cards.json:MADSCIENTIST-ENERGY_SHIELD.description
+PASS English text: cards.json:MADSCIENTIST-REACTIVE_BOILER.title
+PASS English text: cards.json:MADSCIENTIST-REACTIVE_BOILER.description
+PASS English text: cards.json:MADSCIENTIST-STRENGTH_RESEARCH.title
+PASS English text: cards.json:MADSCIENTIST-STRENGTH_RESEARCH.description
+PASS English text: cards.json:MADSCIENTIST-DEXTERITY_RESEARCH.title
+PASS English text: cards.json:MADSCIENTIST-DEXTERITY_RESEARCH.description
+PASS English text: cards.json:MADSCIENTIST-REFLEX_RESEARCH.title
+PASS English text: cards.json:MADSCIENTIST-REFLEX_RESEARCH.description
+PASS English text: cards.json:MADSCIENTIST-MIXED_REAGENT.title
+PASS English text: cards.json:MADSCIENTIST-MIXED_REAGENT.description
+PASS English text: cards.json:MADSCIENTIST-KNOCK.title
+PASS English text: cards.json:MADSCIENTIST-KNOCK.description
+PASS English text: cards.json:MADSCIENTIST-BLAST.title
+PASS English text: cards.json:MADSCIENTIST-BLAST.description
+PASS English text: cards.json:MADSCIENTIST-MACHINE_BLAST.title
+PASS English text: cards.json:MADSCIENTIST-MACHINE_BLAST.description
+PASS English text: cards.json:MADSCIENTIST-MACHINE_REAGENT.title
+PASS English text: cards.json:MADSCIENTIST-MACHINE_REAGENT.description
+PASS English text: cards.json:MADSCIENTIST-SPATIAL_TEAR.title
+PASS English text: cards.json:MADSCIENTIST-SPATIAL_TEAR.description
+PASS English text: cards.json:MADSCIENTIST-GIANT_WRENCH.title
+PASS English text: cards.json:MADSCIENTIST-GIANT_WRENCH.description
+PASS English text: cards.json:MADSCIENTIST-CHEMICAL_FOG.title
+PASS English text: cards.json:MADSCIENTIST-CHEMICAL_FOG.description
+PASS English text: cards.json:MADSCIENTIST-OBSESSION.title
+PASS English text: cards.json:MADSCIENTIST-OBSESSION.description
+PASS English text: cards.json:MADSCIENTIST-BENEFICIAL_MUTATION.title
+PASS English text: cards.json:MADSCIENTIST-BENEFICIAL_MUTATION.description
+PASS English text: cards.json:MADSCIENTIST-SELF_REVIEW.title
+PASS English text: cards.json:MADSCIENTIST-SELF_REVIEW.description
+PASS English text: cards.json:MADSCIENTIST-ETHICAL_BOUNDARY.title
+PASS English text: cards.json:MADSCIENTIST-ETHICAL_BOUNDARY.description
+PASS English text: cards.json:MADSCIENTIST-FORBIDDEN_FRENZY.title
+PASS English text: cards.json:MADSCIENTIST-FORBIDDEN_FRENZY.description
+PASS English text: cards.json:MADSCIENTIST-INFINITE_MACHINE_RESEARCH.title
+PASS English text: cards.json:MADSCIENTIST-INFINITE_MACHINE_RESEARCH.description
+PASS English text: cards.json:MADSCIENTIST-SCIENTIFIC_METHOD.title
+PASS English text: cards.json:MADSCIENTIST-SCIENTIFIC_METHOD.description
+PASS English text: cards.json:MADSCIENTIST-FUSED_CARD.title
+PASS English text: cards.json:MADSCIENTIST-FUSED_CARD.description
+PASS English text: cards.json:MADSCIENTIST-SCIENTIFIC_LEGACY.title
+PASS English text: cards.json:MADSCIENTIST-SCIENTIFIC_LEGACY.description
+PASS English text: cards.json:MADSCIENTIST-GREAT_FUSION.title
+PASS English text: cards.json:MADSCIENTIST-GREAT_FUSION.description
+PASS English text: cards.json:MADSCIENTIST-ASSEMBLE.title
+PASS English text: cards.json:MADSCIENTIST-ASSEMBLE.description
+PASS English text: cards.json:MADSCIENTIST-FULLY_AUTOMATIC.title
+PASS English text: cards.json:MADSCIENTIST-FULLY_AUTOMATIC.description
+PASS English text: cards.json:MADSCIENTIST-MACHINE_RUMBLE.title
+PASS English text: cards.json:MADSCIENTIST-MACHINE_RUMBLE.description
+PASS English text: cards.json:MADSCIENTIST-UNIVERSAL_CORRECTION.title
+PASS English text: cards.json:MADSCIENTIST-UNIVERSAL_CORRECTION.description
+PASS English text: cards.json:MADSCIENTIST-DEFENSE_MODULE.title
+PASS English text: cards.json:MADSCIENTIST-DEFENSE_MODULE.description
+PASS English text: cards.json:MADSCIENTIST-SPEED_MODULE.title
+PASS English text: cards.json:MADSCIENTIST-SPEED_MODULE.description
+PASS English text: cards.json:MADSCIENTIST-ENERGY_MODULE.title
+PASS English text: cards.json:MADSCIENTIST-ENERGY_MODULE.description
+PASS English text: cards.json:MADSCIENTIST-ATTACK_MODULE.title
+PASS English text: cards.json:MADSCIENTIST-ATTACK_MODULE.description
+PASS English text: cards.json:MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.title
+PASS English text: cards.json:MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.description
+PASS English text: cards.json:MADSCIENTIST-LOSS_OF_SANITY.title
+PASS English text: cards.json:MADSCIENTIST-LOSS_OF_SANITY.description
+PASS English text: cards.json:MADSCIENTIST-X_RAY.title
+PASS English text: cards.json:MADSCIENTIST-X_RAY.description
+PASS English text: cards.json:MADSCIENTIST-BLASTING_DEVICE.title
+PASS English text: cards.json:MADSCIENTIST-BLASTING_DEVICE.description
+PASS English text: cards.json:MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.title
+PASS English text: cards.json:MADSCIENTIST-PSEUDOSCIENTIFIC_METHOD.description
+PASS English text: cards.json:MADSCIENTIST-MUTATION.title
+PASS English text: cards.json:MADSCIENTIST-MUTATION.description
+PASS English text: cards.json:MADSCIENTIST-SCORCHED_GROUND.title
+PASS English text: cards.json:MADSCIENTIST-SCORCHED_GROUND.description
+PASS English text: cards.json:MADSCIENTIST-THINK.title
+PASS English text: cards.json:MADSCIENTIST-THINK.description
+PASS English text: cards.json:MADSCIENTIST-MECHANICAL_ASCENSION.title
+PASS English text: cards.json:MADSCIENTIST-MECHANICAL_ASCENSION.description
+PASS English text: cards.json:MADSCIENTIST-REPTILIAN_EVOLUTION_PROJECT.title
+PASS English text: cards.json:MADSCIENTIST-REPTILIAN_EVOLUTION_PROJECT.description
+PASS English text: cards.json:MADSCIENTIST-FORBIDDEN_SCIENCE.title
+PASS English text: cards.json:MADSCIENTIST-FORBIDDEN_SCIENCE.description
+PASS English text: cards.json:MADSCIENTIST-SCIENTIFIC_RESEARCH.title
+PASS English text: cards.json:MADSCIENTIST-SCIENTIFIC_RESEARCH.description
+PASS English text: cards.json:MADSCIENTIST-PROCESS.title
+PASS English text: cards.json:MADSCIENTIST-PROCESS.description
+PASS English text: cards.json:MADSCIENTIST-INVENTORY.title
+PASS English text: cards.json:MADSCIENTIST-INVENTORY.description
+PASS English text: cards.json:MADSCIENTIST-MAD_RESEARCH.title
+PASS English text: cards.json:MADSCIENTIST-MAD_RESEARCH.description
+PASS English text: cards.json:MADSCIENTIST-SOUL_RESEARCH.title
+PASS English text: cards.json:MADSCIENTIST-SOUL_RESEARCH.description
+PASS English text: cards.json:MADSCIENTIST-REFINE.title
+PASS English text: cards.json:MADSCIENTIST-REFINE.description
+PASS English text: cards.json:MADSCIENTIST-SPARE_SPIKES.title
+PASS English text: cards.json:MADSCIENTIST-SPARE_SPIKES.description
+PASS English text: cards.json:MADSCIENTIST-SPARE_REAGENT.title
+PASS English text: cards.json:MADSCIENTIST-SPARE_REAGENT.description
+PASS English text: cards.json:MADSCIENTIST-PLAN.title
+PASS English text: cards.json:MADSCIENTIST-PLAN.description
+PASS English text: cards.json:MADSCIENTIST-SELF_REPAIR_RESEARCH.title
+PASS English text: cards.json:MADSCIENTIST-SELF_REPAIR_RESEARCH.description
+PASS English text: cards.json:CARD.FUSED_CARD.title
+PASS English text: cards.json:CARD.FUSED_CARD.description
+PASS English text: cards.json:CARD.FUSED_X_CARD.title
+PASS English text: cards.json:CARD.FUSED_X_CARD.description
+PASS English text: cards.json:MADSCIENTIST-FUSED_X_CARD.title
+PASS English text: cards.json:MADSCIENTIST-FUSED_X_CARD.description
+PASS English text: cards.json:FUSED_CARD.title
+PASS English text: cards.json:FUSED_CARD.description
+PASS English text: cards.json:FUSED_X_CARD.title
+PASS English text: cards.json:FUSED_X_CARD.description
+PASS characters.json: matching language keys
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.title
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.titleObject
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.description
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.pronounObject
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.pronounSubject
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.pronounPossessive
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.possessiveAdjective
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.aromaPrinciple
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.banter.alive.endTurnPing
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.banter.dead.endTurnPing
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.eventDeathPrevention
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.goldMonologue
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.cardsModifierTitle
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.cardsModifierDescription
+PASS English text: characters.json:MADSCIENTIST-MAD_SCIENTIST.bestiaryQuote
+PASS powers.json: matching language keys
+PASS English text: powers.json:MADSCIENTIST-MACHINE_DURABILITY_POWER.title
+PASS English text: powers.json:MADSCIENTIST-MACHINE_DURABILITY_POWER.description
+PASS English text: powers.json:MADSCIENTIST-MACHINE_BROKEN_POWER.title
+PASS English text: powers.json:MADSCIENTIST-MACHINE_BROKEN_POWER.description
+PASS English text: powers.json:MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER.title
+PASS English text: powers.json:MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER.description
+PASS English text: powers.json:MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER.title
+PASS English text: powers.json:MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER.description
+PASS English text: powers.json:MADSCIENTIST-SPARE_SPIKES_POWER.title
+PASS English text: powers.json:MADSCIENTIST-SPARE_SPIKES_POWER.description
+PASS English text: powers.json:MADSCIENTIST-SPARE_REAGENT_POWER.title
+PASS English text: powers.json:MADSCIENTIST-SPARE_REAGENT_POWER.description
+PASS English text: powers.json:MADSCIENTIST-PLAN_POWER.title
+PASS English text: powers.json:MADSCIENTIST-PLAN_POWER.description
+PASS English text: powers.json:MADSCIENTIST-MUTATION_POWER.title
+PASS English text: powers.json:MADSCIENTIST-MUTATION_POWER.description
+PASS English text: powers.json:MADSCIENTIST-SCORCHED_GROUND_POWER.title
+PASS English text: powers.json:MADSCIENTIST-SCORCHED_GROUND_POWER.description
+PASS English text: powers.json:MADSCIENTIST-THINK_POWER.title
+PASS English text: powers.json:MADSCIENTIST-THINK_POWER.description
+PASS English text: powers.json:MADSCIENTIST-INVENTORY_POWER.title
+PASS English text: powers.json:MADSCIENTIST-INVENTORY_POWER.description
+PASS English text: powers.json:MADSCIENTIST-MAD_RESEARCH_POWER.title
+PASS English text: powers.json:MADSCIENTIST-MAD_RESEARCH_POWER.description
+PASS English text: powers.json:MADSCIENTIST-SOUL_RESEARCH_POWER.title
+PASS English text: powers.json:MADSCIENTIST-SOUL_RESEARCH_POWER.description
+PASS English text: powers.json:MADSCIENTIST-BLOCK_LOCK_POWER.title
+PASS English text: powers.json:MADSCIENTIST-BLOCK_LOCK_POWER.description
+PASS English text: powers.json:MADSCIENTIST-BLAST_FREE_POWER.title
+PASS English text: powers.json:MADSCIENTIST-BLAST_FREE_POWER.description
+PASS English text: powers.json:MADSCIENTIST-SOUL_RESEARCH_POWER.spent
+PASS English text: powers.json:MADSCIENTIST-MACHINE_DURABILITY_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-MACHINE_BROKEN_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-SPARE_SPIKES_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-SPARE_REAGENT_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-PLAN_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-MUTATION_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-SCORCHED_GROUND_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-THINK_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-INVENTORY_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-MAD_RESEARCH_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-SOUL_RESEARCH_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-BLOCK_LOCK_POWER.smartDescription
+PASS English text: powers.json:MADSCIENTIST-BLAST_FREE_POWER.smartDescription
+PASS relics.json: matching language keys
+PASS English text: relics.json:MADSCIENTIST-TOME_OF_SCIENCE.title
+PASS English text: relics.json:MADSCIENTIST-TOME_OF_SCIENCE.description
+PASS English text: relics.json:MADSCIENTIST-TOME_OF_SCIENCE.flavor
+PASS English text: relics.json:MADSCIENTIST-TOME_OF_AWAKENING.title
+PASS English text: relics.json:MADSCIENTIST-TOME_OF_AWAKENING.description
+PASS English text: relics.json:MADSCIENTIST-TOME_OF_AWAKENING.flavor
+PASS static_hover_tips.json: matching language keys
+PASS WrenchStrike has localized title and description
+PASS WrenchStrike has card portrait
+PASS Jolt has localized title and description
+PASS Jolt has card portrait
+PASS Assault has localized title and description
+PASS Assault has card portrait
+PASS Rumble has localized title and description
+PASS Rumble has card portrait
+PASS MixedReagent has localized title and description
+PASS MixedReagent has card portrait
+PASS Knock has localized title and description
+PASS Knock has card portrait
+PASS Blast has localized title and description
+PASS Blast has card portrait
+PASS MachineBlast has localized title and description
+PASS MachineBlast has card portrait
+PASS MachineReagent has localized title and description
+PASS MachineReagent has card portrait
+PASS SpatialTear has localized title and description
+PASS SpatialTear has card portrait
+PASS GiantWrench has localized title and description
+PASS GiantWrench has card portrait
+PASS Strike has localized title and description
+PASS Strike has card portrait
+PASS Defend has localized title and description
+PASS Defend has card portrait
+PASS MachineRumble has localized title and description
+PASS MachineRumble has card portrait
+PASS UniversalCorrection has localized title and description
+PASS UniversalCorrection has card portrait
+PASS DefenseModule has localized title and description
+PASS DefenseModule has card portrait
+PASS SpeedModule has localized title and description
+PASS SpeedModule has card portrait
+PASS EnergyModule has localized title and description
+PASS EnergyModule has card portrait
+PASS AttackModule has localized title and description
+PASS AttackModule has card portrait
+PASS MadScientistCharacterCard has localized title and description
+PASS MadScientistCharacterCard has card portrait
+PASS GreatFusion has localized title and description
+PASS GreatFusion has card portrait
+PASS Assemble has localized title and description
+PASS Assemble has card portrait
+PASS FullyAutomatic has localized title and description
+PASS FullyAutomatic has card portrait
+PASS LossOfSanity has localized title and description
+PASS LossOfSanity has card portrait
+PASS Mutation has localized title and description
+PASS Mutation has card portrait
+PASS ScorchedGround has localized title and description
+PASS ScorchedGround has card portrait
+PASS Think has localized title and description
+PASS Think has card portrait
+PASS MechanicalAscension has localized title and description
+PASS MechanicalAscension has card portrait
+PASS ReptilianEvolutionProject has localized title and description
+PASS ReptilianEvolutionProject has card portrait
+PASS ForbiddenScience has localized title and description
+PASS ForbiddenScience has card portrait
+PASS Process has localized title and description
+PASS Process has card portrait
+PASS SpareSpikes has localized title and description
+PASS SpareSpikes has card portrait
+PASS SpareReagent has localized title and description
+PASS SpareReagent has card portrait
+PASS Plan has localized title and description
+PASS Plan has card portrait
+PASS SelfRepairResearch has localized title and description
+PASS SelfRepairResearch has card portrait
+PASS StrengthResearch has localized title and description
+PASS StrengthResearch has card portrait
+PASS DexterityResearch has localized title and description
+PASS DexterityResearch has card portrait
+PASS ReflexResearch has localized title and description
+PASS ReflexResearch has card portrait
+PASS PseudoscientificMethod has localized title and description
+PASS PseudoscientificMethod has card portrait
+PASS ForbiddenFrenzy has localized title and description
+PASS ForbiddenFrenzy has card portrait
+PASS InfiniteMachineResearch has localized title and description
+PASS InfiniteMachineResearch has card portrait
+PASS Refine has localized title and description
+PASS Refine has card portrait
+PASS Inventory has localized title and description
+PASS Inventory has card portrait
+PASS MadResearch has localized title and description
+PASS MadResearch has card portrait
+PASS SoulResearch has localized title and description
+PASS SoulResearch has card portrait
+PASS ScientificLegacy has localized title and description
+PASS ScientificLegacy has card portrait
+PASS ScientificMethod has localized title and description
+PASS ScientificMethod has card portrait
+PASS ScientificResearch has localized title and description
+PASS ScientificResearch has card portrait
+PASS FullRepair has localized title and description
+PASS FullRepair has card portrait
+PASS SelfRepairPlan has localized title and description
+PASS SelfRepairPlan has card portrait
+PASS QuickRepair has localized title and description
+PASS QuickRepair has card portrait
+PASS MachineDefense has localized title and description
+PASS MachineDefense has card portrait
+PASS MachineProduction has localized title and description
+PASS MachineProduction has card portrait
+PASS MachineControl has localized title and description
+PASS MachineControl has card portrait
+PASS EnergyShield has localized title and description
+PASS EnergyShield has card portrait
+PASS ReactiveBoiler has localized title and description
+PASS ReactiveBoiler has card portrait
+PASS ChemicalFog has localized title and description
+PASS ChemicalFog has card portrait
+PASS Obsession has localized title and description
+PASS Obsession has card portrait
+PASS BeneficialMutation has localized title and description
+PASS BeneficialMutation has card portrait
+PASS SelfReview has localized title and description
+PASS SelfReview has card portrait
+PASS EthicalBoundary has localized title and description
+PASS EthicalBoundary has card portrait
+PASS XRay has localized title and description
+PASS XRay has card portrait
+PASS BlastingDevice has localized title and description
+PASS BlastingDevice has card portrait
+PASS exactly 63 issue card classes
+PASS MADSCIENTIST-STRIKE.description: dynamic variable Damage
+PASS MADSCIENTIST-DEFEND.description: dynamic variable Block
+PASS MADSCIENTIST-WRENCH_STRIKE.description: dynamic variable Damage
+PASS MADSCIENTIST-WRENCH_STRIKE.description: dynamic variable Repair
+PASS MADSCIENTIST-JOLT.description: dynamic variable Damage
+PASS MADSCIENTIST-JOLT.description: dynamic variable Cards
+PASS MADSCIENTIST-ASSAULT.description: dynamic variable Damage
+PASS MADSCIENTIST-RUMBLE.description: dynamic variable Damage
+PASS MADSCIENTIST-FULL_REPAIR.description: dynamic variable Repair
+PASS MADSCIENTIST-SELF_REPAIR_PLAN.description: dynamic variable Cards
+PASS MADSCIENTIST-SELF_REPAIR_PLAN.description: dynamic variable Repair
+PASS MADSCIENTIST-QUICK_REPAIR.description: dynamic variable Cards
+PASS MADSCIENTIST-MACHINE_DEFENSE.description: dynamic variable Block
+PASS MADSCIENTIST-MACHINE_PRODUCTION.description: dynamic variable DurabilityCost
+PASS MADSCIENTIST-MACHINE_CONTROL.description: dynamic variable DurabilityCost
+PASS MADSCIENTIST-ENERGY_SHIELD.description: dynamic variable Block
+PASS MADSCIENTIST-REACTIVE_BOILER.description: dynamic variable Block
+PASS MADSCIENTIST-STRENGTH_RESEARCH.description: dynamic variable StrengthPower
+PASS MADSCIENTIST-DEXTERITY_RESEARCH.description: dynamic variable DexterityPower
+PASS MADSCIENTIST-REFLEX_RESEARCH.description: dynamic variable ThornsPower
+PASS MADSCIENTIST-MIXED_REAGENT.description: dynamic variable Damage
+PASS MADSCIENTIST-MIXED_REAGENT.description: dynamic variable Cards
+PASS MADSCIENTIST-MIXED_REAGENT.description: dynamic variable WeakPower
+PASS MADSCIENTIST-MIXED_REAGENT.description: dynamic variable PoisonPower
+PASS MADSCIENTIST-KNOCK.description: dynamic variable Damage
+PASS MADSCIENTIST-BLAST.description: dynamic variable Damage
+PASS MADSCIENTIST-BLAST.description: dynamic variable VulnerablePower
+PASS MADSCIENTIST-BLAST.description: dynamic variable WeakPower
+PASS MADSCIENTIST-MACHINE_BLAST.description: dynamic variable Damage
+PASS MADSCIENTIST-MACHINE_BLAST.description: dynamic variable VulnerablePower
+PASS MADSCIENTIST-MACHINE_BLAST.description: dynamic variable WeakPower
+PASS MADSCIENTIST-MACHINE_REAGENT.description: dynamic variable Damage
+PASS MADSCIENTIST-MACHINE_REAGENT.description: dynamic variable Cards
+PASS MADSCIENTIST-MACHINE_REAGENT.description: dynamic variable WeakPower
+PASS MADSCIENTIST-MACHINE_REAGENT.description: dynamic variable PoisonPower
+PASS MADSCIENTIST-SPATIAL_TEAR.description: dynamic variable Damage
+PASS MADSCIENTIST-GIANT_WRENCH.description: dynamic variable Damage
+PASS MADSCIENTIST-CHEMICAL_FOG.description: dynamic variable Loss
+PASS MADSCIENTIST-CHEMICAL_FOG.description: dynamic variable Loss
+PASS MADSCIENTIST-CHEMICAL_FOG.description: dynamic variable Block
+PASS MADSCIENTIST-OBSESSION.description: dynamic variable Block
+PASS MADSCIENTIST-BENEFICIAL_MUTATION.description: dynamic variable StrengthPower
+PASS MADSCIENTIST-BENEFICIAL_MUTATION.description: dynamic variable DexterityPower
+PASS MADSCIENTIST-ETHICAL_BOUNDARY.description: dynamic variable Energy
+PASS MADSCIENTIST-ETHICAL_BOUNDARY.description: dynamic variable Cards
+PASS MADSCIENTIST-FORBIDDEN_FRENZY.description: dynamic variable Damage
+PASS MADSCIENTIST-FUSED_CARD.description: dynamic variable Effects
+PASS MADSCIENTIST-FULLY_AUTOMATIC.description: dynamic variable Repair
+PASS MADSCIENTIST-MACHINE_RUMBLE.description: dynamic variable Damage
+PASS MADSCIENTIST-UNIVERSAL_CORRECTION.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.description: dynamic variable Energy
+PASS MADSCIENTIST-LOSS_OF_SANITY.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-X_RAY.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-X_RAY.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-BLASTING_DEVICE.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-MUTATION.description: dynamic variable Block
+PASS MADSCIENTIST-MUTATION.description: dynamic variable Loss
+PASS MADSCIENTIST-SCORCHED_GROUND.description: dynamic variable Turns
+PASS MADSCIENTIST-THINK.description: dynamic variable Block
+PASS MADSCIENTIST-MECHANICAL_ASCENSION.description: dynamic variable Artifact
+PASS MADSCIENTIST-REPTILIAN_EVOLUTION_PROJECT.description: dynamic variable Intangible
+PASS MADSCIENTIST-SCIENTIFIC_RESEARCH.description: dynamic variable Block
+PASS MADSCIENTIST-SCIENTIFIC_RESEARCH.description: dynamic variable Repair
+PASS MADSCIENTIST-INVENTORY.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-SOUL_RESEARCH.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-SPARE_SPIKES.description: dynamic variable DelayedDamage
+PASS MADSCIENTIST-SPARE_REAGENT.description: dynamic variable DelayedDamage
+PASS MADSCIENTIST-SPARE_REAGENT.description: dynamic variable Weak
+PASS MADSCIENTIST-PLAN.description: dynamic variable Block
+PASS MADSCIENTIST-SELF_REPAIR_RESEARCH.description: dynamic variable Repair
+PASS MADSCIENTIST-FUSED_X_CARD.description: dynamic variable Effects
+PASS MADSCIENTIST-STRIKE.description: dynamic variable Damage
+PASS MADSCIENTIST-DEFEND.description: dynamic variable Block
+PASS MADSCIENTIST-WRENCH_STRIKE.description: dynamic variable Damage
+PASS MADSCIENTIST-WRENCH_STRIKE.description: dynamic variable Repair
+PASS MADSCIENTIST-JOLT.description: dynamic variable Damage
+PASS MADSCIENTIST-JOLT.description: dynamic variable Cards
+PASS MADSCIENTIST-ASSAULT.description: dynamic variable Damage
+PASS MADSCIENTIST-RUMBLE.description: dynamic variable Damage
+PASS MADSCIENTIST-FULL_REPAIR.description: dynamic variable Repair
+PASS MADSCIENTIST-SELF_REPAIR_PLAN.description: dynamic variable Cards
+PASS MADSCIENTIST-SELF_REPAIR_PLAN.description: dynamic variable Repair
+PASS MADSCIENTIST-QUICK_REPAIR.description: dynamic variable Cards
+PASS MADSCIENTIST-MACHINE_DEFENSE.description: dynamic variable Block
+PASS MADSCIENTIST-MACHINE_PRODUCTION.description: dynamic variable DurabilityCost
+PASS MADSCIENTIST-MACHINE_CONTROL.description: dynamic variable DurabilityCost
+PASS MADSCIENTIST-ENERGY_SHIELD.description: dynamic variable Block
+PASS MADSCIENTIST-REACTIVE_BOILER.description: dynamic variable Block
+PASS MADSCIENTIST-STRENGTH_RESEARCH.description: dynamic variable StrengthPower
+PASS MADSCIENTIST-DEXTERITY_RESEARCH.description: dynamic variable DexterityPower
+PASS MADSCIENTIST-REFLEX_RESEARCH.description: dynamic variable ThornsPower
+PASS MADSCIENTIST-MIXED_REAGENT.description: dynamic variable Damage
+PASS MADSCIENTIST-MIXED_REAGENT.description: dynamic variable Cards
+PASS MADSCIENTIST-MIXED_REAGENT.description: dynamic variable WeakPower
+PASS MADSCIENTIST-MIXED_REAGENT.description: dynamic variable PoisonPower
+PASS MADSCIENTIST-KNOCK.description: dynamic variable Damage
+PASS MADSCIENTIST-BLAST.description: dynamic variable Damage
+PASS MADSCIENTIST-BLAST.description: dynamic variable VulnerablePower
+PASS MADSCIENTIST-BLAST.description: dynamic variable WeakPower
+PASS MADSCIENTIST-MACHINE_BLAST.description: dynamic variable Damage
+PASS MADSCIENTIST-MACHINE_BLAST.description: dynamic variable VulnerablePower
+PASS MADSCIENTIST-MACHINE_BLAST.description: dynamic variable WeakPower
+PASS MADSCIENTIST-MACHINE_REAGENT.description: dynamic variable Damage
+PASS MADSCIENTIST-MACHINE_REAGENT.description: dynamic variable Cards
+PASS MADSCIENTIST-MACHINE_REAGENT.description: dynamic variable WeakPower
+PASS MADSCIENTIST-MACHINE_REAGENT.description: dynamic variable PoisonPower
+PASS MADSCIENTIST-SPATIAL_TEAR.description: dynamic variable Damage
+PASS MADSCIENTIST-GIANT_WRENCH.description: dynamic variable Damage
+PASS MADSCIENTIST-CHEMICAL_FOG.description: dynamic variable Loss
+PASS MADSCIENTIST-CHEMICAL_FOG.description: dynamic variable Loss
+PASS MADSCIENTIST-CHEMICAL_FOG.description: dynamic variable Block
+PASS MADSCIENTIST-OBSESSION.description: dynamic variable Block
+PASS MADSCIENTIST-BENEFICIAL_MUTATION.description: dynamic variable StrengthPower
+PASS MADSCIENTIST-BENEFICIAL_MUTATION.description: dynamic variable DexterityPower
+PASS MADSCIENTIST-ETHICAL_BOUNDARY.description: dynamic variable Energy
+PASS MADSCIENTIST-ETHICAL_BOUNDARY.description: dynamic variable Cards
+PASS MADSCIENTIST-FORBIDDEN_FRENZY.description: dynamic variable Damage
+PASS MADSCIENTIST-FUSED_CARD.description: dynamic variable Effects
+PASS MADSCIENTIST-FULLY_AUTOMATIC.description: dynamic variable Repair
+PASS MADSCIENTIST-MACHINE_RUMBLE.description: dynamic variable Damage
+PASS MADSCIENTIST-UNIVERSAL_CORRECTION.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-MAD_SCIENTIST_CHARACTER_CARD.description: dynamic variable Energy
+PASS MADSCIENTIST-LOSS_OF_SANITY.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-X_RAY.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-X_RAY.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-BLASTING_DEVICE.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-MUTATION.description: dynamic variable Block
+PASS MADSCIENTIST-MUTATION.description: dynamic variable Loss
+PASS MADSCIENTIST-SCORCHED_GROUND.description: dynamic variable Turns
+PASS MADSCIENTIST-THINK.description: dynamic variable Block
+PASS MADSCIENTIST-MECHANICAL_ASCENSION.description: dynamic variable Artifact
+PASS MADSCIENTIST-REPTILIAN_EVOLUTION_PROJECT.description: dynamic variable Intangible
+PASS MADSCIENTIST-SCIENTIFIC_RESEARCH.description: dynamic variable Block
+PASS MADSCIENTIST-SCIENTIFIC_RESEARCH.description: dynamic variable Repair
+PASS MADSCIENTIST-INVENTORY.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-SOUL_RESEARCH.description: dynamic variable IfUpgraded
+PASS MADSCIENTIST-SPARE_SPIKES.description: dynamic variable DelayedDamage
+PASS MADSCIENTIST-SPARE_REAGENT.description: dynamic variable DelayedDamage
+PASS MADSCIENTIST-SPARE_REAGENT.description: dynamic variable Weak
+PASS MADSCIENTIST-PLAN.description: dynamic variable Block
+PASS MADSCIENTIST-SELF_REPAIR_RESEARCH.description: dynamic variable Repair
+PASS MADSCIENTIST-FUSED_X_CARD.description: dynamic variable Effects
+PASS eng X_RAY does not show X(X+1)
+PASS eng BLASTING_DEVICE does not show X(X+1)
+PASS eng has eight ancient groups plus the Architect
+PASS eng Architect key 0-0r.char
+PASS eng Architect key 0-0r.next
+PASS eng Architect key 0-1r.ancient
+PASS eng Architect key 0-attack
+PASS eng Architect attack is an enum value, not translated prose
+PASS eng FUSED_CARD runtime title
+PASS eng FUSED_CARD runtime description includes material effects
+PASS eng FUSED_X_CARD runtime title
+PASS eng FUSED_X_CARD runtime description includes material effects
+PASS eng MADSCIENTIST-MACHINE_DURABILITY_POWER has a smart description
+PASS eng MADSCIENTIST-MACHINE_DURABILITY_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-MACHINE_DURABILITY_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-MACHINE_BROKEN_POWER has a smart description
+PASS eng MADSCIENTIST-MACHINE_BROKEN_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER has a smart description
+PASS eng MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER has a smart description
+PASS eng MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-SPARE_SPIKES_POWER has a smart description
+PASS eng MADSCIENTIST-SPARE_SPIKES_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-SPARE_SPIKES_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-SPARE_REAGENT_POWER has a smart description
+PASS eng MADSCIENTIST-SPARE_REAGENT_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-SPARE_REAGENT_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-PLAN_POWER has a smart description
+PASS eng MADSCIENTIST-PLAN_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-PLAN_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-MUTATION_POWER has a smart description
+PASS eng MADSCIENTIST-MUTATION_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-MUTATION_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-SCORCHED_GROUND_POWER has a smart description
+PASS eng MADSCIENTIST-SCORCHED_GROUND_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-SCORCHED_GROUND_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-THINK_POWER has a smart description
+PASS eng MADSCIENTIST-THINK_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-THINK_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-INVENTORY_POWER has a smart description
+PASS eng MADSCIENTIST-INVENTORY_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-INVENTORY_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-MAD_RESEARCH_POWER has a smart description
+PASS eng MADSCIENTIST-MAD_RESEARCH_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-SOUL_RESEARCH_POWER has a smart description
+PASS eng MADSCIENTIST-SOUL_RESEARCH_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-SOUL_RESEARCH_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-BLOCK_LOCK_POWER has a smart description
+PASS eng MADSCIENTIST-BLOCK_LOCK_POWER smart variable OwnerName is supplied by PowerModel
+PASS eng MADSCIENTIST-BLOCK_LOCK_POWER smart variable Amount is supplied by PowerModel
+PASS eng MADSCIENTIST-BLAST_FREE_POWER has a smart description
+PASS eng MADSCIENTIST-BLAST_FREE_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs X_RAY does not show X(X+1)
+PASS zhs BLASTING_DEVICE does not show X(X+1)
+PASS zhs has eight ancient groups plus the Architect
+PASS zhs Architect key 0-0r.char
+PASS zhs Architect key 0-0r.next
+PASS zhs Architect key 0-1r.ancient
+PASS zhs Architect key 0-attack
+PASS zhs Architect attack is an enum value, not translated prose
+PASS zhs FUSED_CARD runtime title
+PASS zhs FUSED_CARD runtime description includes material effects
+PASS zhs FUSED_X_CARD runtime title
+PASS zhs FUSED_X_CARD runtime description includes material effects
+PASS zhs MADSCIENTIST-MACHINE_DURABILITY_POWER has a smart description
+PASS zhs MADSCIENTIST-MACHINE_DURABILITY_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-MACHINE_DURABILITY_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-MACHINE_BROKEN_POWER has a smart description
+PASS zhs MADSCIENTIST-MACHINE_BROKEN_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER has a smart description
+PASS zhs MADSCIENTIST-INFINITE_MACHINE_RESEARCH_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER has a smart description
+PASS zhs MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-SELF_REPAIR_RESEARCH_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-SPARE_SPIKES_POWER has a smart description
+PASS zhs MADSCIENTIST-SPARE_SPIKES_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-SPARE_SPIKES_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-SPARE_REAGENT_POWER has a smart description
+PASS zhs MADSCIENTIST-SPARE_REAGENT_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-SPARE_REAGENT_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-PLAN_POWER has a smart description
+PASS zhs MADSCIENTIST-PLAN_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-PLAN_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-MUTATION_POWER has a smart description
+PASS zhs MADSCIENTIST-MUTATION_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-MUTATION_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-SCORCHED_GROUND_POWER has a smart description
+PASS zhs MADSCIENTIST-SCORCHED_GROUND_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-SCORCHED_GROUND_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-THINK_POWER has a smart description
+PASS zhs MADSCIENTIST-THINK_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-THINK_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-INVENTORY_POWER has a smart description
+PASS zhs MADSCIENTIST-INVENTORY_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-INVENTORY_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-MAD_RESEARCH_POWER has a smart description
+PASS zhs MADSCIENTIST-MAD_RESEARCH_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-SOUL_RESEARCH_POWER has a smart description
+PASS zhs MADSCIENTIST-SOUL_RESEARCH_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-SOUL_RESEARCH_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-BLOCK_LOCK_POWER has a smart description
+PASS zhs MADSCIENTIST-BLOCK_LOCK_POWER smart variable OwnerName is supplied by PowerModel
+PASS zhs MADSCIENTIST-BLOCK_LOCK_POWER smart variable Amount is supplied by PowerModel
+PASS zhs MADSCIENTIST-BLAST_FREE_POWER has a smart description
+PASS zhs MADSCIENTIST-BLAST_FREE_POWER smart variable OwnerName is supplied by PowerModel
+PASS images/rooms/rest_site.png is a PNG (layout not tested)
+PASS images/ui/hands/multiplayer_hand_madscientist_point.png is a PNG (layout not tested)
+PASS images/ui/hands/multiplayer_hand_madscientist_rock.png is a PNG (layout not tested)
+PASS images/ui/hands/multiplayer_hand_madscientist_paper.png is a PNG (layout not tested)
+PASS images/ui/hands/multiplayer_hand_madscientist_scissors.png is a PNG (layout not tested)
+PASS build output uses isolated-overridable ModOutputDir
+PASS build output uses isolated-overridable ModOutputDir
+PASS build output uses isolated-overridable ModOutputDir
+PASS build output uses isolated-overridable ModOutputDir
+655 static resource assertions passed; no rendering/gameplay/multiplayer claim.

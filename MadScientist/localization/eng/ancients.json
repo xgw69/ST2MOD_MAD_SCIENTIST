@@ -46,5 +46,9 @@
   "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.0-1.char": "I fuse cards. You fuse beasts. We are colleagues.",
   "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.0-0.next": "Continue",
   "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.1-0r.ancient": "Show me your stitching.",
-  "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient": "The chimera approves."
+  "TANX.talk.MADSCIENTIST-MAD_SCIENTIST.2-0.ancient": "The chimera approves.",
+  "THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-0r.char": "Every experiment leads back to you. Today I test whether your design can be broken.",
+  "THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-0r.next": "Continue",
+  "THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-1r.ancient": "You mistake my design for a hypothesis. Come, and learn the difference.",
+  "THE_ARCHITECT.talk.MADSCIENTIST-MAD_SCIENTIST.0-attack": "Both"
 }
