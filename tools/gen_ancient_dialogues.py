@@ -124,20 +124,32 @@ ZH = {
 }
 
 
-def build(table):
+def build(table, next_label):
     out = {}
     for ancient, lines in table.items():
+        pages = {}
         for suffix, text in lines.items():
-            speaker = suffix.split(".")[-1]
-            page = suffix.rsplit(".", 1)[0]
-            out[f"{ancient}.talk.{CH}.{page}.{speaker}"] = text
+            page, speaker = suffix.rsplit(".", 1)
+            pages.setdefault(page, {})[speaker] = text
+        groups = {}
+        for page in pages:
+            groups.setdefault(page.split("-")[0], []).append(page)
+        for prefix, plist in groups.items():
+            order = sorted(plist, key=lambda p: int(p.split("-")[1].rstrip("r")))
+            for page in plist:
+                for speaker, text in pages[page].items():
+                    out[f"{ancient}.talk.{CH}.{page}.{speaker}"] = text
+            for page in order[:-1]:
+                key = f"{ancient}.talk.{CH}.{page}.next"
+                if key not in out:
+                    out[key] = next_label
     return out
-
 
 for lang, table in (("eng", EN), ("zhs", ZH)):
     p = Path(f"MadScientist/localization/{lang}/ancients.json")
     existing = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
-    existing.update(build(table))
+    existing = {k: v for k, v in existing.items() if CH not in k}
+    existing.update(build(table, "继续" if lang == "zhs" else "Continue"))
     p.write_text(json.dumps(existing, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 print("ok")
