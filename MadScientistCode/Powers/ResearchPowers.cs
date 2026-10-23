@@ -109,6 +109,7 @@ public class SoulResearchPower : MadScientistPower
         }
 
         _used = true;
+        await CreatureCmd.LoseMaxHp(new ThrowingPlayerChoiceContext(), creature, Amount, true);
         var heal = System.Math.Max(1, (int)(creature.MaxHp / 2m));
         await CreatureCmd.Heal(creature, heal);
         await PowerCmd.Remove(this);

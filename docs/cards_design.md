@@ -95,7 +95,7 @@
 | 机器药剂 | Machine Reagent / `MachineReagent` | 1 | 单体 | 造成 4(6) 点伤害；抽 4(6) 张牌；给予 4(6) 层虚弱；给予 4(6) 层中毒；消耗 5 点机器耐久；保留 | |
 | 全自动运行 | Fully Automatic / `FullyAutomatic` | 3 | 全体 | 消耗你全部机器耐久，对所有敌人造成等量伤害；每有一名敌人被此牌伤害，修复 1(2)；回合开始时若此牌在消耗牌堆，自动打出；消耗 | |
 | 备用药剂 | Spare Reagent / `SpareReagent` | 1 | 全体 | 下回合开始时，对所有敌人造成 9(10) 点伤害，给予 1(2) 层虚弱 | |
-| 全能修正 | Universal Correction / `UniversalCorrection` | 0 | 单体 | 造成"该敌人当前生命对 20 取余"点伤害 | 余数为 0 时 0 伤害（见 Q13） |
+| 全能修正 | Universal Correction / `UniversalCorrection` | 0 | 单体 | 造成"该敌人当前生命对 20(40) 取余"点伤害 | 升级改为对 40 取余 |
 | 疯狂科学（攻击形态） | Mad Science / 原版 `MadScience` | 1 | 视形态 | 原版事件牌的攻击形态，算作罕见卡 | 不新建卡，引用原版 |
 
 #### 稀有
@@ -120,7 +120,7 @@
 
 | 中文 | 英文 / 类名 | 费用 | 目标 | 效果 | 备注 |
 |---|---|---|---|---|---|
-| 科学研究 | Scientific Research / `ScientificResearch` | 0 | 自身 | 抽到时，复制一张到手牌；随机获得一张（升级过的）普通攻击牌 | 已实现 |
+| 科学研究 | Scientific Research / `ScientificResearch` | 1 | 自身 | 抽到时，复制一张到手牌；打出获得 6(7) 点格挡，修复 1(2) | |
 | 变异 | Mutation / `Mutation` | 1 | 自身 | 获得 6(8) 点格挡；获得 1 点力量；下回合失去 2(1) 点敏捷 | |
 | 炼制 | Refine / `Refine` | 1(0) | 自身 | 记录最左侧已有药水，战后奖励追加一瓶同类药水；消耗 | 2026-10-22 按反馈改为战后奖励 |
 | 化学雾气 | Chemical Fog / `ChemicalFog` | 1 | 自身 | 失去 2(1) 点敏捷；失去 2(1) 点力量；获得 17 点格挡 | |

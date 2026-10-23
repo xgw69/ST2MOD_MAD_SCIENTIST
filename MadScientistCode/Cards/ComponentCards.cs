@@ -44,7 +44,7 @@ public class UniversalCorrection : MadScientistCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
-        var damage = cardPlay.Target.CurrentHp % 20;
+        var damage = cardPlay.Target.CurrentHp % (IsUpgraded ? 40 : 20);
         if (damage <= 0)
         {
             return;

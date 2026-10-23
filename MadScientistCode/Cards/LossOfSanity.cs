@@ -18,7 +18,10 @@ public class LossOfSanity : MadScientistCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<WeakPower>(choiceContext, Owner.Creature, 99m, Owner.Creature, this);
+        if (!IsUpgraded)
+        {
+            await PowerCmd.Apply<WeakPower>(choiceContext, Owner.Creature, 99m, Owner.Creature, this);
+        }
         await PowerCmd.Apply<VulnerablePower>(choiceContext, Owner.Creature, 99m, Owner.Creature, this);
         await PowerCmd.Apply<FrailPower>(choiceContext, Owner.Creature, 99m, Owner.Creature, this);
 

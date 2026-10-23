@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MadScientist.MadScientistCode.Cards.Fusion;
 using MadScientist.MadScientistCode.Powers;
+using MadScientist.MadScientistCode.Core;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -156,9 +157,12 @@ public class ForbiddenScience : MadScientistCard
 
 public class ScientificResearch : MadScientistCard
 {
-    public ScientificResearch() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public ScientificResearch() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+        [new BlockVar(6m, ValueProp.Move), new DynamicVar("Repair", 1m)];
 
     public override async Task AfterCardDrawnEarly(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
@@ -173,29 +177,18 @@ public class ScientificResearch : MadScientistCard
             copy.UpgradeInternal();
         }
         await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner);
-
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var pool = MegaCrit.Sts2.Core.Models.ModelDb
-            .CardPool<MadScientist.MadScientistCode.Character.MadScientistCardPool>()
-            .AllCards
-            .Where(c => c.Rarity == CardRarity.Common && c.Type == CardType.Attack)
-            .OrderBy(c => c.Id.Entry)
-            .ToList();
-        if (pool.Count == 0)
-        {
-            return;
-        }
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
+        await Durability.Repair(choiceContext, Owner.Creature, (int)DynamicVars["Repair"].BaseValue, this);
+    }
 
-        var canonical = pool[Owner.RunState.Rng.CombatCardGeneration.NextInt(pool.Count)];
-        var bonus = CombatState!.CreateCard(canonical, Owner);
-        if (IsUpgraded)
-        {
-            bonus.UpgradeInternal();
-        }
-        await CardPileCmd.AddGeneratedCardToCombat(bonus, PileType.Hand, Owner);
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Block.UpgradeValueBy(1m);
+        DynamicVars["Repair"].UpgradeValueBy(1m);
     }
 }
 

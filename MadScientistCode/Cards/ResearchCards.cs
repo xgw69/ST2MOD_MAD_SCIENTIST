@@ -37,6 +37,8 @@ public class MadResearch : MadScientistCard
     {
         await PowerCmd.Apply<MadResearchPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
+
+    protected override void OnUpgrade() => EnergyCost.UpgradeBy(-1);
 }
 
 public class SoulResearch : MadScientistCard
@@ -47,6 +49,6 @@ public class SoulResearch : MadScientistCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<SoulResearchPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+        await PowerCmd.Apply<SoulResearchPower>(choiceContext, Owner.Creature, IsUpgraded ? 3m : 5m, Owner.Creature, this);
     }
 }
