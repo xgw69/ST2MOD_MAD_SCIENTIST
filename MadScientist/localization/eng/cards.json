@@ -68,7 +68,7 @@
   "MADSCIENTIST-SCIENTIFIC_LEGACY.title": "Scientific Legacy",
   "MADSCIENTIST-SCIENTIFIC_LEGACY.description": "Choose 1 of 9 Mad Science cards and add it to your hand.",
   "MADSCIENTIST-GREAT_FUSION.title": "Great Fusion",
-  "MADSCIENTIST-GREAT_FUSION.description": "Fuse all cards in your hand with this card, then play it again.",
+  "MADSCIENTIST-GREAT_FUSION.description": "{IfUpgraded:show:Before fusing, upgrade every card that will be fused. Then fuse all other cards in your hand into this card and auto-play the fused card.|Fuse all other cards in your hand into this card, then auto-play the fused card.}",
   "MADSCIENTIST-ASSEMBLE.title": "Assemble",
   "MADSCIENTIST-ASSEMBLE.description": "Fuse all Unplayable cards in your hand and draw pile with this card.",
   "MADSCIENTIST-FULLY_AUTOMATIC.title": "Fully Automatic",
