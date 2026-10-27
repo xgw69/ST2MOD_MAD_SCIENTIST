@@ -20,13 +20,9 @@ public class InventoryPower : MadScientistPower
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override async Task BeforeSideTurnStart(
-        PlayerChoiceContext choiceContext,
-        CombatSide side,
-        IReadOnlyList<Creature> participants,
-        ICombatState combatState)
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Players.Player player)
     {
-        if (side != CombatSide.Player || !participants.Contains(Owner) || Owner.Player == null)
+        if (player != Owner.Player)
         {
             return;
         }
